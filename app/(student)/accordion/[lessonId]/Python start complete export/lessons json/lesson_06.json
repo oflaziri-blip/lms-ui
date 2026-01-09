@@ -1,0 +1,280 @@
+{
+  "lesson_id": "lesson_06",
+  "title": "Logic Gates: Nested Cond.",
+  "module": "Module 1: Python Basics",
+  "duration_minutes": 60,
+  "slide_url": "/content/python/slides/lesson_06_nested.pdf",
+  "objectives": [
+    "Master nested if statements",
+    "Use logical operators (and, or, not)",
+    "Construct complex decision trees",
+    "Debug multi-layer logic",
+    "Build an advanced security system"
+  ],
+  "description": "Dive deeper into decision making. Combine conditions using logic gates and nest them to create complex, intelligent behavior.",
+  "exercises": [
+    {
+      "id": "l06_quiz_01",
+      "type": "quiz",
+      "title": "Clearance Check: Logical AND",
+      "description": "When does `A and B` evaluate to True?",
+      "options": [
+        "If A is True",
+        "If B is True",
+        "If both A and B are True",
+        "If at least one is True"
+      ],
+      "correctAnswer": 2,
+      "xp": 5
+    },
+    {
+      "id": "l06_quiz_02",
+      "type": "quiz",
+      "title": "Clearance Check: Logical NOT",
+      "description": "What does `not True` evaluate to?",
+      "options": [
+        "True",
+        "False",
+        "None",
+        "Error"
+      ],
+      "correctAnswer": 1,
+      "xp": 5
+    },
+    {
+      "id": "l06_type_01",
+      "type": "typing",
+      "title": "Neural Sync: AND Gate",
+      "description": "Check if both keys are active.",
+      "targetCode": "if primary_key_active and secondary_key_active:\n    print(\"Vault Unlocked\")",
+      "xp": 10
+    },
+    {
+      "id": "l06_type_02",
+      "type": "typing",
+      "title": "Neural Sync: OR Gate",
+      "description": "Check if either backup is online.",
+      "targetCode": "if emergency_power_1 or emergency_power_2:\n    print(\"Systems Operational\")",
+      "xp": 10
+    },
+    {
+      "id": "l06_type_03",
+      "type": "typing",
+      "title": "Neural Sync: Nested Check",
+      "description": "Check admin status inside a login check.",
+      "targetCode": "if user_logged_in:\n    if user_is_admin:\n        print(\"Root Access Granted\")",
+      "xp": 10
+    },
+    {
+      "id": "l06_debug_01",
+      "type": "debug",
+      "title": "System Repair: Logic Flaw",
+      "description": "We want to check if the user is 'admin' AND 'active'. The current code accepts EITHER.",
+      "brokenCode": "if role == 'admin' or status == 'active':",
+      "starterCode": "role = 'admin'\nstatus = 'inactive'\nif role == 'admin' or status == 'active':\n    print(\"Access\")\nelse:\n    print(\"Deny\")",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "Deny\n"
+        }
+      ],
+      "solution": "role = 'admin'\nstatus = 'inactive'\nif role == 'admin' and status == 'active':\n    print(\"Access\")\nelse:\n    print(\"Deny\")",
+      "xp": 15
+    },
+    {
+      "id": "l06_debug_02",
+      "type": "debug",
+      "title": "System Repair: Nested Indent",
+      "description": "The inner check should only run if the outer check passes.",
+      "brokenCode": "if door == 'open':\nif person == 'authorized':\nprint(\"Enter\")",
+      "starterCode": "door = 'open'\nperson = 'authorized'\nif door == 'open':\nif person == 'authorized':\nprint(\"Enter\")",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "Enter\n"
+        }
+      ],
+      "solution": "door = 'open'\nperson = 'authorized'\nif door == 'open':\n    if person == 'authorized':\n        print(\"Enter\")",
+      "xp": 15
+    },
+    {
+      "id": "l06_code_01",
+      "type": "code",
+      "title": "Field Mission: Double Auth",
+      "description": "Take two inputs: `user` and `pw`. If user is 'admin' AND pw is '1234', print 'Granted'. Else 'Denied'.",
+      "starterCode": "# Auth logic",
+      "solution": "user = input()\npw = input()\nif user == 'admin' and pw == '1234':\n    print('Granted')\nelse:\n    print('Denied')",
+      "testCases": [
+        {
+          "input": "admin\n1234",
+          "expectedOutput": "Granted\n"
+        },
+        {
+          "input": "user\n1234",
+          "expectedOutput": "Denied\n"
+        }
+      ],
+      "points": 20,
+      "xp": 20
+    },
+    {
+      "id": "l06_code_02",
+      "type": "code",
+      "title": "Field Mission: Range Check",
+      "description": "Take integer `n`. Check if `n` is greater than 10 AND less than 20. Print True/False.",
+      "starterCode": "# Range check",
+      "solution": "n = int(input())\nif n > 10 and n < 20:\n    print('True')\nelse:\n    print('False')",
+      "testCases": [
+        {
+          "input": "15",
+          "expectedOutput": "True\n"
+        },
+        {
+          "input": "50",
+          "expectedOutput": "False\n"
+        }
+      ],
+      "points": 20,
+      "xp": 20
+    },
+    {
+      "id": "l06_code_03",
+      "type": "code",
+      "title": "Field Mission: Weekend Logic",
+      "description": "Take input `day`. If day is 'Saturday' OR 'Sunday', print 'Weekend'. Else 'Work'.",
+      "starterCode": "# Day check",
+      "solution": "day = input()\nif day == 'Saturday' or day == 'Sunday':\n    print('Weekend')\nelse:\n    print('Work')",
+      "testCases": [
+        {
+          "input": "Saturday",
+          "expectedOutput": "Weekend\n"
+        },
+        {
+          "input": "Monday",
+          "expectedOutput": "Work\n"
+        }
+      ],
+      "points": 20,
+      "xp": 20
+    },
+    {
+      "id": "l06_typing_adv_1",
+      "type": "typing",
+      "title": "Neural Sync: Dual Authentication",
+      "description": "Vault requires BOTH biometric AND password verification.",
+      "targetCode": "bio_scan = True\npassword_match = True\naccess = bio_scan and password_match\nprint('Access granted:', access)",
+      "points": 10,
+      "xp": 10
+    },
+    {
+      "id": "l06_typing_adv_2",
+      "type": "typing",
+      "title": "Neural Sync: Emergency Override Protocol",
+      "description": "Professional backup power system with complex boolean logic and comments.",
+      "targetCode": "# Emergency Power System\nmain_power = False\nbackup_generator = True\nsolar_panels = False\npower_available = main_power or backup_generator or solar_panels\nprint('Systems operational:', power_available)",
+      "points": 15,
+      "xp": 15
+    },
+    {
+      "id": "l06_challenge_1",
+      "type": "debug",
+      "title": "Debug Challenge: Logic Gate Error",
+      "description": "SECURITY BREACH: Using OR when AND required! Agent needs BOTH clearance AND authorization, not either/or!",
+      "brokenCode": "clearance = True\nauthorization = False\nif clearance or authorization:\n    print('Access')\nelse:\n    print('Denied')",
+      "starterCode": "clearance = True\nauthorization = False\nif clearance or authorization:\n    print('Access')\nelse:\n    print('Denied')",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "Denied\\n"
+        }
+      ],
+      "solution": "clearance = True\nauthorization = False\nif clearance and authorization:\n    print('Access')\nelse:\n    print('Denied')",
+      "points": 20,
+      "xp": 20
+    },
+    {
+      "id": "l06_challenge_2",
+      "type": "code",
+      "title": "Compound Security: Age AND License Check",
+      "description": "Input age and has_license ('True'/'False'). Grant vehicle access ONLY if age >= 18 AND has_license == 'True'. Print 'Approved' or 'Denied'.",
+      "starterCode": "# Vehicle authorization system\nage = int(input())\nhas_license = input()\n",
+      "solution": "age = int(input())\nhas_license = input()\n\nif age >= 18 and has_license == 'True':\n    print('Approved')\nelse:\n    print('Denied')",
+      "testCases": [
+        {
+          "input": "25\\nTrue",
+          "expectedOutput": "Approved\\n"
+        },
+        {
+          "input": "16\\nTrue",
+          "expectedOutput": "Denied\\n"
+        }
+      ],
+      "points": 25,
+      "xp": 25
+    },
+    {
+      "id": "l06_challenge_3",
+      "type": "code",
+      "title": "Tactical Decision: Attack OR Retreat",
+      "description": "Input ammo_count and health. If ammo > 50 OR health > 75, print 'ATTACK'. Else 'RETREAT'. Use OR!",
+      "starterCode": "# Combat decision system\nammo = int(input())\nhealth = int(input())\n",
+      "solution": "ammo = int(input())\nhealth = int(input())\nif ammo > 50 or health > 75:\n    print('ATTACK')\nelse:\n    print('RETREAT')",
+      "testCases": [
+        {
+          "input": "60\\n30",
+          "expectedOutput": "ATTACK\\n"
+        },
+        {
+          "input": "20\\n40",
+          "expectedOutput": "RETREAT\\n"
+        }
+      ],
+      "points": 25,
+      "xp": 25
+    },
+    {
+      "id": "l06_challenge_4",
+      "type": "code",
+      "title": "Stealth Infiltration: NOT Operator",
+      "description": "Input is_detected ('True'/'False'). If NOT detected, print 'PROCEED'. If detected, print 'ABORT'. Use 'not' operator!",
+      "starterCode": "# Stealth status check\nis_detected = input()\n",
+      "solution": "is_detected = input()\nif not is_detected == 'True':\n    print('PROCEED')\nelse:\n    print('ABORT')",
+      "testCases": [
+        {
+          "input": "False",
+          "expectedOutput": "PROCEED\\n"
+        },
+        {
+          "input": "True",
+          "expectedOutput": "ABORT\\n"
+        }
+      ],
+      "points": 30,
+      "xp": 30
+    },
+    {
+      "id": "l06_challenge_5",
+      "type": "code",
+      "title": "Boss Challenge: Mission Go/No-Go Decision",
+      "description": "COMMAND CENTER: Launch mission ONLY if: (team_ready=='True' AND weather=='Clear') OR (emergency=='True'). Input all 3 variables. Print 'LAUNCH' or 'ABORT'. Complex boolean logic!",
+      "starterCode": "# Mission launch protocol\nteam_ready = input()\nweather = input()\nemergency = input()\n",
+      "solution": "team_ready = input()\nweather = input()\nemergency = input()\nif (team_ready == 'True' and weather == 'Clear') or emergency == 'True':\n    print('LAUNCH')\nelse:\n    print('ABORT')",
+      "testCases": [
+        {
+          "input": "True\\nClear\\nFalse",
+          "expectedOutput": "LAUNCH\\n"
+        },
+        {
+          "input": "False\\nStorm\\nTrue",
+          "expectedOutput": "LAUNCH\\n"
+        },
+        {
+          "input": "False\\nClear\\nFalse",
+          "expectedOutput": "ABORT\\n"
+        }
+      ],
+      "points": 40,
+      "xp": 40
+    }
+  ]
+}

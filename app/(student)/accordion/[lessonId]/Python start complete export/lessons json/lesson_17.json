@@ -1,0 +1,230 @@
+{
+  "lesson_id": "lesson_17",
+  "title": "Project: Grid Defense - Urban Environment",
+  "module": "Module 4: Visual Algorithms",
+  "duration_minutes": 90,
+  "slide_url": "/content/python/slides/lesson_17_grid_defense.pdf",
+  "objectives": [
+    "Master procedural generation with nested loops",
+    "Build scalable grid systems with functions",
+    "Calculate optimal spacing and coverage",
+    "Generate ASCII art programmatically",
+    "Combine all Module 4 concepts into one project"
+  ],
+  "description": "Final project: Build a laser grid defense system using procedural generation. Combine coordinates, loops, and functions to protect Neon City. Real algorithms used in game development and procedural world generation.",
+  "exercises": [
+    {
+      "id": "l17_quiz_1",
+      "type": "quiz",
+      "question": "What does 'procedural generation' mean?",
+      "options": [
+        "Hand-placing every object",
+        "Using algorithms to create content",
+        "Random chaos",
+        "Copy-pasting code"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Procedural = using algorithms/functions to generate content automatically.",
+      "points": 5
+    },
+    {
+      "id": "l17_quiz_2",
+      "type": "quiz",
+      "question": "For a 3x4 grid, how many positions total?",
+      "options": [
+        "7",
+        "12",
+        "34",
+        "43"
+      ],
+      "correctAnswer": 1,
+      "explanation": "3 rows × 4 columns = 12 positions.",
+      "points": 5
+    },
+    {
+      "id": "l17_typing_1",
+      "type": "typing",
+      "title": "Neural Sync: Nested Grid Loop",
+      "description": "Type nested loops for 2x2 grid.",
+      "targetCode": "for row in range(2):\\n    for col in range(2):\\n        print(row, col)",
+      "points": 10
+    },
+    {
+      "id": "l17_typing_2",
+      "type": "typing",
+      "title": "Neural Sync: Grid Function",
+      "description": "Define function to print grid position.",
+      "targetCode": "def grid_pos(x, y):\\n    print(f'({x}, {y})')",
+      "points": 10
+    },
+    {
+      "id": "l17_debug_1",
+      "type": "debug",
+      "title": "Glitch Fix: Grid Calculation",
+      "description": "Should calculate 4x3=12 but formula is wrong!",
+      "brokenCode": "rows = 4\\ncols = 3\\ntotal = rows + cols\\nprint(total)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "12\n"
+        }
+      ],
+      "points": 15
+    },
+    {
+      "id": "l17_debug_2",
+      "type": "debug",
+      "title": "Glitch Fix: Spacing Error",
+      "description": "Grid positions should multiply by spacing (100)!",
+      "brokenCode": "spacing = 100\\nfor i in range(3):\\n    x = i\\n    print(x)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "0\\n100\\n200\n"
+        }
+      ],
+      "points": 15
+    },
+    {
+      "id": "l17_code_1",
+      "type": "code",
+      "title": "Field Mission: Grid Size",
+      "description": "Calculate total towers for 500x300 area with 100 spacing.",
+      "starterCode": "width = 500\\nheight = 300\\nspacing = 100\\n\\n# Calculate grid dimensions\\n",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "24\n"
+        }
+      ],
+      "points": 20
+    },
+    {
+      "id": "l17_code_2",
+      "type": "code",
+      "title": "Field Mission: Row Generator",
+      "description": "Print x coordinates for one row: 0, 50, 100, 150, 200 (spacing=50).",
+      "starterCode": "spacing = 50\\nend_x = 200\\n\\n# Generate row\\n",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "0\\n50\\n100\\n150\\n200\n"
+        }
+      ],
+      "points": 20
+    },
+    {
+      "id": "l17_code_3",
+      "type": "code",
+      "title": "Field Mission: 2x2 Defense Grid",
+      "description": "Print all positions for 2x2 grid with 100 spacing. Format: 'x,y'.",
+      "starterCode": "spacing = 100\\n\\n# Generate 2x2 grid\\n",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "0,0\\n100,0\\n0,100\\n100,100\n"
+        }
+      ],
+      "points": 20
+    },
+    {
+      "id": "l17_typing_adv_1",
+      "type": "typing",
+      "title": "Neural Sync: Defense Grid Calculation",
+      "description": "Calculate total security towers for perimeter defense.",
+      "targetCode": "rows = 5\ncols = 4\ntotal_towers = rows * cols\nprint(total_towers)",
+      "points": 10,
+      "xp": 10
+    },
+    {
+      "id": "l17_typing_adv_2",
+      "type": "typing",
+      "title": "Neural Sync: Procedural Tower Placement",
+      "description": "Professional grid generation with nested loops for tactical positioning.",
+      "targetCode": "# Generate 3x3 defensive grid\nspacing = 100\nfor row in range(3):\n    for col in range(3):\n        x = col * spacing\n        y = row * spacing\n        print(f'Tower at ({x}, {y})')",
+      "points": 15,
+      "xp": 15
+    },
+    {
+      "id": "l17_challenge_1",
+      "type": "debug",
+      "title": "Debug Challenge: Grid Math Error",
+      "description": "Total towers wrong! Should MULTIPLY dimensions, not ADD!",
+      "brokenCode": "width = 8\nheight = 5\ntotal = width + height\nprint(total)",
+      "starterCode": "width = 8\nheight = 5\ntotal = width + height\nprint(total)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "40\\n"
+        }
+      ],
+      "solution": "width = 8\nheight = 5\ntotal = width * height\nprint(total)",
+      "points": 20,
+      "xp": 20
+    },
+    {
+      "id": "l17_challenge_2",
+      "type": "code",
+      "title": "Perimeter Defense: Coverage Calculator",
+      "description": "Area is 600x400. Tower spacing is 100. Calculate how many towers fit: (width/spacing) × (height/spacing).",
+      "starterCode": "# Defense coverage analysis\nwidth = 600\nheight = 400\nspacing = 100\n",
+      "solution": "width = 600\nheight = 400\nspacing = 100\ntowers_x = width // spacing\ntowers_y = height // spacing\ntotal = towers_x * towers_y\nprint(total)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "24\\n"
+        }
+      ],
+      "points": 25,
+      "xp": 25
+    },
+    {
+      "id": "l17_challenge_3",
+      "type": "code",
+      "title": "Strategic Placement: Linear Deployment",
+      "description": "Deploy towers along X-axis from 0 to 300 with spacing 100. Print each tower X coordinate.",
+      "starterCode": "# Linear tower deployment\nmax_x = 300\nspacing = 100\n",
+      "solution": "max_x = 300\nspacing = 100\nfor x in range(0, max_x + 1, spacing):\n    print(x)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "0\\n100\\n200\\n300\\n"
+        }
+      ],
+      "points": 25,
+      "xp": 25
+    },
+    {
+      "id": "l17_challenge_4",
+      "type": "code",
+      "title": "Tactical Grid: 2×3 Formation",
+      "description": "Generate 2×3 tower grid (2 rows, 3 columns) with 50 spacing. Print coordinates as 'x,y' format.",
+      "starterCode": "# 2x3 defensive formation\nspacing = 50\n",
+      "solution": "spacing = 50\nfor row in range(2):\n    for col in range(3):\n        x = col * spacing\n        y = row * spacing\n        print(f'{x},{y}')",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "0,0\\n50,0\\n100,0\\n0,50\\n50,50\\n100,50\\n"
+        }
+      ],
+      "points": 30,
+      "xp": 30
+    },
+    {
+      "id": "l17_challenge_5",
+      "type": "code",
+      "title": "Boss Challenge: Complete Defense System",
+      "description": "FINAL EXAM: Build 4×4 grid defense (spacing=100). For each tower, calculate if it's a perimeter tower (row==0 or row==3 or col==0 or col==3). Count total perimeter towers. Print count.",
+      "starterCode": "# Advanced grid analysis\nspacing = 100\ngrid_size = 4\n",
+      "solution": "spacing = 100\ngrid_size = 4\nperimeter_count = 0\n\nfor row in range(grid_size):\n    for col in range(grid_size):\n        if row == 0 or row == grid_size - 1 or col == 0 or col == grid_size - 1:\n            perimeter_count += 1\n\nprint(perimeter_count)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "12\\n"
+        }
+      ],
+      "points": 40,
+      "xp": 40
+    }
+  ]
+}

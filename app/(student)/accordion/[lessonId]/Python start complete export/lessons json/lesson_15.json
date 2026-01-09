@@ -1,0 +1,230 @@
+{
+  "lesson_id": "lesson_15",
+  "title": "Loops in Graphics: Pattern Recognition",
+  "module": "Module 4: Visual Algorithms",
+  "duration_minutes": 60,
+  "slide_url": "/content/python/slides/lesson_15_loops_graphics.pdf",
+  "objectives": [
+    "Use loops to eliminate repetitive code",
+    "Calculate polygon angles (360/sides)",
+    "Generate patterns efficiently with range()",
+    "Calculate total distance with loops",
+    "Apply nested loops for grid patterns"
+  ],
+  "description": "Master efficient pattern generation with loops. Learn why professionals never copy-paste code. Generate squares, hexagons, and complex grids with minimal code using iteration.",
+  "exercises": [
+    {
+      "id": "l15_quiz_1",
+      "type": "quiz",
+      "question": "How many times does 'for i in range(5)' execute?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "Infinite"
+      ],
+      "correctAnswer": 1,
+      "explanation": "range(5) generates 0,1,2,3,4 - exactly 5 iterations.",
+      "points": 5
+    },
+    {
+      "id": "l15_quiz_2",
+      "type": "quiz",
+      "question": "What turn angle for a hexagon (6 sides)?",
+      "options": [
+        "45°",
+        "60°",
+        "90°",
+        "120°"
+      ],
+      "correctAnswer": 1,
+      "explanation": "360 / 6 = 60 degrees per turn.",
+      "points": 5
+    },
+    {
+      "id": "l15_typing_1",
+      "type": "typing",
+      "title": "Neural Sync: Square Loop",
+      "description": "Type a loop that prints 'Move' 4 times.",
+      "targetCode": "for i in range(4):\\n    print('Move')",
+      "points": 10
+    },
+    {
+      "id": "l15_typing_2",
+      "type": "typing",
+      "title": "Neural Sync: Distance Sum",
+      "description": "Sum distances in a loop.",
+      "targetCode": "total = 0\\nfor i in range(5):\\n    total += 10",
+      "points": 10
+    },
+    {
+      "id": "l15_debug_1",
+      "type": "debug",
+      "title": "Glitch Fix: Wrong Range",
+      "description": "Should print 0-4 but only prints 0-3! Fix the range.",
+      "brokenCode": "for i in range(4):\\n    print(i)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "0\\n1\\n2\\n3\\n4\n"
+        }
+      ],
+      "points": 15
+    },
+    {
+      "id": "l15_debug_2",
+      "type": "debug",
+      "title": "Glitch Fix: Angle Formula",
+      "description": "Hexagon angle is wrong - should be 60 not 30!",
+      "brokenCode": "sides = 6\\nangle = 360 * sides\\nprint(angle)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "60.0\n"
+        }
+      ],
+      "points": 15
+    },
+    {
+      "id": "l15_code_1",
+      "type": "code",
+      "title": "Field Mission: Perimeter Calculator",
+      "description": "Calculate perimeter: 8 sides of length 25. Print total.",
+      "starterCode": "# Octagon perimeter\\nsides = 8\\nlength = 25\\n\\n# Calculate total\\n",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "200\n"
+        }
+      ],
+      "points": 20
+    },
+    {
+      "id": "l15_code_2",
+      "type": "code",
+      "title": "Field Mission: Turn Angle",
+      "description": "Calculate and print turn angle for pentagon (5 sides).",
+      "starterCode": "sides = 5\\n\\n# Calculate angle\\n",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "72.0\n"
+        }
+      ],
+      "points": 20
+    },
+    {
+      "id": "l15_code_3",
+      "type": "code",
+      "title": "Field Mission: Pattern Generator",
+      "description": "Print 'Move 50' and 'Turn X' for a square. X = 360/4.",
+      "starterCode": "# Square pattern\\nsides = 4\\nangle = 360 / sides\\n\\n# Print commands\\n",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "Move 50\\nTurn 90.0\\nMove 50\\nTurn 90.0\\nMove 50\\nTurn 90.0\\nMove 50\\nTurn 90.0\n"
+        }
+      ],
+      "points": 20
+    },
+    {
+      "id": "l15_typing_adv_1",
+      "type": "typing",
+      "title": "Neural Sync: Hex Pattern Generator",
+      "description": "Generate hexagon movement sequence with calculated angles.",
+      "targetCode": "sides = 6\nangle = 360 / sides\nfor i in range(sides):\n    print(f'Side {i+1}, Turn {angle}')",
+      "points": 10,
+      "xp": 10
+    },
+    {
+      "id": "l15_typing_adv_2",
+      "type": "typing",
+      "title": "Neural Sync: Distance Accumulator",
+      "description": "Professional loop pattern - calculate total movement distance over iterations.",
+      "targetCode": "# Calculate flight path length\ntotal_distance = 0\nfor segment in range(5):\n    segment_length = 100\n    total_distance += segment_length\n    print(f'Segment {segment+1}: {total_distance} total')",
+      "points": 15,
+      "xp": 15
+    },
+    {
+      "id": "l15_challenge_1",
+      "type": "debug",
+      "title": "Debug Challenge: Wrong Iteration Count",
+      "description": "Pentagon needs 5 sides but loop only runs 4! Fix range!",
+      "brokenCode": "for side in range(4):\n    print('Draw side')",
+      "starterCode": "for side in range(4):\n    print('Draw side')",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "Draw side\\nDraw side\\nDraw side\\nDraw side\\nDraw side\\n"
+        }
+      ],
+      "solution": "for side in range(5):\n    print('Draw side')",
+      "points": 20,
+      "xp": 20
+    },
+    {
+      "id": "l15_challenge_2",
+      "type": "code",
+      "title": "Pattern Math: Angle Calculator",
+      "description": "Calculate turn angle for octagon (8 sides). Formula: 360/sides. Print result.",
+      "starterCode": "# Octagon angle calculation\nsides = 8\n",
+      "solution": "sides = 8\nangle = 360 / sides\nprint(angle)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "45.0\\n"
+        }
+      ],
+      "points": 25,
+      "xp": 25
+    },
+    {
+      "id": "l15_challenge_3",
+      "type": "code",
+      "title": "Movement Sequence: Star Pattern",
+      "description": "Print  'Forward 80' 5 times for star pattern base. Use loop!",
+      "starterCode": "# Star pattern movement\n",
+      "solution": "for i in range(5):\n    print('Forward 80')",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "Forward 80\\nForward 80\\nForward 80\\nForward 80\\nForward 80\\n"
+        }
+      ],
+      "points": 25,
+      "xp": 25
+    },
+    {
+      "id": "l15_challenge_4",
+      "type": "code",
+      "title": "Tactical Distance: Total Path Length",
+      "description": "Drone flies 6 segments, each 150 units. Calculate total distance using loop. Print total.",
+      "starterCode": "# Calculate mission distance\nsegments = 6\ndistance_per_segment = 150\n",
+      "solution": "segments = 6\ndistance_per_segment = 150\ntotal = 0\nfor i in range(segments):\n    total += distance_per_segment\nprint(total)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "900\\n"
+        }
+      ],
+      "points": 30,
+      "xp": 30
+    },
+    {
+      "id": "l15_challenge_5",
+      "type": "code",
+      "title": "Boss Challenge: Adaptive Polygon System",
+      "description": "ADVANCED: Build polygon command generator. For triangle (3 sides), print: 'Move 60', 'Turn 120.0' three times. Calculate angle = 360/3. Use loop to generate all commands!",
+      "starterCode": "# Adaptive polygon generator\nsides = 3\nstep_size = 60\n",
+      "solution": "sides = 3\nstep_size = 60\nangle = 360 / sides\n\nfor i in range(sides):\n    print(f'Move {step_size}')\n    print(f'Turn {angle}')",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "Move 60\\nTurn 120.0\\nMove 60\\nTurn 120.0\\nMove 60\\nTurn 120.0\\n"
+        }
+      ],
+      "points": 40,
+      "xp": 40
+    }
+  ]
+}

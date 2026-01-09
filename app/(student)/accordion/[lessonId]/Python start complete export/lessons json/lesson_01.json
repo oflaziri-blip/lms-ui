@@ -1,0 +1,248 @@
+{
+  "lesson_id": "lesson_01",
+  "title": "Introduction to Python: Print & Math",
+  "module": "Module 1: Python Basics",
+  "duration_minutes": 60,
+  "slide_url": "/content/python/slides/lesson_01.md",
+  "objectives": [
+    "Understand what Python is and why it's powerful",
+    "Write your first Python program using print()",
+    "Master all 7 Python math operators",
+    "Learn order of operations with PEMDAS",
+    "Create ASCII art with code"
+  ],
+  "description": "Learn the foundation of Python: the print() function and all 7 mathematical operators. Guided by Emily and Cole, you'll build calculators and create visual art with code.",
+  "exercises": [
+    {
+      "id": "l01_quiz_01",
+      "type": "quiz",
+      "title": "Clearance Check: Compiler vs Interpreter",
+      "description": "Agent, we need a system that starts immediately. Which approach avoids a lengthy pre-compilation step?",
+      "options": [
+        "Compiled Language (C++)",
+        "Interpreted Language (Python)",
+        "Assembly Language",
+        "Machine Code"
+      ],
+      "correctAnswer": 1,
+      "xp": 5
+    },
+    {
+      "id": "l01_quiz_02",
+      "type": "quiz",
+      "title": "Clearance Check: Operation Logic",
+      "description": "Analyze this operation: `print('10' + '10')`. What is the precise console output?",
+      "options": [
+        "20",
+        "1010",
+        "Syntax Error",
+        "10+10"
+      ],
+      "correctAnswer": 1,
+      "xp": 5
+    },
+    {
+      "id": "l01_type_01",
+      "type": "typing",
+      "title": "Neural Sync: System Boot",
+      "description": "Execute the boot sequence command exactly.",
+      "targetCode": "print(\"System Online. Initializing core protocols... 100%\")",
+      "xp": 10
+    },
+    {
+      "id": "l01_type_02",
+      "type": "typing",
+      "title": "Neural Sync: Core Math",
+      "description": "Calibrate the math core.",
+      "targetCode": "total_energy = 50 + 25 + 75 + 100 # Quantifying sector output",
+      "xp": 10
+    },
+    {
+      "id": "l01_type_03",
+      "type": "typing",
+      "title": "Neural Sync: Power Surge",
+      "description": "Calculate maximum power output.",
+      "targetCode": "encryption_strength = 2 ** 10 # Generating 1024-bit security key",
+      "xp": 10
+    },
+    {
+      "id": "l01_debug_01",
+      "type": "debug",
+      "title": "System Repair: Syntax Error",
+      "description": "The boot message is failing. Fix the missing quotes.",
+      "brokenCode": "print(Hello World)",
+      "starterCode": "print(Hello World)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "Hello World\n"
+        }
+      ],
+      "solution": "print(\"Hello World\")",
+      "xp": 15
+    },
+    {
+      "id": "l01_debug_02",
+      "type": "debug",
+      "title": "System Repair: Calc Error",
+      "description": "The division module is returning a float instead of an integer. We need floor division.",
+      "brokenCode": "result = 10 / 3",
+      "starterCode": "result = 10 / 3\nprint(result)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "3\n"
+        }
+      ],
+      "solution": "result = 10 // 3\nprint(result)",
+      "xp": 15
+    },
+    {
+      "id": "l01_code_01",
+      "type": "code",
+      "title": "Field Mission: Identity",
+      "description": "Create a script that prints your Agent ID and Division.",
+      "starterCode": "# Print 'Agent 42'\n# Print 'Division: Cyber'",
+      "solution": "print('Agent 42')\nprint('Division: Cyber')",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "Agent 42\nDivision: Cyber\n"
+        }
+      ],
+      "points": 20,
+      "xp": 20
+    },
+    {
+      "id": "l01_code_02",
+      "type": "code",
+      "title": "Field Mission: Calculator",
+      "description": "Write a script that calculates and prints 15 multiplied by 4.",
+      "starterCode": "# Calculate and print 15 * 4",
+      "solution": "print(15 * 4)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "60\n"
+        }
+      ],
+      "points": 20,
+      "xp": 20
+    },
+    {
+      "id": "l01_code_03",
+      "type": "code",
+      "title": "Field Mission: ASCII Badge",
+      "description": "Print a simple ASCII triangle badge.\n  *\n ***\n*****",
+      "starterCode": "# Print the badge",
+      "solution": "print('  *  ')\nprint(' *** ')\nprint('*****')",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "  *  \n *** \n*****\n"
+        }
+      ],
+      "points": 20,
+      "xp": 20
+    },
+    {
+      "id": "l01_typing_adv_1",
+      "type": "typing",
+      "title": "Neural Sync: Energy Core Calibration",
+      "description": "Agent, our reactor core needs recalibration. Start with 100 units, add emergency reserves (+50), then subtract cooling loss (-25). Type the exact sequence.",
+      "targetCode": "result = 100 + 50 - 25\nprint(result)",
+      "points": 10,
+      "xp": 10
+    },
+    {
+      "id": "l01_typing_adv_2",
+      "type": "typing",
+      "title": "Neural Sync: Mission Budget Protocol",
+      "description": "You're planning a covert operation. Budget breakdown: $500 (spy equipment), $200 (encrypted transport), $100 (emergency supplies). Type the professional accounting code with inline comments.",
+      "targetCode": "# Calculate mission costs\ntotal_cost = 500  # Equipment\ntotal_cost += 200  # Transport\ntotal_cost += 100  # Supplies\nprint('Total Mission Budget:', total_cost)",
+      "points": 15,
+      "xp": 15
+    },
+    {
+      "id": "l01_challenge_1",
+      "type": "debug",
+      "title": "Debug Challenge: Intercepted Enemy Code",
+      "description": "We intercepted enemy calculations! Their formula returns 14, but our decoder shows 11. The bug is in operator precedence - fix it to crack their encryption formula!",
+      "brokenCode": "answer = 2 + 3 * 4\nprint(answer)",
+      "starterCode": "answer = 2 + 3 * 4\nprint(answer)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "14\\n"
+        }
+      ],
+      "solution": "answer = 2 + 3 * 4\nprint(answer)",
+      "points": 20,
+      "xp": 20
+    },
+    {
+      "id": "l01_challenge_2",
+      "type": "code",
+      "title": "Encryption Protocol: Generate Security Key",
+      "description": "CRITICAL: The mainframe needs a 256-bit encryption key for tonight's data transfer. Use exponential growth (2^8) to calculate the key strength. Network security depends on this!",
+      "starterCode": "# Calculate encryption key strength: 2^8\n",
+      "solution": "result = 2 ** 8\nprint(result)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "256\\n"
+        }
+      ],
+      "points": 25,
+      "xp": 25
+    },
+    {
+      "id": "l01_challenge_3",
+      "type": "code",
+      "title": "Visual Decryption: Agent Signal Pattern",
+      "description": "You're receiving a coded light signal from a field agent. Each row represents signal strength levels. Decode the pattern by printing:\n1 (weak)\n22 (medium)\n333 (strong)",
+      "starterCode": "# Decode the agent signal pattern\n",
+      "solution": "print('1')\nprint('22')\nprint('333')",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "1\\n22\\n333\\n"
+        }
+      ],
+      "points": 25,
+      "xp": 25
+    },
+    {
+      "id": "l01_challenge_4",
+      "type": "code",
+      "title": "Covert Ops: Information Broker Payment",
+      "description": "You're meeting an informant at a restaurant. Bill: $50. You need to calculate a 20% tip to leave as payment for classified intel (10.0). No paper trail - do it in code.",
+      "starterCode": "# Calculate informant payment (20% of $50 bill)\nmeal_cost = 50\n",
+      "solution": "meal_cost = 50\ntip = meal_cost * 0.20\nprint(tip)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "10.0\\n"
+        }
+      ],
+      "points": 30,
+      "xp": 30
+    },
+    {
+      "id": "l01_challenge_5",
+      "type": "code",
+      "title": "Boss Challenge: Vault Code Sequence",
+      "description": "FINAL EXAM: You've reached the mainframe vault. Three locks require three codes:\n1. Safe distribution: Split 100 access tokens among 4 servers (floor division = 25)\n2. Security rotation: Week 7, rotate every 3 days - which day? (7 % 3 = 1)\n3. Firewall strength: 5 layers, each 3x stronger (5^3 = 125)\nPrint each code on a new line to unlock the vault!",
+      "starterCode": "# Vault unlock sequence - three security codes\n",
+      "solution": "print(100 // 4)\nprint(7 % 3)\nprint(5 ** 3)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "25\\n1\\n125\\n"
+        }
+      ],
+      "points": 40,
+      "xp": 40
+    }
+  ]
+}

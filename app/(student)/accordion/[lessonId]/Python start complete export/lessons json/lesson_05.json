@@ -1,0 +1,284 @@
+{
+  "lesson_id": "lesson_05",
+  "title": "Conditionals: The Fork",
+  "module": "Module 1: Python Basics",
+  "duration_minutes": 60,
+  "slide_url": "/content/python/slides/lesson_05_conditionals.pdf",
+  "objectives": [
+    "Master the if statement",
+    "Use else for fallback logic",
+    "Implement elif for multi-path logic",
+    "Understand indentation rules",
+    "Build a decision engine"
+  ],
+  "description": "Teach the machine to think. Use if, elif, and else to create programs that react differently to different situations.",
+  "exercises": [
+    {
+      "id": "l05_quiz_01",
+      "type": "quiz",
+      "title": "Clearance Check: Indentation",
+      "description": "What is the purpose of indentation in Python?",
+      "options": [
+        "It is purely for aesthetics",
+        "It defines a block of code (scope)",
+        "It makes the code run faster",
+        "It is optional"
+      ],
+      "correctAnswer": 1,
+      "xp": 5
+    },
+    {
+      "id": "l05_quiz_02",
+      "type": "quiz",
+      "title": "Clearance Check: Else Logic",
+      "description": "When does the code inside an `else` block execute?",
+      "options": [
+        "Always",
+        "When the `if` condition is True",
+        "When the `if` condition is False",
+        "Never"
+      ],
+      "correctAnswer": 2,
+      "xp": 5
+    },
+    {
+      "id": "l05_type_01",
+      "type": "typing",
+      "title": "Neural Sync: If Statement",
+      "description": "Check if power is over 9000.",
+      "targetCode": "if power_level > 9000:\n    print(\"Warning: Power level critical! Over 9000!\")",
+      "xp": 10
+    },
+    {
+      "id": "l05_type_02",
+      "type": "typing",
+      "title": "Neural Sync: Else Block",
+      "description": "Add a fallback condition.",
+      "targetCode": "else:\n    print(\"Access Denied. Security protocol engaged. Lockdown initiated.\")",
+      "xp": 10
+    },
+    {
+      "id": "l05_type_03",
+      "type": "typing",
+      "title": "Neural Sync: Elif Chain",
+      "description": "Add a secondary check for admin.",
+      "targetCode": "elif user_role == \"admin\":\n    print(\"Welcome, Administrator. Full access granted.\")",
+      "xp": 10
+    },
+    {
+      "id": "l05_debug_01",
+      "type": "debug",
+      "title": "System Repair: Indentation Error",
+      "description": "The print statement isn't part of the if block because it's not indented.",
+      "brokenCode": "if x > 5:\nprint(\"Big\")",
+      "starterCode": "x = 10\nif x > 5:\nprint(\"Big\")",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "Big\n"
+        }
+      ],
+      "solution": "x = 10\nif x > 5:\n    print(\"Big\")",
+      "xp": 15
+    },
+    {
+      "id": "l05_debug_02",
+      "type": "debug",
+      "title": "System Repair: Colon Syntax",
+      "description": "Something crucial is missing at the end of the if line.",
+      "brokenCode": "if score == 100\n    print(\"Win\")",
+      "starterCode": "score = 100\nif score == 100\n    print(\"Win\")",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "Win\n"
+        }
+      ],
+      "solution": "score = 100\nif score == 100:\n    print(\"Win\")",
+      "xp": 15
+    },
+    {
+      "id": "l05_code_01",
+      "type": "code",
+      "title": "Field Mission: Access Gate",
+      "description": "Take password input. If it is 'open', print 'Welcome'. Else, print 'Locked'.",
+      "starterCode": "# Password logic",
+      "solution": "pw = input()\nif pw == 'open':\n    print('Welcome')\nelse:\n    print('Locked')",
+      "testCases": [
+        {
+          "input": "open",
+          "expectedOutput": "Welcome\n"
+        },
+        {
+          "input": "wrong",
+          "expectedOutput": "Locked\n"
+        }
+      ],
+      "points": 20,
+      "xp": 20
+    },
+    {
+      "id": "l05_code_02",
+      "type": "code",
+      "title": "Field Mission: Traffic Light",
+      "description": "Take input 'color'. If 'red' -> Stop. If 'green' -> Go. Else -> Caution.",
+      "starterCode": "# Traffic logic",
+      "solution": "color = input()\nif color == 'red':\n    print('Stop')\nelif color == 'green':\n    print('Go')\nelse:\n    print('Caution')",
+      "testCases": [
+        {
+          "input": "red",
+          "expectedOutput": "Stop\n"
+        },
+        {
+          "input": "green",
+          "expectedOutput": "Go\n"
+        },
+        {
+          "input": "yellow",
+          "expectedOutput": "Caution\n"
+        }
+      ],
+      "points": 20,
+      "xp": 20
+    },
+    {
+      "id": "l05_code_03",
+      "type": "code",
+      "title": "Field Mission: Positive/Negative",
+      "description": "Take integer input. Print 'Pos' if > 0, 'Neg' if < 0, else 'Zero'.",
+      "starterCode": "# Number logic",
+      "solution": "n = int(input())\nif n > 0:\n    print('Pos')\nelif n < 0:\n    print('Neg')\nelse:\n    print('Zero')",
+      "testCases": [
+        {
+          "input": "10",
+          "expectedOutput": "Pos\n"
+        },
+        {
+          "input": "-5",
+          "expectedOutput": "Neg\n"
+        },
+        {
+          "input": "0",
+          "expectedOutput": "Zero\n"
+        }
+      ],
+      "points": 20,
+      "xp": 20
+    },
+    {
+      "id": "l05_typing_adv_1",
+      "type": "typing",
+      "title": "Neural Sync: Threat Level Assessment",
+      "description": "Security system with 3 threat levels using elif chain.",
+      "targetCode": "threat = 2\nif threat == 1:\n    print('LOW')\nelif threat == 2:\n    print('MEDIUM')\nelse:\n    print('HIGH')",
+      "points": 10,
+      "xp": 10
+    },
+    {
+      "id": "l05_typing_adv_2",
+      "type": "typing",
+      "title": "Neural Sync: Multi-Level Clearance System",
+      "description": "Professional clearance protocol with 4 security levels and comments.",
+      "targetCode": "# Security Clearance Protocol\nlevel = int(input())\nif level == 1:\n    print('RESTRICTED - Public Access Only')\nelif level == 2:\n    print('CONFIDENTIAL - Agents Only')\nelif level == 3:\n    print('SECRET - Field Operatives')\nelse:\n    print('TOP SECRET - Director Level')",
+      "points": 15,
+      "xp": 15
+    },
+    {
+      "id": "l05_challenge_1",
+      "type": "debug",
+      "title": "Debug Challenge: Missing Elif Colon",
+      "description": "SYNTAX ERROR: Security checkpoint failing! Missing colon after elif condition causes system crash!",
+      "brokenCode": "score = 85\nif score >= 90:\n    print('A')\nelif score >= 80\n    print('B')\nelse:\n    print('C')",
+      "starterCode": "score = 85\nif score >= 90:\n    print('A')\nelif score >= 80\n    print('B')\nelse:\n    print('C')",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "B\\n"
+        }
+      ],
+      "solution": "score = 85\nif score >= 90:\n    print('A')\nelif score >= 80:\n    print('B')\nelse:\n    print('C')",
+      "points": 20,
+      "xp": 20
+    },
+    {
+      "id": "l05_challenge_2",
+      "type": "code",
+      "title": "Access Control: Rank-Based Permissions",
+      "description": "Input operative rank (1-4). Print permissions: 1='Field Agent', 2='Senior Agent', 3='Team Lead', 4='Director'. Use elif!",
+      "starterCode": "# Rank verification system\nrank = int(input())\n",
+      "solution": "rank = int(input())\nif rank == 1:\n    print('Field Agent')\nelif rank == 2:\n    print('Senior Agent')\nelif rank == 3:\n    print('Team Lead')\nelse:\n    print('Director')",
+      "testCases": [
+        {
+          "input": "2",
+          "expectedOutput": "Senior Agent\\n"
+        },
+        {
+          "input": "4",
+          "expectedOutput": "Director\\n"
+        }
+      ],
+      "points": 25,
+      "xp": 25
+    },
+    {
+      "id": "l05_challenge_3",
+      "type": "code",
+      "title": "Mission Priority: Urgency Classifier",
+      "description": "Input mission urgency (1-5). 5='CRITICAL', 4='HIGH', 3='MEDIUM', 2='LOW', 1='ROUTINE'. Print urgency level.",
+      "starterCode": "# Mission urgency classifier\nurgency = int(input())\n",
+      "solution": "urgency = int(input())\nif urgency == 5:\n    print('CRITICAL')\nelif urgency == 4:\n    print('HIGH')\nelif urgency == 3:\n    print('MEDIUM')\nelif urgency == 2:\n    print('LOW')\nelse:\n    print('ROUTINE')",
+      "testCases": [
+        {
+          "input": "5",
+          "expectedOutput": "CRITICAL\\n"
+        },
+        {
+          "input": "1",
+          "expectedOutput": "ROUTINE\\n"
+        }
+      ],
+      "points": 25,
+      "xp": 25
+    },
+    {
+      "id": "l05_challenge_4",
+      "type": "code",
+      "title": "Enemy Intel: Threat Assessment",
+      "description": "Input enemy count. <10='Minimal', 10-50='Moderate', 51-100='Severe', >100='Critical'. Use elif with ranges!",
+      "starterCode": "# Threat level analyzer\nenemy_count = int(input())\n",
+      "solution": "enemy_count = int(input())\nif enemy_count < 10:\n    print('Minimal')\nelif enemy_count <= 50:\n    print('Moderate')\nelif enemy_count <= 100:\n    print('Severe')\nelse:\n    print('Critical')",
+      "testCases": [
+        {
+          "input": "5",
+          "expectedOutput": "Minimal\\n"
+        },
+        {
+          "input": "75",
+          "expectedOutput": "Severe\\n"
+        }
+      ],
+      "points": 30,
+      "xp": 30
+    },
+    {
+      "id": "l05_challenge_5",
+      "type": "code",
+      "title": "Boss Challenge: Operative Evaluation System",
+      "description": "CLASSIFIED: Rate operative performance. Input score (0-100). 90+='Elite', 75-89='Excellent', 60-74='Competent', 50-59='Acceptable', <50='Reassignment Required'. Complex elif chain!",
+      "starterCode": "# Performance review system\nscore = int(input())\n",
+      "solution": "score = int(input())\nif score >= 90:\n    print('Elite')\nelif score >= 75:\n    print('Excellent')\nelif score >= 60:\n    print('Competent')\nelif score >= 50:\n    print('Acceptable')\nelse:\n    print('Reassignment Required')",
+      "testCases": [
+        {
+          "input": "95",
+          "expectedOutput": "Elite\\n"
+        },
+        {
+          "input": "45",
+          "expectedOutput": "Reassignment Required\\n"
+        }
+      ],
+      "points": 40,
+      "xp": 40
+    }
+  ]
+}

@@ -1,0 +1,240 @@
+{
+    "exportDate": "2026-01-08",
+    "totalCourses": 1,
+    "courses": [
+        {
+            "courseId": "python-go-1",
+            "courseTitle": "Python Go 1",
+            "modules": [
+                {
+                    "id": "era_01",
+                    "title": "🎖️ Era 1: The Academy",
+                    "lessons": [
+                        {
+                            "id": "lesson_01",
+                            "title": "System Boot (Print/Strings)",
+                            "description": "Learn the foundation of Python: the print() function and all 7 mathematical operators.",
+                            "tasks": []
+                        },
+                        {
+                            "id": "lesson_02",
+                            "title": "Memory Containers (Variables)",
+                            "description": "Master variables, strings, numbers, and basic data types in Python.",
+                            "tasks": []
+                        },
+                        {
+                            "id": "lesson_03",
+                            "title": "Jump Calculations (Math)",
+                            "description": "Master all 7 Python math operators and order of operations with PEMDAS.",
+                            "tasks": []
+                        },
+                        {
+                            "id": "lesson_04",
+                            "title": "The Decoder (F-Strings)",
+                            "description": "Format strings dynamically with F-strings and string interpolation.",
+                            "tasks": []
+                        },
+                        {
+                            "id": "lesson_05",
+                            "title": "Biometric Scan (Input/Int)",
+                            "description": "Capture user input and convert data types for interactive programs.",
+                            "tasks": []
+                        },
+                        {
+                            "id": "lesson_06",
+                            "title": "Graduation Day (Review)",
+                            "description": "Review all Python basics concepts and prepare for Era 2.",
+                            "tasks": []
+                        }
+                    ]
+                },
+                {
+                    "id": "era_02",
+                    "title": "🛡️ Era 2: The Dark Ages",
+                    "lessons": [
+                        {
+                            "id": "lesson_07",
+                            "title": "Friend or Foe (Booleans)",
+                            "description": "Master Boolean logic and True/False values.",
+                            "tasks": []
+                        },
+                        {
+                            "id": "lesson_08",
+                            "title": "The Gatekeeper (If/Else)",
+                            "description": "Make decisions in your code with conditional statements.",
+                            "tasks": []
+                        },
+                        {
+                            "id": "lesson_09",
+                            "title": "The Potion Shop (Elif)",
+                            "description": "Handle multiple conditions with elif chains.",
+                            "tasks": []
+                        },
+                        {
+                            "id": "lesson_10",
+                            "title": "The Siege (Logic: And/Or)",
+                            "description": "Combine conditions with AND, OR, and NOT operators.",
+                            "tasks": []
+                        },
+                        {
+                            "id": "lesson_11",
+                            "title": "The Time Loop (While Loops)",
+                            "description": "Repeat actions with while loops until conditions are met.",
+                            "tasks": []
+                        },
+                        {
+                            "id": "lesson_12",
+                            "title": "Breaking the Spell (Break/Continue)",
+                            "description": "Control loop flow with break and continue statements.",
+                            "tasks": []
+                        }
+                    ]
+                },
+                {
+                    "id": "era_03",
+                    "title": "⚙️ Era 3: The Industrial Revolution",
+                    "lessons": [
+                        {
+                            "id": "lesson_13",
+                            "title": "The Assembly Line (For Loops)",
+                            "description": "Iterate efficiently with for loops over sequences.",
+                            "tasks": []
+                        },
+                        {
+                            "id": "lesson_14",
+                            "title": "The Cargo Manifest (Lists)",
+                            "description": "Work with ordered collections of data using Python lists.",
+                            "tasks": []
+                        },
+                        {
+                            "id": "lesson_15",
+                            "title": "Loading & Unloading (List Methods)",
+                            "description": "Manipulate lists with append, remove, insert, and more.",
+                            "tasks": []
+                        },
+                        {
+                            "id": "lesson_16",
+                            "title": "Quality Control (Iterating Lists)",
+                            "description": "Process list items with loops and comprehensions.",
+                            "tasks": []
+                        },
+                        {
+                            "id": "lesson_17",
+                            "title": "Slicing the Data (Slicing)",
+                            "description": "Extract portions of lists using Python's slicing syntax.",
+                            "tasks": []
+                        }
+                    ]
+                },
+                {
+                    "id": "era_04",
+                    "title": "📜 Era 4: The Renaissance",
+                    "lessons": [
+                        {
+                            "id": "lesson_18",
+                            "title": "The Archive (Dictionaries)",
+                            "description": "Store and retrieve data using key-value pairs.",
+                            "tasks": []
+                        },
+                        {
+                            "id": "lesson_19",
+                            "title": "Rewriting History (Modifying Dicts)",
+                            "description": "Update, add, and remove dictionary entries dynamically.",
+                            "tasks": []
+                        },
+                        {
+                            "id": "lesson_20",
+                            "title": "The Roll Call (Dict Items)",
+                            "description": "Iterate through dictionary keys, values, and items.",
+                            "tasks": []
+                        },
+                        {
+                            "id": "lesson_21",
+                            "title": "The Museum (Sets)",
+                            "description": "Work with unique collections using Python sets.",
+                            "tasks": []
+                        },
+                        {
+                            "id": "lesson_22",
+                            "title": "Fixed Points (Tuples)",
+                            "description": "Explore immutable sequences with tuples.",
+                            "tasks": []
+                        }
+                    ]
+                },
+                {
+                    "id": "era_05",
+                    "title": "🦾 Era 5: The Cyber-Future",
+                    "lessons": [
+                        {
+                            "id": "lesson_23",
+                            "title": "Drone Protocols (Def Functions)",
+                            "description": "Create reusable code blocks with function definitions.",
+                            "tasks": []
+                        },
+                        {
+                            "id": "lesson_24",
+                            "title": "Target Lock (Parameters)",
+                            "description": "Pass data to functions using parameters and arguments.",
+                            "tasks": []
+                        },
+                        {
+                            "id": "lesson_25",
+                            "title": "Mission Report (Return)",
+                            "description": "Send data back from functions with return statements.",
+                            "tasks": []
+                        },
+                        {
+                            "id": "lesson_26",
+                            "title": "Firewall Scope (Global/Local)",
+                            "description": "Understand variable scope and global vs local variables.",
+                            "tasks": []
+                        },
+                        {
+                            "id": "lesson_27",
+                            "title": "The Upgrade Market (Imports)",
+                            "description": "Extend Python's power by importing modules and libraries.",
+                            "tasks": []
+                        },
+                        {
+                            "id": "lesson_28",
+                            "title": "Crash Avoidance (Try/Except)",
+                            "description": "Handle errors gracefully with exception handling.",
+                            "tasks": []
+                        }
+                    ]
+                },
+                {
+                    "id": "era_06",
+                    "title": "🚀 Era 6: The Space Age",
+                    "lessons": [
+                        {
+                            "id": "lesson_29",
+                            "title": "The Blueprint (Classes)",
+                            "description": "Design objects with class definitions and OOP principles.",
+                            "tasks": []
+                        },
+                        {
+                            "id": "lesson_30",
+                            "title": "Ship Systems (__init__)",
+                            "description": "Initialize objects with constructor methods.",
+                            "tasks": []
+                        },
+                        {
+                            "id": "lesson_31",
+                            "title": "Maneuvers (Methods)",
+                            "description": "Add behaviors to objects with class methods.",
+                            "tasks": []
+                        },
+                        {
+                            "id": "lesson_32",
+                            "title": "The Omega Paradox (Capstone)",
+                            "description": "Apply everything you've learned in a final capstone project.",
+                            "tasks": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

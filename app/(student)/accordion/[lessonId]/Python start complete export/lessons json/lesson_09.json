@@ -1,0 +1,210 @@
+{
+  "lesson_id": "lesson_09",
+  "title": "Nested Control Constructs",
+  "module": "Module 2: Advanced Control Flow",
+  "duration_minutes": 50,
+  "slide_url": "/content/python/slides/lesson_09_nested_constructs.pdf",
+  "objectives": [
+    "Understand nested loop execution and iteration multiplication",
+    "Work with 2D grids and coordinate systems",
+    "Analyze time complexity (O(n²) and beyond)",
+    "Use flag variables to break from nested loops",
+    "Apply nested loops to real-world problems"
+  ],
+  "description": "Master nested loops and complex control structures. Learn 2D grids, time complexity (O(n²)), and real-world pattern generation techniques. Build multiplication tables and coordinate systems!",
+  "exercises": [
+    {
+      "id": "l09_typing_1",
+      "type": "typing",
+      "title": "Neural Sync: Nested Loop",
+      "description": "Type a nested loop structure.",
+      "targetCode": "for i in range(3):\n    for j in range(3):\n        print(i, j)",
+      "points": 10
+    },
+    {
+      "id": "l09_typing_2",
+      "type": "typing",
+      "title": "Neural Sync: 2D Pattern",
+      "description": "Create a 2D star pattern.",
+      "targetCode": "for row in range(3):\n    for col in range(3):\n        print('*', end='')\n    print()",
+      "points": 10
+    },
+    {
+      "id": "l09_typing_3",
+      "type": "typing",
+      "title": "Neural Sync: Matrix Traversal",
+      "description": "Traverse a grid with descriptive variable names.",
+      "targetCode": "for x in range(5):\n    for y in range(5):\n        process(x, y)",
+      "points": 10
+    },
+    {
+      "id": "l09_debug_1",
+      "type": "debug",
+      "title": "Glitch Fix: Indentation Error",
+      "description": "The inner loop isn't properly indented inside the outer loop!",
+      "brokenCode": "for i in range(3):\nfor j in range(3):\n    print(i, j)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "0 0\\n0 1\\n0 2\\n1 0\\n1 1\\n1 2\\n2 0\\n2 1\\n2 2\n"
+        }
+      ],
+      "points": 15
+    },
+    {
+      "id": "l09_debug_2",
+      "type": "debug",
+      "title": "Glitch Fix: Variable Reuse",
+      "description": "Both loops use variable 'i'! The inner should use 'j'.",
+      "brokenCode": "for i in range(2):\n    for i in range(2):\n        print(i)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "0\\n1\\n0\\n1\n"
+        }
+      ],
+      "points": 15
+    },
+    {
+      "id": "l09_code_1",
+      "type": "code",
+      "title": "Field Mission: Coordinate Grid",
+      "description": "Generate and print all coordinates from (0,0) to (2,2) in format: (x,y)",
+      "starterCode": "# Generate coordinate grid\n",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "(0,0)\\n(0,1)\\n(0,2)\\n(1,0)\\n(1,1)\\n(1,2)\\n(2,0)\\n(2,1)\\n(2,2)\n"
+        }
+      ],
+      "points": 20
+    },
+    {
+      "id": "l09_code_2",
+      "type": "code",
+      "title": "Field Mission: Multiplication Table",
+      "description": "Print a 3x3 multiplication table (1-3 × 1-3). Format: 'X × Y = Z'",
+      "starterCode": "# 3x3 multiplication table\n",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "1 × 1 = 1\n"
+        }
+      ],
+      "points": 20
+    },
+    {
+      "id": "l09_code_3",
+      "type": "code",
+      "title": "Field Mission: Number Grid",
+      "description": "Print a 3x3 grid of asterisks with each row on a new line.",
+      "starterCode": "# Print 3x3 star grid\n",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "***\\n***\\n***\n"
+        }
+      ],
+      "points": 20
+    },
+    {
+      "id": "l09_typing_adv_1",
+      "type": "typing",
+      "title": "Neural Sync: Grid Surveillance Initialize",
+      "description": "Security cameras scan a 2x2 sector. Type the nested loop that generates all quadrant coordinates for full coverage.",
+      "targetCode": "for i in range(2):\n    for j in range(2):\n        print(i, j)",
+      "points": 10,
+      "xp": 10
+    },
+    {
+      "id": "l09_typing_adv_2",
+      "type": "typing",
+      "title": "Neural Sync: Code Breaker Matrix",
+      "description": "Enemy uses a 3x3 multiplication cipher. Type the professional decryption matrix calculator that reveals their encryption pattern.",
+      "targetCode": "# Generate 3x3 multiplication table\nfor row in range(1, 4):\n    for col in range(1, 4):\n        result = row * col\n        print(f'{row} x {col} = {result}')",
+      "points": 15,
+      "xp": 15
+    },
+    {
+      "id": "l09_challenge_1",
+      "type": "debug",
+      "title": "Debug Challenge: Drone Formation Error",
+      "description": "CRITICAL: Surveillance drones aren't forming proper grid pattern! They're flying in single file instead of 2x2 formation. Fix the nested loop indentation before they crash!",
+      "brokenCode": "for i in range(2):\nfor j in range(2):\n    print(f'({i},{j})')",
+      "starterCode": "for i in range(2):\nfor j in range(2):\n    print(f'({i},{j})')",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "(0,0)\\n(0,1)\\n(1,0)\\n(1,1)\\n"
+        }
+      ],
+      "solution": "for i in range(2):\n    for j in range(2):\n        print(f'({i},{j})')",
+      "points": 20,
+      "xp": 20
+    },
+    {
+      "id": "l09_challenge_2",
+      "type": "code",
+      "title": "Infiltration Math: Sector Analysis",
+      "description": "You're analyzing a 5x5 city grid for enemy presence. Each sector (i,j) has a threat level of i×j. Calculate the total combined threat across all 25 sectors.",
+      "starterCode": "# Calculate total threat level across grid\ntotal = 0\n",
+      "solution": "total = 0\nfor i in range(5):\n    for j in range(5):\n        total += i * j\nprint(total)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "100\\n"
+        }
+      ],
+      "points": 25,
+      "xp": 25
+    },
+    {
+      "id": "l09_challenge_3",
+      "type": "code",
+      "title": "Perimeter Breach: Laser Grid Visualization",
+      "description": "Enemy compound is protected by a 4×6 laser fence. Each # represents one laser node. Map the entire security perimeter before infiltration.",
+      "starterCode": "# Visualize 4x6 laser grid\n",
+      "solution": "for row in range(4):\n    for col in range(6):\n        print('#', end='')\n    print()",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "######\\n######\\n######\\n######\\n"
+        }
+      ],
+      "points": 25,
+      "xp": 25
+    },
+    {
+      "id": "l09_challenge_4",
+      "type": "code",
+      "title": "Black Ops: Stadium Seating Assignment",
+      "description": "Mission requires planting 15 operatives in target stadium. Assign seat codes for 3 rows (A-C) × 5 columns (1-5). Format: A1, A2... B1, B2... Use chr(65+row) for row letters.",
+      "starterCode": "# Generate covert seating assignments\nfor row in range(3):\n    for seat in range(1, 6):\n        # Output seat code\n",
+      "solution": "for row in range(3):\n    for seat in range(1, 6):\n        print(chr(65 + row) + str(seat))",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "A1\\nA2\\nA3\\nA4\\nA5\\nB1\\nB2\\nB3\\nB4\\nB5\\nC1\\nC2\\nC3\\nC4\\nC5\\n"
+        }
+      ],
+      "points": 30,
+      "xp": 30
+    },
+    {
+      "id": "l09_challenge_5",
+      "type": "code",
+      "title": "Boss Challenge: Signal Strength Pyramid",
+      "description": "ADVANCED RECON: You're triangulating enemy broadcast towers. Signal strength forms a diamond pattern - weak at edges, strongest in center. Generate the exact visualization showing peak signal at center. This pattern reveals tower locations!",
+      "starterCode": "# Triangulation pattern generator\n",
+      "solution": "# Top half\nfor i in range(3):\n    print(' ' * (2 - i) + '*' * (2 * i + 1))\n# Bottom half\nfor i in range(1, -1, -1):\n    print(' ' * (2 - i) + '*' * (2 * i + 1))",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "  *\\n ***\\n*****\\n ***\\n  *\\n"
+        }
+      ],
+      "points": 40,
+      "xp": 40
+    }
+  ]
+}

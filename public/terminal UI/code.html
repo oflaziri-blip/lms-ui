@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lesson 5: Python IDE Interface</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;family=Fira+Code:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#00ffff", // Electric Cyan
+              "violet-accent": "#8A2BE2", // Vivid Violet
+              "emerald-accent": "#39FF14", // Neon Emerald
+              "background-light": "#f5f8f8",
+              "background-dark": "#070b12", // Deep background
+              "surface-dark": "#080c14", // Editor background
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"],
+              "body": ["Inter", "sans-serif"],
+              "mono": ["Fira Code", "monospace"],
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            boxShadow: {
+                'neon-cyan': '0 0 5px rgba(0, 255, 255, 0.2), 0 0 20px rgba(0, 255, 255, 0.1)',
+                'neon-violet': '0 0 5px rgba(138, 43, 226, 0.5), 0 0 20px rgba(138, 43, 226, 0.3)',
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        /* Custom Scrollbar for Cyberpunk Vibe */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #080c14; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b; 
+            border-radius: 4px;
+            border: 2px solid #080c14;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #334155; 
+        }
+        
+        /* Glassmorphism Utilities */
+        .glass-panel {
+            background: rgba(16, 24, 24, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Syntax Highlighting Base */
+        .code-line {
+            counter-increment: line; 
+            padding-left: 1rem;
+            position: relative;
+        }
+        .code-line::before {
+            content: counter(line);
+            position: absolute;
+            left: -2.5rem;
+            width: 2rem;
+            text-align: right;
+            color: #4b5563;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.875rem;
+            user-select: none;
+        }
+        .code-active {
+            background: rgba(0, 255, 255, 0.05);
+            box-shadow: inset 2px 0 0 #00ffff;
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-white font-body h-screen flex flex-col overflow-hidden selection:bg-primary selection:text-black">
+<!-- Header -->
+<header class="flex-none h-16 border-b border-[#1e293b] bg-[#080c14] flex items-center justify-between px-6 z-20 relative shadow-md">
+<div class="flex items-center gap-4">
+<div class="size-8 rounded bg-gradient-to-br from-primary to-violet-accent flex items-center justify-center text-black">
+<span class="material-symbols-outlined text-[20px] font-bold">terminal</span>
+</div>
+<div>
+<h1 class="font-display text-white text-lg font-bold tracking-tight">Lesson 5: The For Loop</h1>
+<div class="flex gap-1 h-1 mt-1">
+<div class="w-8 h-full bg-primary rounded-full shadow-[0_0_8px_rgba(0,255,255,0.6)]"></div>
+<div class="w-2 h-full bg-[#1e293b] rounded-full"></div>
+<div class="w-2 h-full bg-[#1e293b] rounded-full"></div>
+</div>
+</div>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg border border-[#1e293b] hover:border-primary hover:text-primary transition-all duration-300 group bg-[#0f172a]">
+<span class="material-symbols-outlined text-gray-400 group-hover:text-primary transition-colors text-sm">arrow_back</span>
+<span class="text-sm font-medium">Dashboard</span>
+</button>
+</header>
+<!-- Main Workspace -->
+<main class="flex-1 flex flex-row overflow-hidden relative">
+<!-- Abstract Background Grid Pattern -->
+<div class="absolute inset-0 z-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+<!-- Left Pane: Instructions (25%) -->
+<aside class="w-[25%] min-w-[320px] flex flex-col z-10 glass-panel border-r border-[#1e293b] h-full">
+<div class="flex-1 overflow-y-auto p-6 space-y-6">
+<!-- Section Header -->
+<div>
+<div class="inline-flex items-center gap-2 px-2 py-1 rounded bg-primary/10 border border-primary/20 text-primary text-xs font-mono font-bold uppercase tracking-wider mb-3">
+<span class="material-symbols-outlined text-[14px]">school</span>
+                        Objective
+                    </div>
+<h2 class="text-2xl font-display font-bold text-white mb-2 leading-tight">Mastering Iteration</h2>
+<p class="text-gray-400 text-sm leading-relaxed">
+                        In this lesson, we will explore the <code class="text-primary bg-primary/10 px-1 rounded">for</code> loop. Loops allow you to repeat a block of code multiple times efficiently.
+                    </p>
+</div>
+<!-- Info Card -->
+<div class="p-4 rounded-xl bg-[#0f172a]/80 border border-violet-accent/20 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-3 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-4xl text-violet-accent">info</span>
+</div>
+<h3 class="text-violet-accent font-bold text-sm mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">lightbulb</span>
+                        Quick Tip
+                    </h3>
+<p class="text-xs text-gray-300 leading-relaxed">
+                        Use the <code class="text-violet-accent">range()</code> function to generate a sequence of numbers. It's often used for looping a specific number of times.
+                    </p>
+</div>
+<!-- Checklists -->
+<div>
+<h3 class="text-white text-sm font-bold uppercase tracking-wider mb-4 border-b border-[#1e293b] pb-2">Tasks</h3>
+<div class="space-y-3">
+<label class="flex gap-x-3 items-start group cursor-pointer">
+<div class="relative flex items-center">
+<input checked="" class="peer h-5 w-5 rounded border-[#334155] border-2 bg-transparent text-primary focus:ring-0 focus:ring-offset-0 transition-all checked:bg-primary checked:border-primary cursor-pointer" type="checkbox"/>
+</div>
+<span class="text-gray-300 text-sm font-medium peer-checked:text-white peer-checked:line-through decoration-gray-500 transition-colors pt-0.5">Define a list variable called 'items'</span>
+</label>
+<label class="flex gap-x-3 items-start group cursor-pointer">
+<div class="relative flex items-center">
+<input class="peer h-5 w-5 rounded border-[#334155] border-2 bg-transparent text-primary focus:ring-0 focus:ring-offset-0 transition-all checked:bg-primary checked:border-primary cursor-pointer" type="checkbox"/>
+</div>
+<span class="text-gray-300 text-sm font-medium peer-checked:text-white transition-colors pt-0.5">Iterate through the list using a for loop</span>
+</label>
+<label class="flex gap-x-3 items-start group cursor-pointer">
+<div class="relative flex items-center">
+<input class="peer h-5 w-5 rounded border-[#334155] border-2 bg-transparent text-primary focus:ring-0 focus:ring-offset-0 transition-all checked:bg-primary checked:border-primary cursor-pointer" type="checkbox"/>
+</div>
+<span class="text-gray-300 text-sm font-medium peer-checked:text-white transition-colors pt-0.5">Print each item to the console</span>
+</label>
+</div>
+</div>
+</div>
+<!-- Sticky Action Button -->
+<div class="p-6 border-t border-[#1e293b] bg-[#080c14]/80 backdrop-blur-sm">
+<button class="w-full flex items-center justify-center gap-3 rounded-lg h-12 bg-violet-accent hover:bg-[#7c26cb] text-white text-sm font-bold tracking-wide shadow-neon-violet transition-all duration-300 transform active:scale-[0.98]">
+<span class="material-symbols-outlined">play_circle</span>
+                    RUN CODE <span class="opacity-60 font-normal text-xs ml-1">[Ctrl+Enter]</span>
+</button>
+</div>
+</aside>
+<!-- Center Pane: Editor (50%) -->
+<section class="flex-1 flex flex-col z-10 bg-surface-dark relative border-r border-[#1e293b]">
+<!-- Editor Tabs -->
+<div class="h-10 flex items-end px-2 bg-[#05080c] border-b border-[#1e293b] gap-1">
+<div class="px-4 py-2 text-xs text-primary bg-surface-dark border-t-2 border-primary rounded-t font-mono flex items-center gap-2 shadow-[0_-4px_12px_rgba(0,0,0,0.5)] z-10">
+<span class="material-symbols-outlined text-[14px]">code</span>
+                    main.py
+                    <span class="w-2 h-2 rounded-full bg-primary ml-2 animate-pulse"></span>
+</div>
+<div class="px-4 py-2 text-xs text-gray-500 hover:text-gray-300 hover:bg-[#0f172a] rounded-t font-mono flex items-center gap-2 transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[14px]">description</span>
+                    utils.py
+                </div>
+</div>
+<!-- Code Area -->
+<div class="flex-1 flex overflow-hidden font-mono text-[15px] leading-7 relative group/editor">
+<!-- Line Numbers (handled via CSS counter for visual simplicity in this demo) -->
+<div class="w-12 bg-[#05080c] border-r border-[#1e293b] text-gray-600 text-right pt-4 pb-4 select-none flex flex-col items-center">
+<!-- Numbers are pseudo-elements in the code block for alignment, but visually creating a gutter here -->
+</div>
+<!-- Code Content -->
+<div class="flex-1 p-0 overflow-auto custom-scrollbar pt-4 pb-4" style="counter-reset: line;">
+<div class="code-line text-gray-500"># Lesson 5: Loops &amp; Logic</div>
+<div class="code-line text-gray-500"># Iterate through a list of server nodes</div>
+<div class="code-line"> </div>
+<div class="code-line">
+<span class="text-white">nodes</span> <span class="text-primary">=</span>
+<span class="text-white">[</span><span class="text-emerald-accent">"Alpha"</span>, <span class="text-emerald-accent">"Beta"</span>, <span class="text-emerald-accent">"Gamma"</span>, <span class="text-emerald-accent">"Delta"</span><span class="text-white">]</span>
+</div>
+<div class="code-line"> </div>
+<div class="code-line">
+<span class="text-primary">def</span> <span class="text-violet-accent">ping_servers</span><span class="text-white">(server_list):</span>
+</div>
+<div class="code-line">
+                            <span class="text-violet-accent">print</span><span class="text-white">(</span><span class="text-emerald-accent">"Initiating connection sequence..."</span><span class="text-white">)</span>
+</div>
+<div class="code-line"> </div>
+<div class="code-line">
+                            <span class="text-gray-500"># Loop through each node</span>
+</div>
+<div class="code-line code-active">
+                            <span class="text-primary">for</span> <span class="text-white">node</span> <span class="text-primary">in</span> <span class="text-white">server_list:</span>
+</div>
+<div class="code-line">
+                                <span class="text-white">status</span> <span class="text-primary">=</span> <span class="text-emerald-accent">"Online"</span>
+</div>
+<div class="code-line">
+                                <span class="text-primary">if</span> <span class="text-white">node</span> <span class="text-primary">==</span> <span class="text-emerald-accent">"Gamma"</span><span class="text-white">:</span>
+</div>
+<div class="code-line">
+                                    <span class="text-white">status</span> <span class="text-primary">=</span> <span class="text-emerald-accent">"Offline"</span>
+</div>
+<div class="code-line">
+                                <span class="text-violet-accent">print</span><span class="text-white">(</span><span class="text-emerald-accent">f"Node: {node} | Status: {status}"</span><span class="text-white">)</span>
+</div>
+<div class="code-line"> </div>
+<div class="code-line">
+<span class="text-violet-accent">ping_servers</span><span class="text-white">(nodes)</span>
+</div>
+<div class="code-line"> </div>
+</div>
+</div>
+<!-- Editor Status Bar -->
+<div class="h-6 bg-[#00ffff]/5 border-t border-[#1e293b] flex items-center justify-between px-3 text-[10px] text-primary font-mono uppercase tracking-wider">
+<div class="flex gap-4">
+<span>Python 3.10</span>
+<span>UTF-8</span>
+</div>
+<div>
+                    Ln 10, Col 24
+                </div>
+</div>
+</section>
+<!-- Right Pane: Console (25%) -->
+<aside class="w-[25%] min-w-[280px] flex flex-col z-10 bg-[#05080c] h-full">
+<!-- Console Header -->
+<div class="h-10 flex items-center justify-between px-4 bg-[#05080c] border-b border-[#1e293b]">
+<div class="text-gray-400 text-xs font-mono font-bold uppercase tracking-widest flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">terminal</span>
+                    Terminal
+                </div>
+<div class="flex items-center gap-2">
+<span class="text-[10px] text-emerald-accent font-mono uppercase">Connected</span>
+<div class="w-1.5 h-1.5 rounded-full bg-emerald-accent shadow-[0_0_6px_rgba(57,255,20,0.8)] animate-pulse"></div>
+</div>
+</div>
+<!-- Console Output -->
+<div class="flex-1 p-4 font-mono text-sm overflow-y-auto custom-scrollbar">
+<div class="text-gray-500 mb-2">root@academy:~/lesson5 $ python3 main.py</div>
+<div class="text-white mb-1">Initiating connection sequence...</div>
+<div class="text-gray-300">Node: Alpha | Status: Online</div>
+<div class="text-gray-300">Node: Beta | Status: Online</div>
+<div class="text-gray-300">Node: Gamma | Status: Offline</div>
+<div class="text-gray-300 mb-4">Node: Delta | Status: Online</div>
+<div class="text-emerald-accent/80 border-l-2 border-emerald-accent pl-2 text-xs py-1 mb-4 bg-emerald-accent/5">
+                    Process finished with exit code 0
+                </div>
+<div class="flex items-center text-emerald-accent">
+<span class="mr-2">&gt;&gt;&gt;</span>
+<span class="w-2 h-4 bg-emerald-accent opacity-50 animate-pulse"></span>
+</div>
+</div>
+</aside>
+</main>
+</body></html>

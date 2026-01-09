@@ -1,0 +1,344 @@
+{
+    "lesson_id": "lesson_03",
+    "title": "Data Strings: Text Manipulation",
+    "module": "Module 1: Python Basics",
+    "duration_minutes": 60,
+    "slide_url": "/test-lesson03",
+    "objectives": [
+        "Understand what strings are and how they work",
+        "Master string indexing and slicing",
+        "Use string methods (.upper, .lower, .strip, .replace, .find, .count)",
+        "Combine string operations for text processing",
+        "Build real-world text manipulation programs"
+    ],
+    "description": "Master text manipulation in Python. Learn to analyze, transform, and process strings using indexing, slicing, and powerful string methods. NO F-STRINGS!",
+    "exercises": [
+        {
+            "id": "l03_task_01",
+            "type": "code",
+            "title": "Task 1: String Length",
+            "description": "Find the length of the string 'Chronos' using len()",
+            "starterCode": "# Print len('Chronos')",
+            "solution": "print(len('Chronos'))",
+            "testCases": [
+                {
+                    "input": "",
+                    "expectedOutput": "7\n"
+                }
+            ],
+            "tasks": [
+                "Use len() function",
+                "Print the result"
+            ],
+            "xp": 10
+        },
+        {
+            "id": "l03_task_02",
+            "type": "code",
+            "title": "Task 2: First Character",
+            "description": "Get the first character of 'HELLO' using indexing [0]",
+            "starterCode": "word = 'HELLO'\n# Print word[0]",
+            "solution": "word = 'HELLO'\nprint(word[0])",
+            "testCases": [
+                {
+                    "input": "",
+                    "expectedOutput": "H\n"
+                }
+            ],
+            "tasks": [
+                "Use [0] for first character",
+                "Print the result"
+            ],
+            "xp": 10
+        },
+        {
+            "id": "l03_task_03",
+            "type": "code",
+            "title": "Task 3: Last Character",
+            "description": "Get the last character of 'HELLO' using negative indexing [-1]",
+            "starterCode": "word = 'HELLO'\n# Print word[-1]",
+            "solution": "word = 'HELLO'\nprint(word[-1])",
+            "testCases": [
+                {
+                    "input": "",
+                    "expectedOutput": "O\n"
+                }
+            ],
+            "tasks": [
+                "Use [-1] for last character",
+                "Print the result"
+            ],
+            "xp": 10
+        },
+        {
+            "id": "l03_task_04",
+            "type": "code",
+            "title": "Task 4: String Slicing",
+            "description": "Extract 'CHR' from 'CHRONOS' using slicing [0:3]",
+            "starterCode": "text = 'CHRONOS'\n# Print text[0:3]",
+            "solution": "text = 'CHRONOS'\nprint(text[0:3])",
+            "testCases": [
+                {
+                    "input": "",
+                    "expectedOutput": "CHR\n"
+                }
+            ],
+            "tasks": [
+                "Use [0:3] to get first 3 chars",
+                "Remember: end is NOT included"
+            ],
+            "xp": 15
+        },
+        {
+            "id": "l03_task_05",
+            "type": "code",
+            "title": "Task 5: Concatenation",
+            "description": "Join 'Agent' + ' ' + '007' to make 'Agent 007'",
+            "starterCode": "# Print 'Agent' + ' ' + '007'",
+            "solution": "print('Agent' + ' ' + '007')",
+            "testCases": [
+                {
+                    "input": "",
+                    "expectedOutput": "Agent 007\n"
+                }
+            ],
+            "tasks": [
+                "Use + to join strings",
+                "Don't forget the space"
+            ],
+            "xp": 10
+        },
+        {
+            "id": "l03_task_06",
+            "type": "code",
+            "title": "Task 6: String Repetition",
+            "description": "Print 'Ha' repeated 3 times: HaHaHa",
+            "starterCode": "# Print 'Ha' * 3",
+            "solution": "print('Ha' * 3)",
+            "testCases": [
+                {
+                    "input": "",
+                    "expectedOutput": "HaHaHa\n"
+                }
+            ],
+            "tasks": [
+                "Use * to repeat strings",
+                "Multiply by 3"
+            ],
+            "xp": 10
+        },
+        {
+            "id": "l03_task_07",
+            "type": "code",
+            "title": "Task 7: Uppercase Conversion",
+            "description": "Convert 'hello' to uppercase using .upper()",
+            "starterCode": "text = 'hello'\n# Print text.upper()",
+            "solution": "text = 'hello'\nprint(text.upper())",
+            "testCases": [
+                {
+                    "input": "",
+                    "expectedOutput": "HELLO\n"
+                }
+            ],
+            "tasks": [
+                "Use .upper() method",
+                "Print the result"
+            ],
+            "xp": 15
+        },
+        {
+            "id": "l03_task_08",
+            "type": "code",
+            "title": "Task 8: Lowercase Conversion",
+            "description": "Convert 'WORLD' to lowercase using .lower()",
+            "starterCode": "text = 'WORLD'\n# Print text.lower()",
+            "solution": "text = 'WORLD'\nprint(text.lower())",
+            "testCases": [
+                {
+                    "input": "",
+                    "expectedOutput": "world\n"
+                }
+            ],
+            "tasks": [
+                "Use .lower() method",
+                "Print the result"
+            ],
+            "xp": 15
+        },
+        {
+            "id": "l03_task_09",
+            "type": "code",
+            "title": "Task 9: Strip Whitespace",
+            "description": "Remove spaces from '  Hello  ' using .strip()",
+            "starterCode": "text = '  Hello  '\n# Print text.strip()",
+            "solution": "text = '  Hello  '\nprint(text.strip())",
+            "testCases": [
+                {
+                    "input": "",
+                    "expectedOutput": "Hello\n"
+                }
+            ],
+            "tasks": [
+                "Use .strip() method",
+                "Removes spaces from both ends"
+            ],
+            "xp": 15
+        },
+        {
+            "id": "l03_task_10",
+            "type": "code",
+            "title": "Task 10: Replace Text",
+            "description": "Replace 'World' with 'Chronos' in 'Hello World'",
+            "starterCode": "text = 'Hello World'\n# Print text.replace('World', 'Chronos')",
+            "solution": "text = 'Hello World'\nprint(text.replace('World', 'Chronos'))",
+            "testCases": [
+                {
+                    "input": "",
+                    "expectedOutput": "Hello Chronos\n"
+                }
+            ],
+            "tasks": [
+                "Use .replace() method",
+                "Replace 'World' with 'Chronos'"
+            ],
+            "xp": 15
+        },
+        {
+            "id": "l03_task_11",
+            "type": "code",
+            "title": "Task 11: Find Character Position",
+            "description": "Find the position of '@' in 'user@example.com' using .find()",
+            "starterCode": "email = 'user@example.com'\n# Print email.find('@')",
+            "solution": "email = 'user@example.com'\nprint(email.find('@'))",
+            "testCases": [
+                {
+                    "input": "",
+                    "expectedOutput": "4\n"
+                }
+            ],
+            "tasks": [
+                "Use .find() method",
+                "Returns index position"
+            ],
+            "xp": 15
+        },
+        {
+            "id": "l03_task_12",
+            "type": "code",
+            "title": "Task 12: Count Characters",
+            "description": "Count how many times 'a' appears in 'banana' using .count()",
+            "starterCode": "text = 'banana'\n# Print text.count('a')",
+            "solution": "text = 'banana'\nprint(text.count('a'))",
+            "testCases": [
+                {
+                    "input": "",
+                    "expectedOutput": "3\n"
+                }
+            ],
+            "tasks": [
+                "Use .count() method",
+                "Count letter 'a'"
+            ],
+            "xp": 15
+        },
+        {
+            "id": "l03_task_13",
+            "type": "code",
+            "title": "Task 13: Extract Username from Email",
+            "description": "Extract 'agent007' from 'agent007@chronos.net' using .find() and slicing",
+            "starterCode": "email = 'agent007@chronos.net'\n# Find @ position, then slice from 0 to that position",
+            "solution": "email = 'agent007@chronos.net'\nat_pos = email.find('@')\nprint(email[0:at_pos])",
+            "testCases": [
+                {
+                    "input": "",
+                    "expectedOutput": "agent007\n"
+                }
+            ],
+            "tasks": [
+                "Use .find('@') to get position",
+                "Use slicing [0:at_pos]",
+                "Print the username"
+            ],
+            "xp": 20
+        },
+        {
+            "id": "l03_task_14",
+            "type": "code",
+            "title": "Task 14: Text Analyzer",
+            "description": "Print the length and uppercase version of 'hello world'",
+            "starterCode": "text = 'hello world'\n# Print length\n# Print uppercase",
+            "solution": "text = 'hello world'\nprint(len(text))\nprint(text.upper())",
+            "testCases": [
+                {
+                    "input": "",
+                    "expectedOutput": "11\nHELLO WORLD\n"
+                }
+            ],
+            "tasks": [
+                "Use len() for length",
+                "Use .upper() for uppercase",
+                "Print both"
+            ],
+            "xp": 20
+        },
+        {
+            "id": "l03_task_15",
+            "type": "code",
+            "title": "Task 15: Clean and Format",
+            "description": "Clean '  AGENT_007  ' - strip spaces, lowercase, replace _ with -",
+            "starterCode": "text = '  AGENT_007  '\n# Strip, then lower, then replace",
+            "solution": "text = '  AGENT_007  '\ncleaned = text.strip().lower().replace('_', '-')\nprint(cleaned)",
+            "testCases": [
+                {
+                    "input": "",
+                    "expectedOutput": "agent-007\n"
+                }
+            ],
+            "tasks": [
+                "Chain .strip().lower().replace()",
+                "Replace '_' with '-'"
+            ],
+            "xp": 25
+        },
+        {
+            "id": "l03_task_16",
+            "type": "debug",
+            "title": "Task 16: Fix Index Error",
+            "description": "Fix the index error - 'HI' only has indices 0 and 1!",
+            "brokenCode": "word = 'HI'\nprint(word[5])",
+            "starterCode": "word = 'HI'\nprint(word[5])",
+            "solution": "word = 'HI'\nprint(word[1])",
+            "testCases": [
+                {
+                    "input": "",
+                    "expectedOutput": "I\n"
+                }
+            ],
+            "tasks": [
+                "Change [5] to valid index",
+                "Use [1] for second character"
+            ],
+            "xp": 15
+        },
+        {
+            "id": "l03_task_17",
+            "type": "code",
+            "title": "Task 17: Formatted Output",
+            "description": "Print a formatted agent profile:\n===\nAGENT: SHADOW\n===",
+            "starterCode": "name = 'shadow'\n# Print the three lines with borders and uppercase name",
+            "solution": "name = 'shadow'\nprint('===')\nprint('AGENT:', name.upper())\nprint('===')",
+            "testCases": [
+                {
+                    "input": "",
+                    "expectedOutput": "===\nAGENT: SHADOW\n===\n"
+                }
+            ],
+            "tasks": [
+                "Print border with ===",
+                "Use .upper() on name",
+                "Print closing border"
+            ],
+            "xp": 25
+        }
+    ]
+}

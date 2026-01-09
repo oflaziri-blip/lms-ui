@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Cyberpunk Pro Student Dashboard - Test Preview</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Fira+Code:wght@300..700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#53d22d",
+                        "primary-glow": "#53d22d",
+                        "accent-violet": "#8b5cf6",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#0f172a",
+                        "surface-dark": "#1e293b",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "mono": ["Fira Code", "monospace"],
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                    backgroundImage: {
+                        'grid-pattern': "linear-gradient(to right, rgba(83, 210, 45, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(83, 210, 45, 0.05) 1px, transparent 1px)",
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .neon-text-glow {
+            text-shadow: 0 0 10px rgba(83, 210, 45, 0.5);
+        }
+        .neon-box-glow {
+            box-shadow: 0 0 20px rgba(83, 210, 45, 0.15);
+        }
+        .violet-glow {
+            box-shadow: 0 0 15px rgba(139, 92, 246, 0.3);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #334155; 
+        }
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display overflow-hidden selection:bg-primary selection:text-background-dark">
+    <div class="relative flex h-screen w-full overflow-hidden">
+        <!-- Background Grid Effect -->
+        <div class="absolute inset-0 z-0 pointer-events-none bg-grid-pattern bg-[length:40px_40px] opacity-20"></div>
+        <div class="absolute inset-0 z-0 bg-gradient-to-t from-background-dark via-transparent to-transparent pointer-events-none"></div>
+        
+        <!-- Sidebar -->
+        <nav class="glass-panel relative z-20 hidden w-20 flex-col items-center justify-between border-r border-white/5 py-8 transition-all duration-300 hover:w-64 group/sidebar lg:flex">
+            <div class="flex flex-col items-center gap-8 w-full">
+                <!-- Logo -->
+                <div class="flex items-center gap-3 px-4 w-full justify-center group-hover/sidebar:justify-start">
+                    <div class="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary/20 text-primary neon-box-glow">
+                        <span class="material-symbols-outlined text-[24px]">terminal</span>
+                    </div>
+                    <span class="whitespace-nowrap text-lg font-bold tracking-wide opacity-0 transition-opacity duration-300 group-hover/sidebar:opacity-100">Cyberpunk<span class="text-primary">Pro</span></span>
+                </div>
+                
+                <!-- Nav Items -->
+                <div class="flex w-full flex-col gap-2 px-3">
+                    <a class="flex items-center gap-4 rounded-full bg-primary/10 px-3 py-3 text-primary transition-all hover:bg-primary/20 hover:shadow-[0_0_15px_rgba(83,210,45,0.3)] group-hover/sidebar:px-4" href="#">
+                        <span class="material-symbols-outlined">home</span>
+                        <span class="whitespace-nowrap font-medium opacity-0 transition-opacity duration-300 group-hover/sidebar:opacity-100">Home</span>
+                    </a>
+                    <a class="flex items-center gap-4 rounded-full px-3 py-3 text-slate-400 transition-all hover:bg-white/5 hover:text-white group-hover/sidebar:px-4" href="#">
+                        <span class="material-symbols-outlined">book_2</span>
+                        <span class="whitespace-nowrap font-medium opacity-0 transition-opacity duration-300 group-hover/sidebar:opacity-100">Courses</span>
+                    </a>
+                    <a class="flex items-center gap-4 rounded-full px-3 py-3 text-slate-400 transition-all hover:bg-white/5 hover:text-white group-hover/sidebar:px-4" href="#">
+                        <span class="material-symbols-outlined">trophy</span>
+                        <span class="whitespace-nowrap font-medium opacity-0 transition-opacity duration-300 group-hover/sidebar:opacity-100">Leaderboard</span>
+                    </a>
+                    <a class="flex items-center gap-4 rounded-full px-3 py-3 text-slate-400 transition-all hover:bg-white/5 hover:text-white group-hover/sidebar:px-4" href="#">
+                        <span class="material-symbols-outlined">code_blocks</span>
+                        <span class="whitespace-nowrap font-medium opacity-0 transition-opacity duration-300 group-hover/sidebar:opacity-100">Snippets</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="flex w-full flex-col px-3">
+                <a class="flex items-center gap-4 rounded-full px-3 py-3 text-slate-400 transition-all hover:bg-white/5 hover:text-white group-hover/sidebar:px-4" href="#">
+                    <span class="material-symbols-outlined">settings</span>
+                    <span class="whitespace-nowrap font-medium opacity-0 transition-opacity duration-300 group-hover/sidebar:opacity-100">Settings</span>
+                </a>
+            </div>
+        </nav>
+        
+        <!-- Main Content -->
+        <main class="relative z-10 flex h-full flex-1 flex-col overflow-y-auto overflow-x-hidden scroll-smooth">
+            <!-- Header -->
+            <header class="sticky top-0 z-30 flex h-20 w-full items-center justify-between glass-panel px-6 py-4 lg:px-10 border-b border-white/5">
+                <div class="flex flex-col">
+                    <h1 class="text-xl font-bold leading-tight text-white lg:text-2xl">
+                        Welcome back, <span class="text-primary">Neo</span>
+                    </h1>
+                    <p class="text-xs text-slate-400 font-mono">System Status: <span class="text-green-400">Online</span></p>
+                </div>
+                
+                <!-- HUD -->
+                <div class="flex items-center gap-4 lg:gap-6">
+                    <!-- Streak -->
+                    <div class="hidden items-center gap-2 rounded-full border border-orange-500/20 bg-orange-500/10 px-3 py-1.5 md:flex">
+                        <span class="material-symbols-outlined text-orange-500 text-[20px] fill-current">local_fire_department</span>
+                        <span class="font-mono text-sm font-bold text-orange-400">12 Days</span>
+                    </div>
+                    
+                    <!-- XP -->
+                    <div class="hidden items-center gap-2 rounded-full border border-yellow-500/20 bg-yellow-500/10 px-3 py-1.5 md:flex">
+                        <span class="material-symbols-outlined text-yellow-400 text-[20px]">bolt</span>
+                        <span class="font-mono text-sm font-bold text-yellow-400">2,450 XP</span>
+                    </div>
+                    
+                    <!-- Profile -->
+                    <div class="relative flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-slate-800 ring-2 ring-slate-700 transition-all hover:ring-primary">
+                        <div class="bg-center bg-no-repeat bg-cover rounded-full h-full w-full" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAO2Vy7y61wdyo9cN9J_xCtPhyBGDqQvTJWDBovzQ5e3TkTMUzyD7oxBngT86vLYzYDxea_2sIKtne-vwmJLoYhDF8uYQtEPogY0XkIZL3MqSczEwe3Z8-jj1IQtlh6XrFkY9E-4r5kHlxyQSC-YNKkKXPIfNbWEMQ0wllv_JGdJ3awA4b8SlsF2obr8S8AR6X1at20bDUtKbtJOlrN9C7flu1IZmUT-9UlsFznjb9IGiKSRqkMewAx0lTfiRG_7BwHQwZENVCrMaKF");'></div>
+                        <div class="absolute -bottom-1 -right-1 h-3 w-3 rounded-full bg-primary ring-2 ring-background-dark"></div>
+                    </div>
+                </div>
+            </header>
+            
+            <div class="layout-content-container mx-auto flex w-full max-w-7xl flex-col gap-8 p-6 lg:p-10">
+                <!-- Hero Section -->
+                <div class="@container">
+                    <div class="relative overflow-hidden rounded-2xl border border-white/10 bg-surface-dark shadow-2xl neon-box-glow group">
+                        <!-- Abstract Code Background -->
+                        <div class="absolute inset-0 opacity-40 mix-blend-overlay">
+                            <div class="absolute inset-0 bg-gradient-to-r from-background-dark via-transparent to-transparent z-10"></div>
+                            <div class="h-full w-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCPz-IBM5jEc6Tv8pj4IbIjOJSXc2DftS7pz2WSkYCpOMk0bNYustRzk1DwnOz40beW0x5gSui47RzNCBgrnSjvDDftubCFurKW1j8InNYYurCDt7C-1t91xy2UES-2pxgTwfZZswB_bwFcFBhEpCkkh7ETUJRP4RBFdd3sfOEazWafPMTj55vBobm0Ftd_iLxRVVB6JNIXRu8B60FLzU9ddqUo-HWv-SHeQOwX58Ep_fZHGtlZHoA06ngXUsF-CM1apVMu6NhcvjUc");'></div>
+                        </div>
+                        
+                        <div class="relative z-20 flex flex-col justify-between gap-8 p-6 md:flex-row md:items-end md:p-10">
+                            <div class="flex max-w-2xl flex-col gap-4">
+                                <div class="flex items-center gap-2">
+                                    <span class="rounded-full bg-primary/20 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-primary ring-1 ring-primary/50">Current Mission</span>
+                                    <span class="flex items-center gap-1 text-[10px] font-mono text-slate-400">
+                                        <span class="material-symbols-outlined text-[14px]">schedule</span> 25m remaining
+                                    </span>
+                                </div>
+                                
+                                <h2 class="font-display text-3xl font-bold leading-tight text-white md:text-4xl lg:text-5xl">
+                                    Control Flow: <br/>
+                                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">Loops & Logic</span>
+                                </h2>
+                                
+                                <p class="max-w-lg text-sm text-slate-300 md:text-base">
+                                    Master the art of 'for' and 'while' loops to manipulate the flow of execution. Your code controls the outcome.
+                                </p>
+                                
+                                <!-- Progress -->
+                                <div class="mt-2 flex w-full max-w-md flex-col gap-2">
+                                    <div class="flex justify-between text-xs font-medium text-slate-400">
+                                        <span class="font-mono">Progress</span>
+                                        <span class="font-mono text-primary">45%</span>
+                                    </div>
+                                    <div class="h-1.5 w-full overflow-hidden rounded-full bg-slate-700/50">
+                                        <div class="h-full w-[45%] rounded-full bg-primary shadow-[0_0_10px_#53d22d]"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button class="relative flex h-12 w-full min-w-[200px] items-center justify-center overflow-hidden rounded-full bg-primary text-background-dark font-bold shadow-[0_0_20px_rgba(83,210,45,0.4)] transition-all hover:scale-105 hover:shadow-[0_0_30px_rgba(83,210,45,0.6)] md:w-auto">
+                                <span class="relative z-10 flex items-center gap-2">
+                                    <span class="material-symbols-outlined">play_arrow</span>
+                                    Continue Lesson 5
+                                </span>
+                                <div class="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent group-hover:animate-[shimmer_1.5s_infinite]"></div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Main Layout Grid -->
+                <div class="grid grid-cols-1 gap-8 xl:grid-cols-3">
+                    <!-- Left Column: Curriculum Map -->
+                    <div class="xl:col-span-2 flex flex-col gap-6">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-xl font-bold text-white">Mission Map</h3>
+                            <button class="text-xs font-mono text-slate-400 hover:text-primary transition-colors">View Full Map -></button>
+                        </div>
+                        
+                        <!-- Timeline Container -->
+                        <div class="relative flex flex-col gap-8 rounded-2xl border border-white/5 bg-surface-dark/50 p-6 backdrop-blur-sm lg:flex-row lg:items-start lg:justify-between lg:gap-4 lg:py-12">
+                            <!-- Connecting Line (Desktop) -->
+                            <div class="absolute left-6 top-12 hidden h-0.5 w-[90%] -translate-y-1/2 bg-slate-700 lg:block"></div>
+                            <div class="absolute left-6 top-12 hidden h-0.5 w-[45%] -translate-y-1/2 bg-gradient-to-r from-primary to-slate-700 lg:block shadow-[0_0_10px_rgba(83,210,45,0.3)]"></div>
+                            
+                            <!-- Connecting Line (Mobile) -->
+                            <div class="absolute left-[39px] top-6 bottom-6 block w-0.5 bg-slate-700 lg:hidden"></div>
+                            
+                            <!-- Module 1: Completed -->
+                            <div class="relative z-10 flex flex-row items-center gap-4 lg:flex-col lg:items-start lg:gap-4 lg:w-1/3 group cursor-pointer">
+                                <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-background-dark ring-4 ring-background-dark shadow-[0_0_15px_rgba(83,210,45,0.4)] transition-transform group-hover:scale-110">
+                                    <span class="material-symbols-outlined text-[18px] font-bold">check</span>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="text-xs font-mono text-primary font-bold uppercase tracking-wider mb-1">Module 01</span>
+                                    <h4 class="text-lg font-bold text-white group-hover:text-primary transition-colors">Introduction</h4>
+                                    <p class="text-xs text-slate-400 mt-1">Variables & Basic Types</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Module 2: Active -->
+                            <div class="relative z-10 flex flex-row items-center gap-4 lg:flex-col lg:items-center lg:text-center lg:gap-4 lg:w-1/3 group cursor-pointer">
+                                <div class="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-background-dark border-2 border-primary text-primary ring-4 ring-background-dark shadow-[0_0_20px_rgba(83,210,45,0.6)] animate-pulse">
+                                    <span class="h-2 w-2 rounded-full bg-primary"></span>
+                                </div>
+                                <div class="flex flex-col lg:items-center">
+                                    <span class="text-xs font-mono text-primary font-bold uppercase tracking-wider mb-1 flex items-center gap-1">
+                                        <span class="inline-block w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+                                        Module 02
+                                    </span>
+                                    <h4 class="text-lg font-bold text-white group-hover:text-primary transition-colors">Control Flow</h4>
+                                    <p class="text-xs text-slate-400 mt-1">Loops, If/Else, Logic</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Module 3: Locked -->
+                            <div class="relative z-10 flex flex-row items-center gap-4 lg:flex-col lg:items-end lg:text-right lg:gap-4 lg:w-1/3 group opacity-50 hover:opacity-100 transition-opacity">
+                                <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-slate-800 border border-slate-600 text-slate-500 ring-4 ring-background-dark">
+                                    <span class="material-symbols-outlined text-[16px]">lock</span>
+                                </div>
+                                <div class="flex flex-col lg:items-end">
+                                    <span class="text-xs font-mono text-slate-500 font-bold uppercase tracking-wider mb-1">Module 03</span>
+                                    <h4 class="text-lg font-bold text-slate-300">Data Structures</h4>
+                                    <p class="text-xs text-slate-500 mt-1">Lists, Dictionaries, Sets</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Stats / Grid Section -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="p-5 rounded-2xl bg-surface-dark border border-white/5 flex flex-col gap-3 hover:border-primary/30 transition-colors group">
+                                <div class="flex justify-between items-start">
+                                    <div class="h-10 w-10 rounded-full bg-accent-violet/10 flex items-center justify-center text-accent-violet group-hover:text-white group-hover:bg-accent-violet transition-colors">
+                                        <span class="material-symbols-outlined">code</span>
+                                    </div>
+                                    <span class="text-xs font-mono text-slate-500">Weekly Goal</span>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-bold text-white font-mono">1,240</div>
+                                    <div class="text-xs text-slate-400">Lines of code written</div>
+                                </div>
+                            </div>
+                            
+                            <div class="p-5 rounded-2xl bg-surface-dark border border-white/5 flex flex-col gap-3 hover:border-primary/30 transition-colors group">
+                                <div class="flex justify-between items-start">
+                                    <div class="h-10 w-10 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 group-hover:text-white group-hover:bg-blue-500 transition-colors">
+                                        <span class="material-symbols-outlined">bug_report</span>
+                                    </div>
+                                    <span class="text-xs font-mono text-slate-500">Accuracy</span>
+                                </div>
+                                <div>
+                                    <div class="text-2xl font-bold text-white font-mono">94%</div>
+                                    <div class="text-xs text-slate-400">Challenge success rate</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Column: Daily Challenge -->
+                    <div class="xl:col-span-1 flex flex-col gap-6">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-xl font-bold text-white">Daily Challenge</h3>
+                            <span class="text-xs font-mono rounded bg-accent-violet/20 text-accent-violet px-2 py-1">+50 XP</span>
+                        </div>
+                        
+                        <div class="flex flex-col h-full rounded-2xl bg-[#0d1117] border border-white/10 overflow-hidden shadow-lg">
+                            <div class="flex items-center gap-2 px-4 py-3 bg-white/5 border-b border-white/5">
+                                <div class="flex gap-1.5">
+                                    <div class="w-3 h-3 rounded-full bg-red-500/50"></div>
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500/50"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-500/50"></div>
+                                </div>
+                                <span class="text-xs text-slate-500 font-mono ml-2">challenge_05.py</span>
+                            </div>
+                            
+                            <div class="p-4 flex-1 font-mono text-sm overflow-x-auto">
+                                <pre><code class="text-slate-300"><span class="text-accent-violet">def</span> <span class="text-blue-400">calculate_sum</span>(numbers):
+    <span class="text-slate-500"># Fix the bug below</span>
+    total = <span class="text-orange-400">0</span>
+    <span class="text-accent-violet">for</span> n <span class="text-accent-violet">in</span> numbers:
+        total -= n  <span class="text-red-400">&lt;-- Bug</span>
+    <span class="text-accent-violet">return</span> total
+
+<span class="text-slate-500"># Input: [1, 2, 3]</span>
+<span class="text-slate-500"># Expected: 6</span></code></pre>
+                            </div>
+                            
+                            <div class="p-4 bg-white/5 border-t border-white/5 flex gap-3">
+                                <input class="w-full bg-black/40 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary placeholder-slate-600 font-mono" placeholder="Type correction..." type="text"/>
+                                <button class="bg-white/10 hover:bg-white/20 text-white rounded-lg px-3 flex items-center justify-center transition-colors">
+                                    <span class="material-symbols-outlined text-[20px]">send</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Mini Leaderboard Widget -->
+                        <div class="rounded-2xl bg-surface-dark border border-white/5 p-5">
+                            <h4 class="text-sm font-bold text-slate-300 mb-4 uppercase tracking-wider">Top Students</h4>
+                            <div class="flex flex-col gap-4">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <div class="text-xs font-bold text-yellow-500 w-4">01</div>
+                                        <div class="h-8 w-8 rounded-full bg-gradient-to-br from-primary to-cyan-500"></div>
+                                        <span class="text-sm font-medium text-white">Alex_Code</span>
+                                    </div>
+                                    <span class="text-xs font-mono text-primary">3,240 XP</span>
+                                </div>
+                                
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-3">
+                                        <div class="text-xs font-bold text-slate-400 w-4">02</div>
+                                        <div class="h-8 w-8 rounded-full bg-gradient-to-br from-purple-500 to-pink-500"></div>
+                                        <span class="text-sm font-medium text-white">Sarah.py</span>
+                                    </div>
+                                    <span class="text-xs font-mono text-slate-400">3,100 XP</span>
+                                </div>
+                                
+                                <div class="flex items-center justify-between opacity-50">
+                                    <div class="flex items-center gap-3">
+                                        <div class="text-xs font-bold text-slate-500 w-4">03</div>
+                                        <div class="h-8 w-8 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500"></div>
+                                        <span class="text-sm font-medium text-white">Ghost</span>
+                                    </div>
+                                    <span class="text-xs font-mono text-slate-400">2,850 XP</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

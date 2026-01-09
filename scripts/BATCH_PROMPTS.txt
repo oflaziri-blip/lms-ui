@@ -1,0 +1,169 @@
+# Lesson 01: Quick Generation Guide
+# Copy each prompt below into Google AI Studio (Nano Banana Pro)
+# Save each image with the corresponding filename
+
+# ====================================================
+# SLIDE 01: L01_Slide01_TitleCard.png
+# ====================================================
+Cinematic title text "OPERATION CHRONOS: SYSTEM BOOT" glowing neon blue against a blurred futuristic server room filled with holographic data streams, particles floating in zero gravity, 8k render --style cinematic 3d render --ar 16:9
+
+# ====================================================
+# SLIDE 02: L01_Slide02_Cockpit.png
+# ====================================================
+First-person POV inside a sleek futuristic cockpit with holographic displays, stars visible through curved glass, dimmed blue emergency lights casting shadows --ar 16:9 --style cinematic
+
+# ====================================================
+# SLIDE 03: L01_Slide03_Error.png
+# ====================================================
+Black terminal screen with flickering static interference, red corrupted text reading "AUDIO DRIVERS OFFLINE - SYSTEM FAILURE", glitch effects, scan lines --style cyberpunk terminal --ar 16:9
+
+# ====================================================
+# SLIDE 04: L01_Slide04_Mission.png
+# ====================================================
+Holographic mission briefing screen showing a glowing green objective checklist with checkboxes, military-style HUD interface --style tactical UI --ar 16:9
+
+# ====================================================
+# SLIDE 05: L01_Slide05_Terminal.png
+# ====================================================
+Extreme closeup of a futuristic wrist-mounted holographic computer with a blinking green cursor on a black screen, Matrix-style code rain in background --style cinematic sci-fi --ar 16:9
+
+# ====================================================
+# SLIDE 06: L01_Slide06_Vocab.png
+# ====================================================
+Glossary-style display with neon text definitions on a dark grid background --style educational infographic --ar 16:9
+
+# ====================================================
+# SLIDE 07: L01_Slide07_RobotMouth.png
+# ====================================================
+3D render of a futuristic robot head with its mouth opening, sound waves emanating in neon green, binary code floating out --style Pixar sci-fi animation --ar 16:9
+
+# ====================================================
+# SLIDE 08: L01_Slide08_Anatomy.png
+# ====================================================
+Technical schematic diagram with glowing arrows pointing to different parts of print("Hello"), blueprint-style on dark background --style technical blueprint --ar 16:9
+
+# ====================================================
+# SLIDE 09: L01_Slide09_Airlock.png
+# ====================================================
+Futuristic space station airlock with glowing parentheses symbols (  ) on either side, showing data particles flowing through the sealed chamber --style sci-fi engineering --ar 16:9
+
+# ====================================================
+# SLIDE 10: L01_Slide10_Quotes.png
+# ====================================================
+Letters "H", "E", "L", "L", "O" floating inside a glowing transparent bubble (quotation marks), while letters outside are scattered on the floor --style 3d render isometric --ar 16:9
+
+# ====================================================
+# SLIDE 11: L01_Slide11_CrashAlert1.png
+# ====================================================
+Red alert siren with flashing warning lights, computer screen showing error message, sparks flying from keyboard --style cinematic emergency --ar 16:9
+
+# ====================================================
+# SLIDE 12: L01_Slide12_CrashAlert2.png
+# ====================================================
+Computer monitor displaying NameError with glitching screen effects, red error text --style cyberpunk glitch --ar 16:9
+
+# ====================================================
+# SLIDE 13: L01_Slide13_Success.png
+# ====================================================
+Green success checkmark with glowing particles, holographic "COMMAND ACCEPTED" text, futuristic UI --style sci-fi celebration --ar 16:9
+
+# ====================================================
+# SLIDE 14: L01_Slide14_Quiz.png
+# ====================================================
+Multiple choice interface with glowing buttons, futuristic exam screen --style tactical HUD --ar 16:9
+
+# ====================================================
+# SLIDE 15: L01_Slide15_Typing.png
+# ====================================================
+Astronaut's hands typing on a glowing holographic keyboard, green code streaming upward on transparent screens --style cinematic ultra detailed --ar 16:9
+
+# ====================================================
+# SLIDE 16: L01_Slide16_Step1.png
+# ====================================================
+Closeup of terminal with just the word "print" typed in green monospace font, cursor blinking after it --style terminal screen --ar 16:9
+
+# ====================================================
+# SLIDE 17: L01_Slide17_Step2.png
+# ====================================================
+Same terminal, now showing "print(" with the opening parenthesis glowing blue, cursor blinking inside --style terminal code --ar 16:9
+
+# ====================================================
+# SLIDE 18: L01_Slide18_Step3.png
+# ====================================================
+Terminal showing 'print("Wake up"' with the quoted text glowing green, quotation marks highlighted --style cyberpunk terminal --ar 16:9
+
+# ====================================================
+# SLIDE 19: L01_Slide19_Step4.png
+# ====================================================
+Complete command with closing parenthesis, all syntax highlighted in different colors, green checkmark appearing --style code editor --ar 16:9
+
+# ====================================================
+# SLIDE 20: L01_Slide20_AIOnline.png
+# ====================================================
+Robot Py's eyes lighting up glowing blue, interface screens turning from red to green, success animation --style Pixar character animation --ar 16:9
+
+# ====================================================
+# SLIDE 21: L01_Slide21_TwoCommands.png
+# ====================================================
+Two lines of code on screen, both glowing, connected by flowing data lines --style code visualization --ar 16:9
+
+# ====================================================
+# SLIDE 22: L01_Slide22_Challenge.png
+# ====================================================
+Challenge screen with typing area, countdown timer, "WRITE YOUR CODE" prompt --style game UI --ar 16:9
+
+# ====================================================
+# SLIDE 23: L01_Slide23_TaskProtocol.png
+# ====================================================
+Military-style training checklist with 17 items, progress bars, rank insignia --style tactical briefing --ar 16:9
+
+# ====================================================
+# SLIDE 24: L01_Slide24_Typing.png
+# ====================================================
+Hands on futuristic keyboard with accuracy meter, typing speed display --style action shot --ar 16:9
+
+# ====================================================
+# SLIDE 25: L01_Slide25_Debugging.png
+# ====================================================
+Broken code on screen with red error highlights, magnifying glass icon --style bug hunt UI --ar 16:9
+
+# ====================================================
+# SLIDE 26: L01_Slide26_Levels.png
+# ====================================================
+Three difficulty levels shown as ascending steps: Recruit → Agent → Architect, with XP rewards --style game progression --ar 16:9
+
+# ====================================================
+# SLIDE 27: L01_Slide27_Tips.png
+# ====================================================
+Tactical tips displayed as holographic notes on a military-style notepad --style UI overlay --ar 16:9
+
+# ====================================================
+# SLIDE 28: L01_Slide28_DebugSecret.png
+# ====================================================
+Glowing lightbulb icon with code snippets showing before/after debugging --style educational tip --ar 16:9
+
+# ====================================================
+# SLIDE 29: L01_Slide29_BossLevel.png
+# ====================================================
+Epic boss battle screen with ASCII art preview, dramatic lighting --style video game boss intro --ar 16:9
+
+# ====================================================
+# SLIDE 30: L01_Slide30_Victory.png
+# ====================================================
+Victory screen with glowing "MISSION COMPLETE" text, fireworks, XP +120 notification --style celebration animation --ar 16:9
+
+# ====================================================
+# END OF PROMPTS
+# ====================================================
+
+INSTRUCTIONS:
+1. Go to: https://aistudio.google.com/
+2. Select "Nano Banana Pro" or "Imagen 4"
+3. Set aspect ratio to 16:9
+4. Copy each prompt above
+5. Generate image
+6. Download and save with the filename specified
+7. Save all images to: public/images/lesson01/
+
+Total: 30 images
+Estimated time: ~15-20 minutes

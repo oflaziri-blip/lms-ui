@@ -1,0 +1,210 @@
+{
+  "lesson_id": "lesson_08",
+  "title": "Loops Continued",
+  "module": "Module 2: Control Flow Mastery",
+  "duration_minutes": 45,
+  "slide_url": "/content/python/slides/lesson_08_loops_continued.pdf",
+  "objectives": [
+    "Master break and continue for loop control",
+    "Use advanced range() with custom steps",
+    "Apply common loop patterns (accumulator, counter, flag)",
+    "Optimize loops for efficiency",
+    "Solve real-world problems like prime checking and FizzBuzz"
+  ],
+  "description": "Master advanced loop control with break, continue, and custom range() patterns. Learn loop optimization and common patterns used by professional developers. Build FizzBuzz and prime checkers!",
+  "exercises": [
+    {
+      "id": "l08_typing_1",
+      "type": "typing",
+      "title": "Neural Sync: Break Statement",
+      "description": "Use break to exit a loop early.",
+      "targetCode": "for i in range(100):\n    if i == 10:\n        break\n    print(i)",
+      "points": 10
+    },
+    {
+      "id": "l08_typing_2",
+      "type": "typing",
+      "title": "Neural Sync: Continue Statement",
+      "description": "Use continue to skip an iteration.",
+      "targetCode": "for i in range(10):\n    if i % 2 == 0:\n        continue\n    print(i)",
+      "points": 10
+    },
+    {
+      "id": "l08_typing_3",
+      "type": "typing",
+      "title": "Neural Sync: Range Step",
+      "description": "Use range with a custom step.",
+      "targetCode": "for i in range(0, 20, 2):\n    print(i)",
+      "points": 10
+    },
+    {
+      "id": "l08_debug_1",
+      "type": "debug",
+      "title": "Glitch Fix: Wrong Loop Type",
+      "description": "Using while when for would be better! Convert to for loop.",
+      "brokenCode": "i = 0\nwhile i < 5:\n    print(i)\n    i += 1",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "0\\n1\\n2\\n3\\n4\n"
+        }
+      ],
+      "points": 15
+    },
+    {
+      "id": "l08_debug_2",
+      "type": "debug",
+      "title": "Glitch Fix: Range Bounds",
+      "description": "Should print 10-20 but prints 10-19! Fix the stop value.",
+      "brokenCode": "for i in range(10, 20):\n    print(i)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "10\\n11\\n12\\n13\\n14\\n15\\n16\\n17\\n18\\n19\\n20\n"
+        }
+      ],
+      "points": 15
+    },
+    {
+      "id": "l08_code_1",
+      "type": "code",
+      "title": "Field Mission: Suspect Scanner",
+      "description": "Loop through the suspects list ['Neo', 'Trinity', 'Morpheus', 'Agent Smith'] and print each one.",
+      "starterCode": "suspects = ['Neo', 'Trinity', 'Morpheus', 'Agent Smith']\n# Print each suspect\n",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "Neo\\nTrinity\\nMorpheus\\nAgent Smith\n"
+        }
+      ],
+      "points": 20
+    },
+    {
+      "id": "l08_code_2",
+      "type": "code",
+      "title": "Field Mission: FizzBuzz",
+      "description": "Print numbers 1-15. If divisible by 3: 'Fizz', by 5: 'Buzz', by both: 'FizzBuzz', else: the number.",
+      "starterCode": "# FizzBuzz 1-15\n",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "1\\n2\\nFizz\\n4\\nBuzz\\nFizz\\n7\\n8\\nFizz\\nBuzz\\n11\\nFizz\\n13\\n14\\nFizzBuzz\n"
+        }
+      ],
+      "points": 20
+    },
+    {
+      "id": "l08_code_3",
+      "type": "code",
+      "title": "Field Mission: Find Target",
+      "description": "Search numbers 1-100 for the first one divisible by 7. Print it and stop.",
+      "starterCode": "# Find first multiple of 7\n",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "7\n"
+        }
+      ],
+      "points": 20
+    },
+    {
+      "id": "l08_typing_adv_1",
+      "type": "typing",
+      "title": "Neural Sync: Countdown Sequence",
+      "description": "Missile defense system needs a 5-stage countdown. Type the loop that counts stages 0-4 before launch authorization.",
+      "targetCode": "for i in range(5):\n    print(i)",
+      "points": 10,
+      "xp": 10
+    },
+    {
+      "id": "l08_typing_adv_2",
+      "type": "typing",
+      "title": "Neural Sync: Infiltration Route Calculator",
+      "description": "You're planning a stealth infiltration. Each step advances you deeper into enemy territory. Type the professional code that calculates total distance penetrated using the accumulator pattern.",
+      "targetCode": "# Calculate total distance\ntotal = 0\nfor step in range(10):\n    total += step  # Add each step\nprint('Total distance:', total)",
+      "points": 15,
+      "xp": 15
+    },
+    {
+      "id": "l08_challenge_1",
+      "type": "debug",
+      "title": "Debug Challenge: Jammed Broadcast Signal",
+      "description": "MAYDAY! Your emergency beacon is stuck broadcasting forever, draining battery. It should only send 5 distress signals. Fix the range before power failure!",
+      "brokenCode": "for i in range(1000000):\n    print(i)",
+      "starterCode": "for i in range(1000000):\n    print(i)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "0\\n1\\n2\\n3\\n4\\n"
+        }
+      ],
+      "solution": "for i in range(5):\n    print(i)",
+      "points": 20,
+      "xp": 20
+    },
+    {
+      "id": "l08_challenge_2",
+      "type": "code",
+      "title": "Cryptography: Permutation Key Generator",
+      "description": "Your encryption requires calculating possible key permutations. Use factorial (5! = 5×4×3×2×1 = 120) to determine how many ways the enemy can try to crack it. Every permutation matters!",
+      "starterCode": "# Calculate encryption permutations: 5!\nresult = 1\nfor i in range(1, 6):\n    # Multiply for permutations\n",
+      "solution": "result = 1\nfor i in range(1, 6):\n    result *= i\nprint(result)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "120\\n"
+        }
+      ],
+      "points": 25,
+      "xp": 25
+    },
+    {
+      "id": "l08_challenge_3",
+      "type": "code",
+      "title": "Laser Security: Breach Visualization",
+      "description": "Hacking enemy security grid. Each * represents a breached laser beam. Print the penetration pattern showing 4 progressive breach levels (1 beam, 2 beams, 3 beams, 4 beams).",
+      "starterCode": "# Visualize security breach progression\n",
+      "solution": "for i in range(1, 5):\n    print('*' * i)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "*\\n**\\n***\\n****\\n"
+        }
+      ],
+      "points": 25,
+      "xp": 25
+    },
+    {
+      "id": "l08_challenge_4",
+      "type": "code",
+      "title": "Black Market: Transaction Tracker",
+      "description": "You're buying intelligence from multiple sources. Prices: $10, $25, $5, $15, $30. Loop through each payment and calculate the total cost of your intel network.",
+      "starterCode": "# Calculate total intel acquisition cost\nprices = [10, 25, 5, 15, 30]\ntotal = 0\n",
+      "solution": "prices = [10, 25, 5, 15, 30]\ntotal = 0\nfor price in prices:\n    total += price\nprint(total)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "85\\n"
+        }
+      ],
+      "points": 30,
+      "xp": 30
+    },
+    {
+      "id": "l08_challenge_5",
+      "type": "code",
+      "title": "Boss Challenge: Surveillance Pattern Decoder",
+      "description": "CLASSIFIED: Enemy patrol uses coded intervals (1-20). Divisible by 3 = 'Fizz' (guard change), by 5 = 'Buzz' (camera sweep), both = 'FizzBuzz' (full alert). Decode their 20-minute security cycle to find infiltration windows!",
+      "starterCode": "# Decode enemy patrol cipher\nfor num in range(1, 21):\n    # Analyze security pattern\n",
+      "solution": "for num in range(1, 21):\n    if num % 3 == 0 and num % 5 == 0:\n        print('FizzBuzz')\n    elif num % 3 == 0:\n        print('Fizz')\n    elif num % 5 == 0:\n        print('Buzz')\n    else:\n        print(num)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "1\\n2\\nFizz\\n4\\nBuzz\\nFizz\\n7\\n8\\nFizz\\nBuzz\\n11\\nFizz\\n13\\n14\\nFizzBuzz\\n16\\n17\\nFizz\\n19\\nBuzz\\n"
+        }
+      ],
+      "points": 40,
+      "xp": 40
+    }
+  ]
+}

@@ -1,0 +1,189 @@
+{
+    "lesson_id": "lesson_18",
+    "title": "Objects and Methods: Drone Calibration",
+    "module": "Module 5: Object-Oriented Programming",
+    "duration_minutes": 60,
+    "environment": "turtle",
+    "slide_url": "/content/python/slides/lesson_18_objects_methods.pdf",
+    "objectives": [
+        "Understand what objects are in programming",
+        "Learn that methods are actions objects can perform",
+        "Practice calling methods on turtle objects",
+        "Create and control turtle navigation systems"
+    ],
+    "description": "Welcome to Neon City's Drone Division! Learn about objects and methods by calibrating our new delivery drones. The turtle is your first real object - discover how to command it using methods like t.forward() and t.color().",
+    "exercises": [
+        {
+            "id": "l18_quiz_1",
+            "type": "quiz",
+            "title": "Object Fundamentals",
+            "question": "What is an object in programming?",
+            "options": [
+                "A variable that stores numbers",
+                "A thing with data (attributes) and actions (methods)",
+                "A function that returns values",
+                "A loop that repeats code"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Objects bundle data and methods together. Like a drone has battery_level (data) and fly() (method).",
+            "points": 5
+        },
+        {
+            "id": "l18_quiz_2",
+            "type": "quiz",
+            "title": "Method Syntax",
+            "question": "How do you call a method on a turtle object named 'drone'?",
+            "options": [
+                "forward(drone, 100)",
+                "drone.forward(100)",
+                "drone->forward(100)",
+                "forward.drone(100)"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Use dot notation: object.method(). The dot means 'use this object's ability'.",
+            "points": 5
+        },
+        {
+            "id": "l18_typing_1",
+            "type": "typing",
+            "title": "Neural Sync: Create Object",
+            "description": "Type code to create a turtle object named 'bot'.",
+            "targetCode": "import turtle\\nbot = turtle.Turtle()",
+            "points": 10
+        },
+        {
+            "id": "l18_typing_2",
+            "type": "typing",
+            "title": "Neural Sync: Method Calls",
+            "description": "Make a turtle named 'agent' move forward 50 and turn left 45 degrees.",
+            "targetCode": "agent.forward(50)\\nagent.left(45)",
+            "points": 10
+        },
+        {
+            "id": "l18_debug_1",
+            "type": "debug",
+            "title": "Glitch Fix: Wrong Method",
+            "description": "Drone isn't moving! Fix the typo in the method name.",
+            "brokenCode": "import turtle\\ndrone = turtle.Turtle()\\ndrone.forwrd(100)",
+            "testCases": [],
+            "points": 15
+        },
+        {
+            "id": "l18_debug_2",
+            "type": "debug",
+            "title": "Glitch Fix: Missing Object",
+            "description": "Code crashes! You're calling a method but never created the object.",
+            "brokenCode": "import turtle\\nrobot.forward(50)\\nrobot.right(90)",
+            "testCases": [],
+            "points": 15
+        },
+        {
+            "id": "l18_code_1",
+            "type": "code",
+            "title": "Basic Drone Calibration",
+            "instructions": "**Mission Briefing:**\\n\\nThe Drone Factory has assembled a new navigation unit. Your job: activate it and run the calibration sequence.\\n\\n**Protocol:**\\n1. Create a turtle object called `drone`\\n2. Make it move forward 100 units\\n3. Turn right 90 degrees\\n4. Move forward 100 more units\\n\\nThis creates an L-shaped flight path to test the navigation system.",
+            "starterCode": "import turtle\\n\\n# Create your drone object here\\n\\n# Move and turn commands\\n",
+            "solution": "import turtle\\n\\n# Create drone navigation object\\ndrone = turtle.Turtle()\\n\\n# Execute calibration sequence\\ndrone.forward(100)\\ndrone.right(90)\\ndrone.forward(100)\\n\\nturtle.done()",
+            "hints": [
+                "Remember: turtle.Turtle() creates a new turtle object",
+                "Use drone.forward(distance) to move",
+                "Use drone.right(angle) to turn"
+            ],
+            "testCases": [],
+            "points": 20
+        },
+        {
+            "id": "l18_code_2",
+            "type": "code",
+            "title": "Drone Appearance Customization",
+            "instructions": "**Upgrade Protocol:**\\n\\nNow that the drone flies, let's customize its appearance for the Neon City aesthetic!\\n\\n**Your Task:**\\n1. Create a turtle named `neon_drone`\\n2. Set its shape to 'turtle' using the `.shape()` method\\n3. Set its color to 'cyan' using the `.color()` method\\n4. Make it draw a square (4 sides, 100 units each, 90-degree turns)\\n\\nThe square represents the drone's patrol zone.",
+            "starterCode": "import turtle\\n\\n# Create and customize your neon drone\\nneon_drone = turtle.Turtle()\\n\\n# Set appearance\\n\\n# Draw patrol zone (square)\\n",
+            "solution": "import turtle\\n\\n# Create and customize neon drone\\nneon_drone = turtle.Turtle()\\n\\n# Set cyberpunk appearance\\nneon_drone.shape('turtle')\\nneon_drone.color('cyan')\\n\\n# Draw patrol zone\\nfor i in range(4):\\n    neon_drone.forward(100)\\n    neon_drone.right(90)\\n\\nturtle.done()",
+            "hints": [
+                "Use neon_drone.shape('turtle') to change appearance",
+                "Use neon_drone.color('cyan') for that neon glow",
+                "A square has 4 equal sides and 4 right angles"
+            ],
+            "testCases": [],
+            "points": 20
+        },
+        {
+            "id": "l18_code_3",
+            "type": "code",
+            "title": "Complex Navigation Path",
+            "instructions": "**Advanced Calibration:**\\n\\nCreate a drone that draws a hexagon navigation path.\\n\\n**Specifications:**\\n- Shape: 'circle' (represents a flying drone)\\n- Color: 'lime' (high-visibility mode)\\n- Path: Hexagon with 80-unit sides\\n- Turn angle: 60 degrees (hexagons have 6 sides)\\n\\n**Remember:** Objects have methods that change their behavior!",
+            "starterCode": "import turtle\\n\\n# Initialize advanced drone\\nadvanced_drone = turtle.Turtle()\\n\\n# Configure appearance\\n\\n# Execute hexagon patrol route\\n",
+            "solution": "import turtle\\n\\n# Initialize advanced drone\\nadvanced_drone = turtle.Turtle()\\n\\n# Configure for night operations\\nadvanced_drone.shape('circle')\\nadvanced_drone.color('lime')\\nadvanced_drone.speed(2)\\n\\n# Execute hexagon patrol route\\nfor side in range(6):\\n    advanced_drone.forward(80)\\n    advanced_drone.right(60)\\n\\nturtle.done()",
+            "hints": [
+                "Hexagons have 6 sides",
+                "External angle of hexagon = 360 ÷ 6 = 60 degrees",
+                "Use a loop to avoid repetition"
+            ],
+            "testCases": [],
+            "points": 20
+        },
+        {
+            "id": "l18_typing_adv_1",
+            "type": "typing",
+            "title": "Neural Sync: Multi-Drone Setup",
+            "description": "Create two drones with different colors - red and blue.",
+            "targetCode": "import turtle\\ndrone1 = turtle.Turtle()\\ndrone1.color('red')\\ndrone2 = turtle.Turtle()\\ndrone2.color('blue')",
+            "points": 10,
+            "xp": 10
+        },
+        {
+            "id": "l18_typing_adv_2",
+            "type": "typing",
+            "title": "Neural Sync: Shape Customization",
+            "description": "Professional drone setup - configure a turtle with circle shape, cyan color, and speed 5.",
+            "targetCode": "bot = turtle.Turtle()\\nbot.shape('circle')\\nbot.color('cyan')\\nbot.speed(5)",
+            "points": 15,
+            "xp": 15
+        },
+        {
+            "id": "l18_challenge_1",
+            "type": "debug",
+            "title": "Debug Challenge: Object Confusion",
+            "description": "Two drones but only one moves! Fix so drone2 also moves - it should turn right and go forward 50.",
+            "brokenCode": "import turtle\\ndrone1 = turtle.Turtle()\\ndrone2 = turtle.Turtle()\\ndrone1.forward(100)\\ndrone1.right(90)\\ndrone1.forward(50)",
+            "starterCode": "import turtle\\ndrone1 = turtle.Turtle()\\ndrone2 = turtle.Turtle()\\ndrone1.forward(100)\\ndrone1.right(90)\\ndrone1.forward(50)",
+            "testCases": [],
+            "solution": "import turtle\\ndrone1 = turtle.Turtle()\\ndrone2 = turtle.Turtle()\\ndrone1.forward(100)\\ndrone2.right(90)\\ndrone2.forward(50)",
+            "points": 20,
+            "xp": 20
+        },
+        {
+            "id": "l18_challenge_2",
+            "type": "code",
+            "title": "Multi-Drone Formation",
+            "description": "Create 3 drones with different shapes (turtle, circle, square) and colors (red, green, blue). Make each draw a triangle (3 sides, turn 120 degrees each time).",
+            "starterCode": "import turtle\\n\\n# Create 3 drones\\n",
+            "solution": "import turtle\\n\\ndrone1 = turtle.Turtle()\\ndrone1.shape('turtle')\\ndrone1.color('red')\\n\\ndrone2 = turtle.Turtle()\\ndrone2.shape('circle')\\ndrone2.color('green')\\n\\ndrone3 = turtle.Turtle()\\ndrone3.shape('square')\\ndrone3.color('blue')\\n\\nfor drone in [drone1, drone2, drone3]:\\n    for i in range(3):\\n        drone.forward(100)\\n        drone.right(120)\\n\\nturtle.done()",
+            "testCases": [],
+            "points": 25,
+            "xp": 25
+        },
+        {
+            "id": "l18_challenge_3",
+            "type": "code",
+            "title": "Drone Fleet Pattern",
+            "description": "Create 4 drones in a list. Use a loop to make each draw a small square at these positions: (0,0), (150,0), (0,150), (150,150). Use penup() and goto() to position them.",
+            "starterCode": "import turtle\\n\\n# Create drone fleet\\n",
+            "solution": "import turtle\\n\\nfleet = [turtle.Turtle() for i in range(4)]\\npositions = [(0,0), (150,0), (0,150), (150,150)]\\n\\nfor i, drone in enumerate(fleet):\\n    drone.penup()\\n    drone.goto(positions[i])\\n    drone.pendown()\\n    for side in range(4):\\n        drone.forward(50)\\n        drone.right(90)\\n\\nturtle.done()",
+            "testCases": [],
+            "points": 30,
+            "xp": 30
+        },
+        {
+            "id": "l18_challenge_4",
+            "type": "code",
+            "title": "Boss Challenge: Spiral Pattern",
+            "description": "ADVANCED: Create a drone that draws a growing spiral! Start with forward(10), then increase the distance by 10 each time. Do 20 iterations, turn right 90 degrees each time. Hint: use a variable for distance!",
+            "starterCode": "import turtle\\n\\n# Spiral drone\\n",
+            "solution": "import turtle\\n\\nspiral_drone = turtle.Turtle()\\nspiral_drone.color('cyan')\\nspiral_drone.speed(0)\\n\\ndistance = 10\\nfor i in range(20):\\n    spiral_drone.forward(distance)\\n    spiral_drone.right(90)\\n    distance += 10\\n\\nturtle.done()",
+            "testCases": [],
+            "points": 40,
+            "xp": 40
+        }
+    ]
+}

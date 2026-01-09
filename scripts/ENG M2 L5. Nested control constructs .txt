@@ -1,0 +1,524 @@
+Module 2. Lesson 5.
+Nested control constructs
+Link to the methodological guidelines
+
+Module 2. Lesson 5. Nested control constructs
+Helper bot
+Julia
+Discussion:
+
+Great job!
+Discussion
+of the tasks
+The “Friend Around” social network greatly appreciated the work of ProTeam specialists and decided to add a helper bot named Julia to the network.
+Julia must be able to:
+keep up a conversation with the user and answer their questions;
+recommend entertainment and music.
+
+
+Let’s try to figure out this task.
+Emily, 
+Project Manager
+
+Textual helper bot
+Discussion
+of the tasks
+Let’s assume Julia needs to have all this functionality.
+How do we program such a spectrum of actions?
+🤖
+Recommend music
+Tell a joke
+Suggest a community based on the user’s mood
+Buy merch
+
+Textual helper bot
+Discussion
+of the tasks
+Almost every simple action needs to be designed as a separate program!
+1 — Music recommendation
+2 — Joke
+3 — Community based on mood
+4 — Buy merch
+Program loop
+(while “off” is not entered)
+Data input.
+Analysis.
+Music output.
+Joke output.
+Data input.
+Analysis.
+Community output.
+Products output.
+Products input.
+Amount due output.
+
+Discussion
+of the tasks
+We have already done a lot of work with control constructs. We’ve even placed one control construct inside another (a loop within a loop; a loop inside a conditional statement).
+
+But programming this helper bot will require even more effort!
+
+
+Nested constructs
+Cole, 
+Senior Developer
+
+Discussion
+of the tasks
+Training and hackathon
+I suggest the following approach, beneficial for both the developers and the client:
+Undergo training to improve and consolidate our skills of programming nested constructs.
+Together with our colleagues, take part in a hackathon dedicated to programming the Julia bot. 
+The best solution will then be delivered to the client!
+
+The goal of the workday is to
+Today you will:
+program the Julia helper bot using nested control constructs.
+learn new ways of using control constructs;
+undergo training on nested control constructs;
+program your own helper bot during the hackathon.
+Discussion
+of the tasks
+
+Confirmation of
+qualifications
+Module 2. Lesson 5. Nested control constructs
+
+To get started on the working tasks, demonstrate your knowledge level.
+
+Prove that you are ready for the brainstorm and training!
+Confirmation of
+qualifications 
+
+What is a conditional statement?
+What types of conditional statements do you know?
+Confirmation of
+qualifications 
+
+Confirmation of
+qualifications 
+if
+Expression is true
+:
+Execute action 1
+Execute action 2
+Execute action 3
+4 spaces
+An action block starts with a colon
+Conditional statement
+– a command that executes or does not execute an action depending on the value of the logical expression.
+if
+Expression_1 is true
+Execute action 1
+Execute action 2
+elif
+Expression_2 is true
+Execute action 3
+else
+:
+:
+:
+
+What is a loop? 
+Which loop operators do you know?
+Confirmation of
+qualifications 
+
+Confirmation of
+qualifications 
+while
+Expression is true
+:
+Execute action 1
+Execute action 2
+Execute action 3
+Execute action 4
+Loop 
+– a command that executes actions given as long as a certain logical expression remains true.
+While the logical expression is true.
+
+	Execute...
+
+Confirmation of
+qualifications 
+A sequence is an ordered set of elements. 
+for
+element
+:
+Execute action 1
+Execute action 2
+Execute action 3
+Execute action 4
+in
+sequence
+Loop 
+– a command that executes actions given as long as a certain logical expression remains true.
+For every element in the sequence.
+
+	Execute...
+
+What is a counter? 
+What data can it store?
+Confirmation of
+qualifications 
+
+Confirmation of
+qualifications 
+Counter 
+– a variable storing the number of steps of a certain loop.
+No
+Example: 
+Counter storing all the loop steps where the condition was true.
+Counter = 0
+Is logical expression 1 true?
+Is logical expression 2 true?
+Execute action 1
+Yes
+No
+Yes
+Increase counter by 1
+Execute action 2
+
+How do we program 
+a while loop with a counter?
+A for loop with a counter?
+Confirmation of
+qualifications 
+
+Confirmation of
+qualifications 
+while with counter 
+
+while
+Execute action 1
+Execute action 2
+Execute action 3
+i = 0
+i = i + 1
+i < n:
+Counter to repeat the loop body n times.
+while
+Execute action 2
+i = 0
+Expression_1 is true
+:
+if
+Expression_2 is true
+Execute action 1
+:
+i = i + 1
+Counter to count only the steps where the additional condition was true.
+
+Confirmation of
+qualifications 
+for i
+Execute action 1
+Execute action 2
+Execute action 3
+Execute action 4
+in range(n):
+range(n)
+—   creates the sequence of numbers 0, 1, 2… n-1.
+range(a, b)
+—   creates the sequence of numbers a, a+1, a+2… b-1.
+for with counter
+
+Counter to repeat the loop body n times.
+for i
+If the condition is true
+Execute action 2
+in range(n):
+Repeat the loop body n times and count the number of times the additional condition was true.
+k = k + 1
+k = 0
+
+Qualifications confirmed!
+Confirmation of qualifications 
+
+Great! You are ready for the brainstorm and training!
+
+Training
+Brainstorm:
+Module 2. Lesson 5. Nested control constructs
+
+Nested control constructs
+Brainstorm
+The training on nested data structures will consist of two parts: theory and practice.
+Key question:
+What types of conditional statements and loops
+do we need to use in this particular task?
+
+Let’s go over a task
+Brainstorm
+
+Task 1. Program a textual bot that can keep up a conversation. The bot must reply to these questions:
+Q: “What are you able to do?” A: “I can talk with you if you feel sad.”
+Q: “Tell a joke.” A: “The first five days after the weekend are always the hardest!”
+In all the other cases: “Sorry, I don’t understand you.” When the input is “off”, the bot ends operation.
+Which control constructs will we need?
+Ask me anything (off - exit):
+>>> What are you able to do?
+I can talk with you if you feel sad.
+>>> Tell a joke.
+The first five days after the weekend are always the hardest!
+Ask me anything (off - exit):
+>>> Ha-ha, funny!
+Sorry, I don’t understand you
+Ask me anything (off - exit):
+>>> off
+
+Brainstorm
+
+question != ‘off’?
+Question input
+question == (1)?
+Output (1)
+question == (2)?
+Output (2)
+Question input
+End
+No
+No
+Yes
+No
+Yes
+Output (3)
+Yes
+
+Sample solution
+Brainstorm
+
+Task 1. Program a textual bot that can keep up a conversation. The bot must reply to these questions:
+Q: “What are you able to do?” A: “I can talk with you if you feel sad.”
+Q: “Tell a joke.” A: “The first five days after the weekend are always the hardest!”
+In all the other cases: “Sorry, I don’t understand you.” When the input is “off”, the bot ends operation.
+question = input('Ask me anything (off - exit):')
+while question != 'off':
+   if question == 'What are you able to do?':
+       print('I can talk with you if you feel sad.')
+   elif question == 'Tell a joke.':
+       print('The first five days after the weekend are always the hardest!')
+   else:
+       print('Sorry, I don't understand you.')
+   question = input('Ask me anything (off - exit):')
+
+Before we continue:
+How will the program respond if the user inputs the following question: “What music is worth listening to?”
+What addition do we need to make to the program so that, when asked, “What is your hobby?” the bot replies, “I love computer games”?
+Trying to exit the program, users may enter “Off”, “OFF”, etc. instead of “off”. 
+How do we recognize these, too?
+Brainstorm
+
+
+Let’s go over a task
+Brainstorm
+
+Task 2. The bot chooses two numbers a day. Those who guess both of them in 3 tries get a free music subscription for one year. Users enter these two numbers one after another.
+If both of them are guessed correctly, the output is “You win!”
+If only the first one is guessed correctly, the output is “You guessed the first number!”
+If only the second one is guessed correctly, the output is “You guessed the second number!”
+In all the other cases, the output is “Better luck next time!”
+Which constructs will we need?
+First number:
+>>> 25
+Second number:
+>>> 49
+You guessed the second number!
+First number:
+>>> 36
+Second number:
+>>> 49
+You win!
+
+i < 3?
+End
+No
+Yes
+Input user_num1, user_num2
+num1 == 
+user_num1?
+i = 0, num1 = 36, num2 = 49
+num2 == user_num2?
+You win!
+You guessed the first number!
+num2 == user_num2?
+You guessed the second number!
+Better luck next time!
+Yes
+No
+Yes
+No
+i = i + 1
+Beginning
+Yes
+No
+Sample flowchart:
+
+i < 3?
+End
+No
+Yes
+Input user_num1, user_num2
+num1 == 
+user_num1?
+i = 0, num1 = 36, num2 = 49
+num2 == user_num2?
+You win!
+You guessed the first number!
+num2 == user_num2?
+You guessed the second number!
+Better luck next time!
+Yes
+No
+Yes
+No
+i = i + 1
+Beginning
+Yes
+No
+Sample flowchart:
+Break operator
+(no more tries needed!)
+
+Brainstorm
+
+num1 = '36'
+num2 = '49'
+for i in range(3):
+   user_num1 = input('First number:')
+   user_num2 = input('Second number:')
+   if user_num1 == num1:
+       if user_num2 == num2:
+           print('You win!')
+           break
+       else:
+           print('You guessed the first number!')
+   else:
+       if user_num2 == num2:
+           print('You guessed the second number!')
+       else:
+           print('Better luck next time!')
+
+Before we continue:
+How many levels of nesting are there in this program? Are there cases when the interpreter analyzes only part of the branches?
+What will the program print if the user inputs the following sets of numbers? 
+7, 49
+36, 46
+6, 7
+Brainstorm
+
+
+Platform: 
+“Training”
+Module 2. Lesson 5. Nested control constructs
+
+mars.alg.academy
+Do the task on the platform
+“Training”
+Training
+
+Break
+
+Module 2. Lesson 5. Nested control constructs
+Hackathon
+Brainstorm:
+
+Hackathon rules
+Brainstorm
+
+A hackathon is a competition among developers. 
+Before a hackathon, the organizer suggests a project idea and the form in which that idea should be implemented.
+The participants then work on the idea for some time.
+At the end, the results are presented and discussed by both the judges and the participants.
+Hackathons can be conducted in teams or individually.
+
+
+Hackathon rules
+Brainstorm
+
+Today:
+Organizer
+The “Friend Around” social network with the support of ProTeam 
+Form of participation
+Individual
+Determining the winner
+Based on the feedback from the hackathon participants and ProTeam representative in the Laboratory
+Prize
+The best solutions are delivered to the social network to be introduced into the product
+Timing
+20 minutes for development, 10 minutes for evaluation and results
+
+Hackathon task:
+The goal is to program a bot that can:
+recommend entertainment activities;
+answer questions and keep up a conversation.
+Follow the plan:
+Create a new project in the Laboratory.
+Decide what the bot will do: what questions it will answer and what entertainment it will suggest.
+Think where you will use loops and where conditional statements will come in handy.
+Program your own bot.
+Don’t forget to share your program with the other trainees 
+and invite them to evaluate your code in the comments!
+Brainstorm
+
+
+What must Julia be able to do?
+Brainstorm
+
+The more interesting your bots are, the better! 
+For example, Julia may be able to:
+Recommend movies based on the user’s mood.
+Recommend topic interest groups.
+Keep up a conversation and tell jokes.
+Tell the latest news.
+Invite the user to buy brand merch. 
+The only limitation is your imagination!
+
+
+Publish your solution in the Laboratory!
+The Laboratory is an online software development environment. 
+In it, you can:
+program anything you want, not just ProTeam customer requests;
+share your programs with other ProTeam developers;
+like and comment on other students’ projects.
+
+Also, you can share your projects on Twitter,
+Facebook, or other social media.
+
+Brainstorm
+
+
+Laboratory: 
+“Hackathon”
+Module 2. Lesson 5. Nested control constructs
+
+mars.alg.academy
+Do the task in the Laboratory
+“Hackathon”
+Hackathon
+
+End of 
+the workday
+Module 2. Lesson 5. Nested control constructs
+
+Wrapping up 
+the workday
+To wrap up the hackathon, provide your feedback:
+
+
+How many of the other developers’ projects have you looked at? Whose project did you like the most? Why?
+Having seen some of the other solutions, what would you now improve in your own?
+Cole, 
+Senior Developer
+Emily, 
+Project Manager
+
+Add’l tasks to improve efficiency
+Wrapping up 
+the workday
+
+“Training: 
+add’l tasks”
+Training
+Hackathon
+Training: add’l tasks

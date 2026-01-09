@@ -1,0 +1,248 @@
+{
+  "lesson_id": "lesson_03",
+  "title": "Strings & Indexing: The Matrix",
+  "module": "Module 1: Python Basics",
+  "duration_minutes": 60,
+  "slide_url": "/content/python/slides/lesson_03_strings.md",
+  "objectives": [
+    "Master string concatenation and replication",
+    "Understand 0-based indexing",
+    "Learn string slicing [start:stop:step]",
+    "Use f-strings for formatting",
+    "Calculate string length with len()"
+  ],
+  "description": "Manipulate the fabric of text itself. Learn to target specific characters, slice data streams, and format output like a pro.",
+  "exercises": [
+    {
+      "id": "l03_quiz_01",
+      "type": "quiz",
+      "title": "Clearance Check: Index Origin",
+      "description": "In Python, what is the index of the first character in a string?",
+      "options": [
+        "1",
+        "0",
+        "-1",
+        "None"
+      ],
+      "correctAnswer": 1,
+      "xp": 5
+    },
+    {
+      "id": "l03_quiz_02",
+      "type": "quiz",
+      "title": "Clearance Check: Negative Indexing",
+      "description": "What does index `[-1]` refer to in a string?",
+      "options": [
+        "The first character",
+        "The middle character",
+        "The last character",
+        "An error"
+      ],
+      "correctAnswer": 2,
+      "xp": 5
+    },
+    {
+      "id": "l03_type_01",
+      "type": "typing",
+      "title": "Neural Sync: Concatenation",
+      "description": "Combine 'Cyber' and 'Punk' with a plus sign.",
+      "targetCode": "mission_code = \"Cyber\" + \"Punk\" + \"_2077\" # Concatenating mission parameters",
+      "xp": 10
+    },
+    {
+      "id": "l03_type_02",
+      "type": "typing",
+      "title": "Neural Sync: F-String",
+      "description": "Use an f-string to insert the variable 'name'.",
+      "targetCode": "print(f\"Agent {name}, your mission directives are ready for final review.\")",
+      "xp": 10
+    },
+    {
+      "id": "l03_type_03",
+      "type": "typing",
+      "title": "Neural Sync: Slicing",
+      "description": "Slice the first 3 characters of the string 'code'.",
+      "targetCode": "sector_prefix = sector_id[0:5] # Extracting sector designator from full ID",
+      "xp": 10
+    },
+    {
+      "id": "l03_debug_01",
+      "type": "debug",
+      "title": "System Repair: Index Error",
+      "description": "The string 'Python' has 6 characters. Attempting to access index 6 causes a crash.",
+      "brokenCode": "word = \"Python\"\nprint(word[6])",
+      "starterCode": "word = \"Python\"\nprint(word[6])",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "n\n"
+        }
+      ],
+      "solution": "word = \"Python\"\nprint(word[5])",
+      "xp": 15
+    },
+    {
+      "id": "l03_debug_02",
+      "type": "debug",
+      "title": "System Repair: F-String Syntax",
+      "description": "The variables aren't being replaced because the 'f' is missing.",
+      "brokenCode": "name = \"Neo\"\nmsg = \"Wake up, {name}\"",
+      "starterCode": "name = \"Neo\"\nmsg = \"Wake up, {name}\"\nprint(msg)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "Wake up, Neo\n"
+        }
+      ],
+      "solution": "name = \"Neo\"\nmsg = f\"Wake up, {name}\"\nprint(msg)",
+      "xp": 15
+    },
+    {
+      "id": "l03_code_01",
+      "type": "code",
+      "title": "Field Mission: Initials Extractor",
+      "description": "Extract and print the first letter of `first_name` and `last_name`.",
+      "starterCode": "first_name = \"James\"\nlast_name = \"Bond\"\n# Extract initials",
+      "solution": "first_name = \"James\"\nlast_name = \"Bond\"\nprint(first_name[0] + last_name[0])",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "JB\n"
+        }
+      ],
+      "points": 20,
+      "xp": 20
+    },
+    {
+      "id": "l03_code_02",
+      "type": "code",
+      "title": "Field Mission: Reverse Cipher",
+      "description": "Given `code = 'SECRET'`, print it in reverse using slicing.",
+      "starterCode": "code = \"SECRET\"",
+      "solution": "code = \"SECRET\"\nprint(code[::-1])",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "TERCES\n"
+        }
+      ],
+      "points": 20,
+      "xp": 20
+    },
+    {
+      "id": "l03_code_03",
+      "type": "code",
+      "title": "Field Mission: Username Generator",
+      "description": "Create a username: First 3 letters of name + year. Print it.",
+      "starterCode": "name = \"Anderson\"\nyear = 1999",
+      "solution": "name = \"Anderson\"\nyear = 1999\nusername = name[0:3] + str(year)\nprint(username)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "And1999\n"
+        }
+      ],
+      "points": 20,
+      "xp": 20
+    },
+    {
+      "id": "l03_typing_adv_1",
+      "type": "typing",
+      "title": "Neural Sync: Message Encryption",
+      "description": "Combine codename and secret key to create encrypted identity tag.",
+      "targetCode": "agent_tag = codename + \"_\" + secret_key + \"_CLASSIFIED\"\nprint(agent_tag)",
+      "points": 10,
+      "xp": 10
+    },
+    {
+      "id": "l03_typing_adv_2",
+      "type": "typing",
+      "title": "Neural Sync: Intel Report Formatter",
+      "description": "Professional intelligence report using f-strings with multiple variables.",
+      "targetCode": "# Operation Status Report\ntarget = \"Volkov\"\nlocation = \"Moscow\"\nstatus = \"Tracked\"\nreport = f\"TARGET: {target} | LOCATION: {location} | STATUS: {status}\"\nprint(report)",
+      "points": 15,
+      "xp": 15
+    },
+    {
+      "id": "l03_challenge_1",
+      "type": "debug",
+      "title": "Debug Challenge: Index Out of Range",
+      "description": "CRITICAL: Accessing character beyond message length! Message has 5 chars but trying to access index 5 (6th position). Fix before system crash!",
+      "brokenCode": "msg = \"ABORT\"\nprint(msg[5])",
+      "starterCode": "msg = \"ABORT\"\nprint(msg[5])",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "T\\n"
+        }
+      ],
+      "solution": "msg = \"ABORT\"\nprint(msg[4])",
+      "points": 20,
+      "xp": 20
+    },
+    {
+      "id": "l03_challenge_2",
+      "type": "code",
+      "title": "Ciphers: Call Sign Extractor",
+      "description": "Extract first 3 letters of codename \"PHANTOM\" to create shortened call sign. Print the abbreviated version.",
+      "starterCode": "# Extract call sign prefix\ncodename = \"PHANTOM\"\n",
+      "solution": "codename = \"PHANTOM\"\ncall_sign = codename[0:3]\nprint(call_sign)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "PHA\\n"
+        }
+      ],
+      "points": 25,
+      "xp": 25
+    },
+    {
+      "id": "l03_challenge_3",
+      "type": "code",
+      "title": "Decryption: Message Reversal",
+      "description": "Enemy uses simple reverse cipher. Decrypt intercepted message \"REDRUM\" by reversing the string using slicing [::-1].",
+      "starterCode": "# Decrypt enemy transmission\nencrypted = \"REDRUM\"\n",
+      "solution": "encrypted = \"REDRUM\"\ndecrypted = encrypted[::-1]\nprint(decrypted)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "MURDER\\n"
+        }
+      ],
+      "points": 25,
+      "xp": 25
+    },
+    {
+      "id": "l03_challenge_4",
+      "type": "code",
+      "title": "Field Intel: Coordinate Formatter",
+      "description": "Format GPS coordinates for field operative. Combine latitude \"40.7128\" and longitude \"-74.0060\" with f-string. Format: 'Coordinates: LAT, LON'",
+      "starterCode": "# Generate coordinate string\nlat = \"40.7128\"\nlon = \"-74.0060\"\n",
+      "solution": "lat = \"40.7128\"\nlon = \"-74.0060\"\ncoords = f\"Coordinates: {lat}, {lon}\"\nprint(coords)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "Coordinates: 40.7128, -74.0060\n"
+        }
+      ],
+      "points": 30,
+      "xp": 30
+    },
+    {
+      "id": "l03_challenge_5",
+      "type": "code",
+      "title": "Boss Challenge: Codename Generator",
+      "description": "CLASSIFIED: Generate operative codename from real identity. Take first 3 letters of first_name 'Alexander', last 2 of last_name 'Pierce', add birth_year '1975'. Format: first3 + last2 + year (e.g., 'Alece1975'). Use slicing and concatenation!",
+      "starterCode": "# Generate covert identity\nfirst_name = \"Alexander\"\nlast_name = \"Pierce\"\nbirth_year = \"1975\"\n# Build codename\n",
+      "solution": "first_name = \"Alexander\"\nlast_name = \"Pierce\"\nbirth_year = \"1975\"\ncodename = first_name[0:3] + last_name[-2:] + birth_year\nprint(codename)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "Alece1975\\n"
+        }
+      ],
+      "points": 40,
+      "xp": 40
+    }
+  ]
+}

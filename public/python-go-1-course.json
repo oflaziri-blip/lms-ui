@@ -1,0 +1,72 @@
+{
+    "exportDate": "2026-01-08",
+    "totalCourses": 1,
+    "courses": [
+        {
+            "courseId": "python-go-1",
+            "courseTitle": "Python Go 1",
+            "modules": [
+                {
+                    "id": "module_01",
+                    "title": "Module 1: Python Basics",
+                    "lessons": [
+                        {
+                            "id": "lesson_01",
+                            "title": "Introduction to Python: Print & Math",
+                            "description": "Learn the foundation of Python: the print() function and all 7 mathematical operators.",
+                            "tasks": []
+                        },
+                        {
+                            "id": "lesson_02",
+                            "title": "Variables and Data Types",
+                            "description": "Master variables, strings, numbers, and basic data types in Python.",
+                            "tasks": []
+                        },
+                        {
+                            "id": "lesson_03",
+                            "title": "Control Flow: If/Else",
+                            "description": "Make decisions in your code with conditional statements.",
+                            "tasks": []
+                        },
+                        {
+                            "id": "lesson_04",
+                            "title": "Loops: For and While",
+                            "description": "Repeat actions efficiently using loops.",
+                            "tasks": []
+                        },
+                        {
+                            "id": "lesson_05",
+                            "title": "Functions",
+                            "description": "Create reusable code blocks with functions.",
+                            "tasks": []
+                        }
+                    ]
+                },
+                {
+                    "id": "module_02",
+                    "title": "Module 2: Data Structures",
+                    "lessons": [
+                        {
+                            "id": "lesson_06",
+                            "title": "Lists",
+                            "description": "Work with ordered collections of data.",
+                            "tasks": []
+                        },
+                        {
+                            "id": "lesson_07",
+                            "title": "Dictionaries",
+                            "description": "Store and retrieve data using key-value pairs.",
+                            "tasks": []
+                        },
+                        {
+                            "id": "lesson_08",
+                            "title": "Tuples and Sets",
+                            "description": "Explore immutable sequences and unique collections.",
+                            "tasks": []
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

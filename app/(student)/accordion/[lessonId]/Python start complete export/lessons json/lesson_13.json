@@ -1,0 +1,248 @@
+{
+  "lesson_id": "lesson_13",
+  "title": "Creating Modules: The Architect",
+  "module": "Module 3: Functions & Modules",
+  "duration_minutes": 60,
+  "slide_url": "/content/python/slides/lesson_13_creating_modules.pdf",
+  "objectives": [
+    "Understand that every .py file is a module",
+    "Master the import statement variants",
+    "Learn module namespaces",
+    "Use the if __name__ == '__main__' guard",
+    "Avoid circular dependencies"
+  ],
+  "description": "Stop writing monolithic code. Learn to split your logic into reusable modules, creating your own personal library of tools.",
+  "exercises": [
+    {
+      "id": "l13_quiz_01",
+      "type": "quiz",
+      "title": "Clearance Check: Module Definition",
+      "description": "What defines a Python module file?",
+      "options": [
+        "It must have a special header",
+        "It must end with .mod",
+        "Any file ending in .py",
+        "It must contain a class"
+      ],
+      "correctAnswer": 2,
+      "xp": 5
+    },
+    {
+      "id": "l13_quiz_02",
+      "type": "quiz",
+      "title": "Clearance Check: Main Guard",
+      "description": "When is `if __name__ == '__main__':` True?",
+      "options": [
+        "When the file is imported",
+        "When the file is run directly",
+        "Always",
+        "Never"
+      ],
+      "correctAnswer": 1,
+      "xp": 5
+    },
+    {
+      "id": "l13_type_01",
+      "type": "typing",
+      "title": "Neural Sync: Import Alias",
+      "description": "Import the configuration module as 'cfg'.",
+      "targetCode": "import configuration_settings as cfg # Optimizing namespace access",
+      "xp": 10
+    },
+    {
+      "id": "l13_type_02",
+      "type": "typing",
+      "title": "Neural Sync: From Import",
+      "description": "Import only the necessary function.",
+      "targetCode": "from security_protocols import encrypt_data # Selective loading",
+      "xp": 10
+    },
+    {
+      "id": "l13_type_03",
+      "type": "typing",
+      "title": "Neural Sync: Main Guard",
+      "description": "Protect the execution block.",
+      "targetCode": "if __name__ == \"__main__\":\n    initiate_sequence()",
+      "xp": 10
+    },
+    {
+      "id": "l13_debug_01",
+      "type": "debug",
+      "title": "System Repair: Import Error",
+      "description": "The import statement is misspelled.",
+      "brokenCode": "import rando as random_gen",
+      "starterCode": "import rando as random_gen\nprint(random_gen.randint(1, 10))",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "5\n"
+        }
+      ],
+      "solution": "import random as random_gen\nprint(random_gen.randint(1, 10))",
+      "xp": 15
+    },
+    {
+      "id": "l13_debug_02",
+      "type": "debug",
+      "title": "System Repair: Namespace Conflict",
+      "description": "We are trying to use a function without referencing its module prefix.",
+      "brokenCode": "import time\nsleep(1)",
+      "starterCode": "import time\nsleep(1)\nprint(\"Awake\")",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "Awake\n"
+        }
+      ],
+      "solution": "import time\ntime.sleep(1)\nprint(\"Awake\")",
+      "xp": 15
+    },
+    {
+      "id": "l13_code_01",
+      "type": "code",
+      "title": "Field Mission: Math Module",
+      "description": "Import the `math` module. Print the value of `math.pi`.",
+      "starterCode": "# Import math and print pi",
+      "solution": "import math\nprint(math.pi)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "3.141592653589793\n"
+        }
+      ],
+      "points": 25,
+      "xp": 25
+    },
+    {
+      "id": "l13_code_02",
+      "type": "code",
+      "title": "Field Mission: Selective Import",
+      "description": "From `random`, import `randint`. Print a random number between 1 and 1 (so it's deterministic for testing).",
+      "starterCode": "# From random import randint",
+      "solution": "from random import randint\nprint(randint(1, 1))",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "1\n"
+        }
+      ],
+      "points": 25,
+      "xp": 25
+    },
+    {
+      "id": "l13_code_03",
+      "type": "code",
+      "title": "Field Mission: System Path",
+      "description": "Import `sys` and print the string 'Path Loaded'.",
+      "starterCode": "# Import sys module",
+      "solution": "import sys\nprint('Path Loaded')",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "Path Loaded\n"
+        }
+      ],
+      "points": 25,
+      "xp": 25
+    },
+    {
+      "id": "l13_typing_adv_1",
+      "type": "typing",
+      "title": "Neural Sync: Crypto Module Import",
+      "description": "Import encryption module with alias for field operations.",
+      "targetCode": "import hashlib as crypto\nprint('Crypto module loaded')",
+      "points": 10,
+      "xp": 10
+    },
+    {
+      "id": "l13_typing_adv_2",
+      "type": "typing",
+      "title": "Neural Sync: Selective Tools Import",
+      "description": "Professional import pattern - only load needed functions from intel toolkit.",
+      "targetCode": "# Load specific gadgets\nfrom datetime import datetime, timedelta\nfrom random import choice, shuffle\nprint('Tools imported successfully')",
+      "points": 15,
+      "xp": 15
+    },
+    {
+      "id": "l13_challenge_1",
+      "type": "debug",
+      "title": "Debug Challenge: Module Not Found",
+      "description": "Module name misspelled! Fix the import to use correct 'random' module!",
+      "brokenCode": "import rando\nprint(rando.randint(1, 5))",
+      "starterCode": "import rando\nprint(rando.randint(1, 5))",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "3\\n"
+        }
+      ],
+      "solution": "import random\nprint(random.randint(1, 5))",
+      "points": 20,
+      "xp": 20
+    },
+    {
+      "id": "l13_challenge_2",
+      "type": "code",
+      "title": "Intel Tools: Time Module",
+      "description": "Import time module. Use time.time() to get current timestamp. Print 'Timestamp logged'.",
+      "starterCode": "# Import time utilities\n",
+      "solution": "import time\ntime.time()\nprint('Timestamp logged')",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "Timestamp logged\\n"
+        }
+      ],
+      "points": 25,
+      "xp": 25
+    },
+    {
+      "id": "l13_challenge_3",
+      "type": "code",
+      "title": "Gadget Loader: Math Module",
+      "description": "Import math module. Use math.sqrt(16) and print result.",
+      "starterCode": "# Load math toolkit\n",
+      "solution": "import math\nresult = math.sqrt(16)\nprint(result)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "4.0\\n"
+        }
+      ],
+      "points": 25,
+      "xp": 25
+    },
+    {
+      "id": "l13_challenge_4",
+      "type": "code",
+      "title": "Field Tools: JSON Module",
+      "description": "From json module, import dumps. Convert {'status': 'active'} to JSON string and print.",
+      "starterCode": "# Import JSON encoder\n",
+      "solution": "from json import dumps\ndata = {'status': 'active'}\nresult = dumps(data)\nprint(result)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "{\\\"status\\\": \\\"active\\\"}\\n"
+        }
+      ],
+      "points": 30,
+      "xp": 30
+    },
+    {
+      "id": "l13_challenge_5",
+      "type": "code",
+      "title": "Boss Challenge: Multi-Module Intelligence System",
+      "description": "CLASSIFIED: Build complete intel system. Import 'math', 'random', and 'time'. Calculate: random number 1-10, square root of 25, then print 'SYSTEM READY'. Test all modules!",
+      "starterCode": "# Load all intelligence modules\n",
+      "solution": "import math\nimport random\nimport time\n\nrandom.randint(1, 10)\nmath.sqrt(25)\nprint('SYSTEM READY')",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "SYSTEM READY\\n"
+        }
+      ],
+      "points": 40,
+      "xp": 40
+    }
+  ]
+}

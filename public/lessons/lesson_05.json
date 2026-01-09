@@ -1,0 +1,367 @@
+{
+    "lesson_id": "lesson_05",
+    "title": "Decision Protocols & Conditional Logic",
+    "module": "Module 1: Python Basics",
+    "duration_minutes": 60,
+    "slide_url": "/content/python/slides/lesson_05.md",
+    "objectives": [
+        "Master the if statement",
+        "Use else for fallback logic",
+        "Implement elif for multi-path logic",
+        "Understand indentation rules",
+        "Build intelligent decision engines"
+    ],
+    "description": "Agent, teach Chronos to think. Use if, elif, and else to create programs that react intelligently to different situations. Your code will make decisions like a human operative.",
+    "exercises": [
+        {
+            "id": "l05_quiz_01",
+            "type": "quiz",
+            "title": "Clearance Check: Indentation Purpose",
+            "description": "CHRONOS SYNTAX PROTOCOL: What is the purpose of indentation in Python?",
+            "options": [
+                "It is purely for aesthetics",
+                "It defines a block of code (scope)",
+                "It makes the code run faster",
+                "It is optional"
+            ],
+            "correctAnswer": 1,
+            "tasks": [
+                "Read the syntax question",
+                "Identify indentation's role"
+            ],
+            "xp": 5
+        },
+        {
+            "id": "l05_quiz_02",
+            "type": "quiz",
+            "title": "Clearance Check: Else Block Execution",
+            "description": "CHRONOS LOGIC GATE: When does the code inside an else block execute?",
+            "options": [
+                "Always",
+                "When the if condition is True",
+                "When the if condition is False",
+                "Never"
+            ],
+            "correctAnswer": 2,
+            "tasks": [
+                "Analyze else block behavior",
+                "Select correct execution condition"
+            ],
+            "xp": 5
+        },
+        {
+            "id": "l05_type_01",
+            "type": "typing",
+            "title": "Neural Sync: Critical Power Threshold Alert",
+            "description": "CHRONOS POWER MONITORING: Reactor core approaching critical threshold! If power_level exceeds 9000 units, the system must trigger an immediate warning to prevent catastrophic overload. Implement the conditional check to monitor power levels and alert engineering teams when the threshold is breached.",
+            "targetCode": "if power_level > 9000:\\n    print(\"Warning: Power level critical! Over 9000!\")",
+            "tasks": [
+                "Type the if statement",
+                "Include colon after condition",
+                "Indent the print statement"
+            ],
+            "xp": 10
+        },
+        {
+            "id": "l05_type_02",
+            "type": "typing",
+            "title": "Neural Sync: Lockdown Protocol Activation",
+            "description": "CHRONOS ACCESS CONTROL: Unauthorized access attempt detected! When security verification fails, the system must engage the else block to deny entry and initiate lockdown procedures. Add the fallback security protocol message to protect classified areas from intrusion.",
+            "targetCode": "else:\\n    print(\"Access Denied. Security protocol engaged. Lockdown initiated.\")",
+            "tasks": [
+                "Type else with colon",
+                "Indent the print statement",
+                "Match exact message"
+            ],
+            "xp": 10
+        },
+        {
+            "id": "l05_type_03",
+            "type": "typing",
+            "title": "Neural Sync: Administrative Privilege Check",
+            "description": "CHRONOS ROLE MANAGEMENT: Multi-tier access control system requires elif logic for different clearance levels. Check if user_role equals 'admin' to grant full system access with administrative privileges. This intermediate check sits between standard user and denied access conditions.",
+            "targetCode": "elif user_role == \"admin\":\\n    print(\"Welcome, Administrator. Full access granted.\")",
+            "tasks": [
+                "Type elif with condition",
+                "Include colon",
+                "Indent the print statement"
+            ],
+            "xp": 10
+        },
+        {
+            "id": "l05_debug_01",
+            "type": "debug",
+            "title": "System Repair: Indentation Failure",
+            "description": "CRITICAL ERROR: Print statement not executing! It's not indented, so it's not part of the if block. Fix the indentation!",
+            "brokenCode": "if x > 5:\\nprint(\"Big\")",
+            "starterCode": "x = 10\\nif x > 5:\\nprint(\"Big\")",
+            "testCases": [
+                {
+                    "input": "",
+                    "expectedOutput": "Big\\n"
+                }
+            ],
+            "solution": "x = 10\\nif x > 5:\\n    print(\"Big\")",
+            "tasks": [
+                "Identify missing indentation",
+                "Add 4 spaces before print",
+                "Verify code executes"
+            ],
+            "xp": 15
+        },
+        {
+            "id": "l05_debug_02",
+            "type": "debug",
+            "title": "System Repair: Missing Colon",
+            "description": "SYNTAX ERROR: If statement failing! Missing colon at end of condition line. This is REQUIRED in Python!",
+            "brokenCode": "if score == 100\\n    print(\"Win\")",
+            "starterCode": "score = 100\\nif score == 100\\n    print(\"Win\")",
+            "testCases": [
+                {
+                    "input": "",
+                    "expectedOutput": "Win\\n"
+                }
+            ],
+            "solution": "score = 100\\nif score == 100:\\n    print(\"Win\")",
+            "tasks": [
+                "Identify missing colon",
+                "Add colon after condition",
+                "Verify syntax is correct"
+            ],
+            "xp": 15
+        },
+        {
+            "id": "l05_code_01",
+            "type": "code",
+            "title": "Field Mission: Secure Facility Gate",
+            "description": "CHRONOS PERIMETER SECURITY: Deploy automated gate control system for classified facility. Input access code from operative. If code matches 'open', grant entry with 'Welcome' message. Otherwise, engage security lockdown with 'Locked' alert.",
+            "starterCode": "# Password verification logic",
+            "solution": "pw = input()\\nif pw == 'open':\\n    print('Welcome')\\nelse:\\n    print('Locked')",
+            "testCases": [
+                {
+                    "input": "open",
+                    "expectedOutput": "Welcome\\n"
+                },
+                {
+                    "input": "wrong",
+                    "expectedOutput": "Locked\\n"
+                }
+            ],
+            "points": 20,
+            "tasks": [
+                "Take password input",
+                "Check if equals 'open'",
+                "Print appropriate message"
+            ],
+            "xp": 20
+        },
+        {
+            "id": "l05_code_02",
+            "type": "code",
+            "title": "Field Mission: Autonomous Traffic Director",
+            "description": "CHRONOS URBAN CONTROL: Deploy AI traffic management system for city-wide vehicle coordination. Input signal color from intersection sensors. Red light = 'Stop' command, Green light = 'Go' command, any other color = 'Caution' protocol. Use elif for multi-path logic!",
+            "starterCode": "# Traffic signal logic",
+            "solution": "color = input()\\nif color == 'red':\\n    print('Stop')\\nelif color == 'green':\\n    print('Go')\\nelse:\\n    print('Caution')",
+            "testCases": [
+                {
+                    "input": "red",
+                    "expectedOutput": "Stop\\n"
+                },
+                {
+                    "input": "green",
+                    "expectedOutput": "Go\\n"
+                },
+                {
+                    "input": "yellow",
+                    "expectedOutput": "Caution\\n"
+                }
+            ],
+            "points": 20,
+            "tasks": [
+                "Take color input",
+                "Use if/elif/else chain",
+                "Print correct action"
+            ],
+            "xp": 20
+        },
+        {
+            "id": "l05_code_03",
+            "type": "code",
+            "title": "Field Mission: Data Stream Analyzer",
+            "description": "CHRONOS DATA INTELLIGENCE: Analyze incoming data packets for threat assessment. Input integer value from sensor network. Classify as 'Pos' if positive (threat detected), 'Neg' if negative (safe zone), or 'Zero' if neutral (monitoring required).",
+            "starterCode": "# Number classification logic",
+            "solution": "n = int(input())\\nif n > 0:\\n    print('Pos')\\nelif n < 0:\\n    print('Neg')\\nelse:\\n    print('Zero')",
+            "testCases": [
+                {
+                    "input": "10",
+                    "expectedOutput": "Pos\\n"
+                },
+                {
+                    "input": "-5",
+                    "expectedOutput": "Neg\\n"
+                },
+                {
+                    "input": "0",
+                    "expectedOutput": "Zero\\n"
+                }
+            ],
+            "points": 20,
+            "tasks": [
+                "Take number input",
+                "Check positive/negative/zero",
+                "Print classification"
+            ],
+            "xp": 20
+        },
+        {
+            "id": "l05_typing_adv_1",
+            "type": "typing",
+            "title": "Neural Sync: Tactical Threat Assessment",
+            "description": "CHRONOS SECURITY OPERATIONS: Implement 3-tier threat level classification system. Threat level 1 indicates LOW risk (routine patrol), level 2 indicates MEDIUM risk (enhanced surveillance), all other levels indicate HIGH risk (tactical response required). Use if/elif/else chain to categorize and alert appropriate response teams.",
+            "targetCode": "threat = 2\\nif threat == 1:\\n    print('LOW')\\nelif threat == 2:\\n    print('MEDIUM')\\nelse:\\n    print('HIGH')",
+            "points": 10,
+            "tasks": [
+                "Create if/elif/else structure",
+                "Check threat levels",
+                "Print appropriate alert"
+            ],
+            "xp": 10
+        },
+        {
+            "id": "l05_typing_adv_2",
+            "type": "typing",
+            "title": "Neural Sync: Multi-Level Security Clearance",
+            "description": "CHRONOS CLASSIFIED ACCESS: Implement 4-tier security clearance verification system. Level 1: RESTRICTED (public access only), Level 2: CONFIDENTIAL (agents only), Level 3: SECRET (field operatives), Level 4+: TOP SECRET (director level). Input clearance level and display appropriate access permissions with professional formatting for security logs.",
+            "targetCode": "# Security Clearance Protocol\\nlevel = int(input())\\nif level == 1:\\n    print('RESTRICTED - Public Access Only')\\nelif level == 2:\\n    print('CONFIDENTIAL - Agents Only')\\nelif level == 3:\\n    print('SECRET - Field Operatives')\\nelse:\\n    print('TOP SECRET - Director Level')",
+            "points": 15,
+            "tasks": [
+                "Take clearance level input",
+                "Implement 4-level elif chain",
+                "Print detailed access level"
+            ],
+            "xp": 15
+        },
+        {
+            "id": "l05_challenge_1",
+            "type": "debug",
+            "title": "Debug Challenge: Elif Syntax Error",
+            "description": "URGENT: Security checkpoint crash! Missing colon after elif condition. Fix before system lockdown!",
+            "brokenCode": "score = 85\\nif score >= 90:\\n    print('A')\\nelif score >= 80\\n    print('B')\\nelse:\\n    print('C')",
+            "starterCode": "score = 85\\nif score >= 90:\\n    print('A')\\nelif score >= 80\\n    print('B')\\nelse:\\n    print('C')",
+            "testCases": [
+                {
+                    "input": "",
+                    "expectedOutput": "B\\n"
+                }
+            ],
+            "solution": "score = 85\\nif score >= 90:\\n    print('A')\\nelif score >= 80:\\n    print('B')\\nelse:\\n    print('C')",
+            "points": 20,
+            "tasks": [
+                "Find missing colon",
+                "Add colon after elif condition",
+                "Verify grade output"
+            ],
+            "xp": 20
+        },
+        {
+            "id": "l05_challenge_2",
+            "type": "code",
+            "title": "Access Control: Rank Permissions",
+            "description": "CHRONOS HIERARCHY: Input rank (1-4). Print: 1='Field Agent', 2='Senior Agent', 3='Team Lead', 4='Director'. Use elif!",
+            "starterCode": "# Rank verification system\\nrank = int(input())\\n",
+            "solution": "rank = int(input())\\nif rank == 1:\\n    print('Field Agent')\\nelif rank == 2:\\n    print('Senior Agent')\\nelif rank == 3:\\n    print('Team Lead')\\nelse:\\n    print('Director')",
+            "testCases": [
+                {
+                    "input": "2",
+                    "expectedOutput": "Senior Agent\\n"
+                },
+                {
+                    "input": "4",
+                    "expectedOutput": "Director\\n"
+                }
+            ],
+            "points": 25,
+            "tasks": [
+                "Take rank input",
+                "Build 4-level elif chain",
+                "Print rank title"
+            ],
+            "xp": 25
+        },
+        {
+            "id": "l05_challenge_3",
+            "type": "code",
+            "title": "Mission Priority: Urgency Classifier",
+            "description": "CHRONOS OPERATIONS: Input urgency (1-5). 5='CRITICAL', 4='HIGH', 3='MEDIUM', 2='LOW', 1='ROUTINE'. Print level.",
+            "starterCode": "# Mission urgency classifier\\nurgency = int(input())\\n",
+            "solution": "urgency = int(input())\\nif urgency == 5:\\n    print('CRITICAL')\\nelif urgency == 4:\\n    print('HIGH')\\nelif urgency == 3:\\n    print('MEDIUM')\\nelif urgency == 2:\\n    print('LOW')\\nelse:\\n    print('ROUTINE')",
+            "testCases": [
+                {
+                    "input": "5",
+                    "expectedOutput": "CRITICAL\\n"
+                },
+                {
+                    "input": "1",
+                    "expectedOutput": "ROUTINE\\n"
+                }
+            ],
+            "points": 25,
+            "tasks": [
+                "Take urgency input",
+                "Build 5-level elif chain",
+                "Print urgency classification"
+            ],
+            "xp": 25
+        },
+        {
+            "id": "l05_challenge_4",
+            "type": "code",
+            "title": "Enemy Intel: Threat Assessment",
+            "description": "CHRONOS TACTICAL: Input enemy count. <10='Minimal', 10-50='Moderate', 51-100='Severe', >100='Critical'. Use ranges!",
+            "starterCode": "# Threat level analyzer\\nenemy_count = int(input())\\n",
+            "solution": "enemy_count = int(input())\\nif enemy_count < 10:\\n    print('Minimal')\\nelif enemy_count <= 50:\\n    print('Moderate')\\nelif enemy_count <= 100:\\n    print('Severe')\\nelse:\\n    print('Critical')",
+            "testCases": [
+                {
+                    "input": "5",
+                    "expectedOutput": "Minimal\\n"
+                },
+                {
+                    "input": "75",
+                    "expectedOutput": "Severe\\n"
+                }
+            ],
+            "points": 30,
+            "tasks": [
+                "Take enemy count input",
+                "Use range comparisons",
+                "Print threat level"
+            ],
+            "xp": 30
+        },
+        {
+            "id": "l05_challenge_5",
+            "type": "code",
+            "title": "Boss Challenge: Performance Evaluation",
+            "description": "CHRONOS CLASSIFIED: Rate operative. Input score (0-100). 90+='Elite', 75-89='Excellent', 60-74='Competent', 50-59='Acceptable', <50='Reassignment Required'.",
+            "starterCode": "# Performance review system\\nscore = int(input())\\n",
+            "solution": "score = int(input())\\nif score >= 90:\\n    print('Elite')\\nelif score >= 75:\\n    print('Excellent')\\nelif score >= 60:\\n    print('Competent')\\nelif score >= 50:\\n    print('Acceptable')\\nelse:\\n    print('Reassignment Required')",
+            "testCases": [
+                {
+                    "input": "95",
+                    "expectedOutput": "Elite\\n"
+                },
+                {
+                    "input": "45",
+                    "expectedOutput": "Reassignment Required\\n"
+                }
+            ],
+            "points": 40,
+            "tasks": [
+                "Take performance score",
+                "Build complex elif chain",
+                "Print evaluation result"
+            ],
+            "xp": 40
+        }
+    ]
+}

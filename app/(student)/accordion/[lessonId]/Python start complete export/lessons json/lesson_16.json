@@ -1,0 +1,230 @@
+{
+  "lesson_id": "lesson_16",
+  "title": "Conditional Drawing: The Security Fence",
+  "module": "Module 4: Visual Algorithms",
+  "duration_minutes": 60,
+  "slide_url": "/content/python/slides/lesson_16_conditional_drawing.pdf",
+  "objectives": [
+    "Implement boundary checking with conditionals",
+    "Detect collisions between objects",
+    "Create multi-zone safety systems",
+    "Clamp values to valid ranges",
+    "Apply AABB collision detection"
+  ],
+  "description": "Master boundary detection and collision systems. Learn how games prevent characters from walking through walls and how drones stay in safe zones. Real algorithms used in robotics and game engines.",
+  "exercises": [
+    {
+      "id": "l16_quiz_1",
+      "type": "quiz",
+      "question": "To check if x is between 10 and 100, which is correct?",
+      "options": [
+        "x > 10 and x < 100",
+        "10 <= x <= 100",
+        "x == 10 or x == 100",
+        "x > 100"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Python's chained comparison: 10 <= x <= 100",
+      "points": 5
+    },
+    {
+      "id": "l16_quiz_2",
+      "type": "quiz",
+      "question": "What does abs(-15) return?",
+      "options": [
+        "-15",
+        "15",
+        "0",
+        "Error"
+      ],
+      "correctAnswer": 1,
+      "explanation": "abs() returns absolute value (always positive).",
+      "points": 5
+    },
+    {
+      "id": "l16_typing_1",
+      "type": "typing",
+      "title": "Neural Sync: Boundary Check",
+      "description": "Check if x is within bounds 0-100.",
+      "targetCode": "if 0 <= x <= 100:\\n    print('Valid')",
+      "points": 10
+    },
+    {
+      "id": "l16_typing_2",
+      "type": "typing",
+      "title": "Neural Sync: Clamp Max",
+      "description": "Clamp x to maximum of 500.",
+      "targetCode": "if x > 500:\\n    x = 500",
+      "points": 10
+    },
+    {
+      "id": "l16_debug_1",
+      "type": "debug",
+      "title": "Glitch Fix: Wrong Boundary",
+      "description": "Should check if x > 100 but checks x < 100!",
+      "brokenCode": "x = 150\\nif x < 100:\\n    print('Out of bounds')\\nelse:\\n    print('Safe')",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "Out of bounds\n"
+        }
+      ],
+      "points": 15
+    },
+    {
+      "id": "l16_debug_2",
+      "type": "debug",
+      "title": "Glitch Fix: Clamp Logic",
+      "description": "Clamp should limit to 100 but doesn't work!",
+      "brokenCode": "x = 250\\nif x < 100:\\n    x = 100\\nprint(x)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "100\n"
+        }
+      ],
+      "points": 15
+    },
+    {
+      "id": "l16_code_1",
+      "type": "code",
+      "title": "Field Mission: Zone Detector",
+      "description": "Print zone for x=75: 'GREEN' if x<100, 'YELLOW' if x<200, else 'RED'.",
+      "starterCode": "x = 75\\n\\n# Determine zone\\n",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "GREEN\n"
+        }
+      ],
+      "points": 20
+    },
+    {
+      "id": "l16_code_2",
+      "type": "code",
+      "title": "Field Mission: Distance Check",
+      "description": "Calculate distance between x1=50 and x2=200. Use abs().",
+      "starterCode": "x1 = 50\\nx2 = 200\\n\\n# Calculate distance\\n",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "150\n"
+        }
+      ],
+      "points": 20
+    },
+    {
+      "id": "l16_code_3",
+      "type": "code",
+      "title": "Field Mission: Boundary Validator",
+      "description": "Check if (x=150, y=250) is in bounds: X(0-500), Y(0-300). Print 'SAFE' or 'OUT'.",
+      "starterCode": "x, y = 150, 250\\nmin_x, max_x = 0, 500\\nmin_y, max_y = 0, 300\\n\\n# Check bounds\\n",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "SAFE\n"
+        }
+      ],
+      "points": 20
+    },
+    {
+      "id": "l16_typing_adv_1",
+      "type": "typing",
+      "title": "Neural Sync: Perimeter Clamp",
+      "description": "Clamp agent position to secure zone maximum.",
+      "targetCode": "max_range = 500\nif position > max_range:\n    position = max_range",
+      "points": 10,
+      "xp": 10
+    },
+    {
+      "id": "l16_typing_adv_2",
+      "type": "typing",
+      "title": "Neural Sync: Multi-Zone Boundary Check",
+      "description": "Professional security system with 3-zone verification.",
+      "targetCode": "# Zone classification system\nif 0 <= agent_pos < 100:\n    zone = 'GREEN'\nelif 100 <= agent_pos < 300:\n    zone = 'YELLOW'\nelse:\n    zone = 'RED'\nprint(f'Agent in {zone} zone')",
+      "points": 15,
+      "xp": 15
+    },
+    {
+      "id": "l16_challenge_1",
+      "type": "debug",
+      "title": "Debug Challenge: Inverted Boundary",
+      "description": "Checking wrong condition! Should allow values UNDER 100, not OVER!",
+      "brokenCode": "value = 50\nif value > 100:\n    print('SAFE')\nelse:\n    print('OUT OF BOUNDS')",
+      "starterCode": "value = 50\nif value > 100:\n    print('SAFE')\nelse:\n    print('OUT OF BOUNDS')",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "SAFE\\n"
+        }
+      ],
+      "solution": "value = 50\nif value < 100:\n    print('SAFE')\nelse:\n    print('OUT OF BOUNDS')",
+      "points": 20,
+      "xp": 20
+    },
+    {
+      "id": "l16_challenge_2",
+      "type": "code",
+      "title": "Perimeter Security: Range Validator",
+      "description": "Check if position=150 is in secure range (0-200). Print 'SECURE' or 'BREACH'.",
+      "starterCode": "# Perimeter check\nposition = 150\nsecure_min = 0\nsecure_max = 200\n",
+      "solution": "position = 150\nsecure_min = 0\nsecure_max = 200\nif secure_min <= position <= secure_max:\n    print('SECURE')\nelse:\n    print('BREACH')",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "SECURE\\n"
+        }
+      ],
+      "points": 25,
+      "xp": 25
+    },
+    {
+      "id": "l16_challenge_3",
+      "type": "code",
+      "title": "Tactical Distance: Proximity Alert",
+      "description": "Enemy at x=300, friendly at x=50. Calculate distance using abs(). Print 'SAFE' if distance > 200, else 'DANGER'.",
+      "starterCode": "# Proximity analysis\nenemy_pos = 300\nfriendly_pos = 50\n",
+      "solution": "enemy_pos = 300\nfriendly_pos = 50\ndistance = abs(enemy_pos - friendly_pos)\nif distance > 200:\n    print('SAFE')\nelse:\n    print('DANGER')",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "SAFE\\n"
+        }
+      ],
+      "points": 25,
+      "xp": 25
+    },
+    {
+      "id": "l16_challenge_4",
+      "type": "code",
+      "title": "Zone Classification: Threat Level",
+      "description": "Classify position=450 into zones: <200='LOW', 200-500='MEDIUM', >500='HIGH'. Print threat level.",
+      "starterCode": "# Threat classification\nposition = 450\n",
+      "solution": "position = 450\nif position < 200:\n    print('LOW')\nelif position <= 500:\n    print('MEDIUM')\nelse:\n    print('HIGH')",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "MEDIUM\\n"
+        }
+      ],
+      "points": 30,
+      "xp": 30
+    },
+    {
+      "id": "l16_challenge_5",
+      "type": "code",
+      "title": "Boss Challenge: 2D Perimeter Defense",
+      "description": "CLASSIFIED: Check if drone (x=250, y=150) is in safe zone: X(0-500), Y(0-300). Also check if within 100 units of base (200, 200). Print 'IN BOUNDS' and 'NEAR BASE' or'FAR FROM BASE'.",
+      "starterCode": "import math\n# Drone and base coordinates\ndrone_x, drone_y = 250, 150\nbase_x, base_y = 200, 200\n",
+      "solution": "import math\ndrone_x, drone_y = 250, 150\nbase_x, base_y = 200, 200\n\n# Boundary check\nif 0 <= drone_x <= 500 and 0 <= drone_y <= 300:\n    print('IN BOUNDS')\nelse:\n    print('OUT OF BOUNDS')\n\n# Proximity check\ndistance = math.sqrt((drone_x - base_x)**2 + (drone_y - base_y)**2)\nif distance < 100:\n    print('NEAR BASE')\nelse:\n    print('FAR FROM BASE')",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "IN BOUNDS\\nFAR FROM BASE\\n"
+        }
+      ],
+      "points": 40,
+      "xp": 40
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+    "lesson_id": "lesson_22",
+    "title": "Inheritance: Security Droid Upgrade",
+    "module": "Module 5: Object-Oriented Programming",
+    "duration_minutes": 60,
+    "environment": "standard",
+    "slide_url": "/content/python/slides/lesson_22_inheritance.pdf",
+    "objectives": [
+        "Understand inheritance and code reuse",
+        "Learn parent-child class relationships",
+        "Create specialized classes from base classes",
+        "Add new methods to child classes"
+    ],
+    "description": "Upgrade your Worker Bots into specialized Security Units! Learn inheritance - how child classes can inherit all the features of a parent class, then add their own unique abilities. Create a SecurityDroid that has everything a Droid has, PLUS patrol capabilities.",
+    "exercises": [
+        {
+            "id": "l22_code_1",
+            "type": "code",
+            "title": "Create a Child Class",
+            "instructions": "**Security Division Upgrade Protocol:**\n\nCreate a SecurityDroid that inherits from Droid.\n\n**Instructions:**\n1. First, copy the base Droid class (with __init__ and greet)\n2. Create a new class `SecurityDroid` that inherits from Droid:\n   ```python\n   class SecurityDroid(Droid):\n       pass\n   ```\n3. Create a SecurityDroid: `guard = SecurityDroid('GUARD-X1', 100)`\n4. Call `guard.greet()`\n\n**Magic:** SecurityDroid automatically gets ALL of Droid's methods!",
+            "starterCode": "# Base Droid class\nclass Droid:\n    def __init__(self, name, battery_level):\n        self.name = name\n        self.battery_level = battery_level\n    \n    def greet(self):\n        print(f\"Greetings. I am {self.name}, Worker Unit.\")\n\n# Create SecurityDroid child class here\n\n# Test that inheritance works\n",
+            "solution": "# Base Droid class\nclass Droid:\n    def __init__(self, name, battery_level):\n        self.name = name\n        self.battery_level = battery_level\n    \n    def greet(self):\n        print(f\"Greetings. I am {self.name}, Worker Unit.\")\n\n# SecurityDroid inherits everything from Droid\nclass SecurityDroid(Droid):\n    pass\n\n# Test that inheritance works\nguard = SecurityDroid('GUARD-X1', 100)\nguard.greet()  # Inherited method works!",
+            "expectedOutput": "Greetings. I am GUARD-X1, Worker Unit.",
+            "hints": [
+                "Use class SecurityDroid(Droid): to inherit",
+                "The word in parentheses is the parent class",
+                "'pass' means the class has no extra code yet"
+            ],
+            "testCases": []
+        },
+        {
+            "id": "l22_code_2",
+            "type": "code",
+            "title": "Add Specialized Methods to Child",
+            "instructions": "**Security Features Installation:**\n\nGive SecurityDroid its own unique patrol() method.\n\n**Task:**\n1. Use your Droid and SecurityDroid classes\n2. Add a `patrol()` method to SecurityDroid that prints:\n   `\"[{self.name}] Initiating sector patrol. All clear.\"`\n3. Create a SecurityDroid: `security = SecurityDroid('SENTINEL-9', 98)`\n4. Call BOTH methods: `security.greet()` AND `security.patrol()`\n\n**Result:** SecurityDroid has inherited greet() PLUS its own patrol()!",
+            "starterCode": "class Droid:\n    def __init__(self, name, battery_level):\n        self.name = name\n        self.battery_level = battery_level\n    \n    def greet(self):\n        print(f\"Greetings. I am {self.name}, Worker Unit.\")\n\nclass SecurityDroid(Droid):\n    # Add patrol method here\n    pass\n\n# Create and test security droid\n",
+            "solution": "class Droid:\n    def __init__(self, name, battery_level):\n        self.name = name\n        self.battery_level = battery_level\n    \n    def greet(self):\n        print(f\"Greetings. I am {self.name}, Worker Unit.\")\n\nclass SecurityDroid(Droid):\n    def patrol(self):\n        print(f\"[{self.name}] Initiating sector patrol. All clear.\")\n\n# Create and test security droid\nsecurity = SecurityDroid('SENTINEL-9', 98)\nsecurity.greet()  # From parent\nsecurity.patrol()  # New method!",
+            "expectedOutput": "Greetings. I am SENTINEL-9, Worker Unit.\n[SENTINEL-9] Initiating sector patrol. All clear.",
+            "hints": [
+                "Add the patrol method inside SecurityDroid class",
+                "Use self.name just like in the parent class",
+                "Child classes can have methods the parent doesn't have"
+            ],
+            "testCases": []
+        },
+        {
+            "id": "l22_code_3",
+            "type": "code",
+            "title": "Compare Worker vs Security Units",
+            "instructions": "**Factory Comparison Test:**\n\nCreate both types of droids and see the difference!\n\n**Test Procedure:**\n1. Create a regular Droid: `worker = Droid('WORKER-5', 100)`\n2. Create a SecurityDroid: `guard = SecurityDroid('GUARD-5', 100)`\n3. Make the worker greet\n4. Make the guard greet AND patrol\n5. Try to make worker.patrol() - it will error! (Comment it out after testing)\n\n**Observation:** Workers can't patrol (they don't have that method), but Guards can do BOTH jobs!",
+            "starterCode": "class Droid:\n    def __init__(self, name, battery_level):\n        self.name = name\n        self.battery_level = battery_level\n    \n    def greet(self):\n       print(f\"Greetings. I am {self.name}, Worker Unit.\")\n\nclass SecurityDroid(Droid):\n    def patrol(self):\n        print(f\"[{self.name}] Initiating sector patrol. All clear.\")\n\n# Create both types\n\n# Test their capabilities\n",
+            "solution": "class Droid:\n    def __init__(self, name, battery_level):\n        self.name = name\n        self.battery_level = battery_level\n    \n    def greet(self):\n        print(f\"Greetings. I am {self.name}, Worker Unit.\")\n\nclass SecurityDroid(Droid):\n    def patrol(self):\n        print(f\"[{self.name}] Initiating sector patrol. All clear.\")\n\n# Create both types\nworker = Droid('WORKER-5', 100)\nguard = SecurityDroid('GUARD-5', 100)\n\n# Test their capabilities\nprint(\"=== Worker Capabilities ===\")\nworker.greet()\n# worker.patrol()  # Would error - workers can't patrol!\n\nprint(\"\\n=== Guard Capabilities ===\")\nguard.greet()  # Inherited\nguard.patrol()  # Unique to SecurityDroid",
+            "expectedOutput": "=== Worker Capabilities ===\nGreetings. I am WORKER-5, Worker Unit.\n\n=== Guard Capabilities ===\nGreetings. I am GUARD-5, Worker Unit.\n[GUARD-5] Initiating sector patrol. All clear.",
+            "hints": [
+                "Workers only have methods from the Droid class",
+                "SecurityDroids have Droid methods PLUS patrol()",
+                "This is inheritance: child gets parent's features + its own"
+            ],
+            "testCases": []
+        }
+    ]
+}

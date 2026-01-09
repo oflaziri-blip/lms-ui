@@ -1,0 +1,210 @@
+{
+  "lesson_id": "lesson_07",
+  "title": "Loops Basics",
+  "module": "Module 2: Control Flow Mastery",
+  "duration_minutes": 45,
+  "slide_url": "/content/python/slides/lesson_07_loops.pdf",
+  "objectives": [
+    "Understand loop fundamentals and iteration concepts",
+    "Master while loops with proper initialization, condition, and update",
+    "Use for loops with range() for counted repetition",
+    "Prevent infinite loops and off-by-one errors",
+    "Choose the right loop type for different scenarios"
+  ],
+  "description": "Master while and for loops to automate repetitive tasks. Learn iteration fundamentals, range(), and avoid common pitfalls like infinite loops. Guided by Emily and Cole through practical countdown timers and hands-on challenges.",
+  "exercises": [
+    {
+      "id": "l07_typing_1",
+      "type": "typing",
+      "title": "Neural Sync: While Loop",
+      "description": "Type a while loop with proper condition.",
+      "targetCode": "while count > 0:\n    print(count)\n    count -= 1",
+      "points": 10
+    },
+    {
+      "id": "l07_typing_2",
+      "type": "typing",
+      "title": "Neural Sync: For Loop",
+      "description": "Type a for loop using range().",
+      "targetCode": "for i in range(10):\n    print(i)",
+      "points": 10
+    },
+    {
+      "id": "l07_typing_3",
+      "type": "typing",
+      "title": "Neural Sync: Loop Counter",
+      "description": "Initialize and update a loop counter.",
+      "targetCode": "i = 0\nwhile i < 5:\n    i = i + 1",
+      "points": 10
+    },
+    {
+      "id": "l07_debug_1",
+      "type": "debug",
+      "title": "Glitch Fix: Infinite Loop",
+      "description": "The counter never decrements, causing an infinite loop! Add the decrement.",
+      "brokenCode": "count = 5\nwhile count > 0:\n    print(count)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "5\\n4\\n3\\n2\\n1\n"
+        }
+      ],
+      "points": 15
+    },
+    {
+      "id": "l07_debug_2",
+      "type": "debug",
+      "title": "Glitch Fix: Off-by-One",
+      "description": "Should print 1-10 but only prints 1-9! Fix the range.",
+      "brokenCode": "for i in range(1, 10):\n    print(i)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "1\\n2\\n3\\n4\\n5\\n6\\n7\\n8\\n9\\n10\n"
+        }
+      ],
+      "points": 15
+    },
+    {
+      "id": "l07_code_1",
+      "type": "code",
+      "title": "Field Mission: Countdown Timer",
+      "description": "Create a countdown from 10 to 0, printing each number.",
+      "starterCode": "# Countdown from 10 to 0\n",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "10\\n9\\n8\\n7\\n6\\n5\\n4\\n3\\n2\\n1\\n0\n"
+        }
+      ],
+      "points": 20
+    },
+    {
+      "id": "l07_code_2",
+      "type": "code",
+      "title": "Field Mission: Sum Calculator",
+      "description": "Calculate the sum of numbers from 1 to 10 using a loop.",
+      "starterCode": "# Calculate sum 1-10\n",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "55\n"
+        }
+      ],
+      "points": 20
+    },
+    {
+      "id": "l07_code_3",
+      "type": "code",
+      "title": "Field Mission: Print Evens",
+      "description": "Print all even numbers from 0 to 20 using a loop.",
+      "starterCode": "# Print evens 0-20\n",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "0\\n2\\n4\\n6\\n8\\n10\\n12\\n14\\n16\\n18\\n20\n"
+        }
+      ],
+      "points": 20
+    },
+    {
+      "id": "l07_typing_adv_1",
+      "type": "typing",
+      "title": "Neural Sync: Self-Destruct Countdown",
+      "description": "Bomb timer counting down from 10. Type the while loop with decrement.",
+      "targetCode": "timer = 10\nwhile timer > 0:\n    print(timer)\n    timer -= 1\nprint('DETONATION!')",
+      "points": 10,
+      "xp": 10
+    },
+    {
+      "id": "l07_typing_adv_2",
+      "type": "typing",
+      "title": "Neural Sync: Surveillance Loop Protocol",
+      "description": "Professional continuous monitoring system with initialization, condition, and update pattern.",
+      "targetCode": "# Continuous surveillance system\nscan_count = 0\nmax_scans = 5\nwhile scan_count < max_scans:\n    print(f'Scan {scan_count + 1} complete')\n    scan_count += 1\nprint('Surveillance cycle finished')",
+      "points": 15,
+      "xp": 15
+    },
+    {
+      "id": "l07_challenge_1",
+      "type": "debug",
+      "title": "Debug Challenge: Runaway Loop",
+      "description": "CRITICAL: Drone stuck in infinite patrol! Counter never increments. Add increment or battery dies!",
+      "brokenCode": "patrol = 0\nwhile patrol < 3:\n    print('Patrolling')",
+      "starterCode": "patrol = 0\nwhile patrol < 3:\n    print('Patrolling')",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "Patrolling\\nPatrolling\\nPatrolling\\n"
+        }
+      ],
+      "solution": "patrol = 0\nwhile patrol < 3:\n    print('Patrolling')\n    patrol += 1",
+      "points": 20,
+      "xp": 20
+    },
+    {
+      "id": "l07_challenge_2",
+      "type": "code",
+      "title": "Tactical Math: Resource Accumulation",
+      "description": "Collect supplies. Start with 0, add 10 per trip. Loop while supplies < 50. Print total at end.",
+      "starterCode": "# Supply collection loop\nsupplies = 0\n",
+      "solution": "supplies = 0\nwhile supplies < 50:\n    supplies += 10\nprint(supplies)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "50\\n"
+        }
+      ],
+      "points": 25,
+      "xp": 25
+    },
+    {
+      "id": "l07_challenge_3",
+      "type": "code",
+      "title": "Breach Detection: Security Scan",
+      "description": "Print 'SCANNING' 5 times using while loop. Use counter variable starting at 0.",
+      "starterCode": "# Repeat security scan 5 times\n",
+      "solution": "count = 0\nwhile count < 5:\n    print('SCANNING')\n    count += 1",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "SCANNING\\nSCANNING\\nSCANNING\\nSCANNING\\nSCANNING\\n"
+        }
+      ],
+      "points": 25,
+      "xp": 25
+    },
+    {
+      "id": "l07_challenge_4",
+      "type": "code",
+      "title": "Infiltration: Stealth Approach",
+      "description": "Move from position 0 to position 100 in steps of 25. Print each position using while loop.",
+      "starterCode": "# Stealth movement tracker\nposition = 0\n",
+      "solution": "position = 0\nwhile position <= 100:\n    print(position)\n    position += 25",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "0\\n25\\n50\\n75\\n100\\n"
+        }
+      ],
+      "points": 30,
+      "xp": 30
+    },
+    {
+      "id": "l07_challenge_5",
+      "type": "code",
+      "title": "Boss Challenge: Password Cracker",
+      "description": "CLASSIFIED: Brute force 4-digit code starting at 1000. Increment by 1 each attempt. Target code is 1005. Print each attempt. Stop when found. Use while loop!",
+      "starterCode": "# Brute force password cracker\nattempt = 1000\ntarget = 1005\n",
+      "solution": "attempt = 1000\ntarget = 1005\nwhile attempt <= target:\n    print(attempt)\n    attempt += 1",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "1000\\n1001\\n1002\\n1003\\n1004\\n1005\\n"
+        }
+      ],
+      "points": 40,
+      "xp": 40
+    }
+  ]
+}

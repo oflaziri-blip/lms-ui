@@ -1,0 +1,88 @@
+Year 1: Python Start
+Module 1: Python Basics
+
+L1. Introduction to the Python language and math operators
+
+L2. Variables
+
+L3. Strings  we never teach f string  
+
+L4. Nested constructions
+
+Module 2: Control Structures
+
+L1. Conditional statements
+
+L2. Nested conditional statements
+
+L3. Loops
+
+L4. Loops. Continuation
+
+L5. Nested control constructs
+
+Module 3: Functions and Modules
+
+L1. Functions
+
+L2. Functions. Continuation
+
+L3. The random and time modules
+
+L4. Creating modules
+
+Module 4: Module Turtle. Math for Developer
+
+L1. Turtle. Linear algorithms
+
+L2. Turtle. Loops
+
+L3. Turtle. Conditional statements
+
+L4. The "Urban Environment" project
+
+Module 5: Object-Oriented Programming
+
+L1. OOP. Objects and Methods
+
+L2. OOP. Events
+
+L3. OOP. The Simple Paint project
+
+L4. OOP. Classes
+
+L5. OOP. Inheritance
+
+L6. OOP. Inheritance. Continued
+
+Module 6: PyGame Game Development Basics
+
+L1. Basics of creating games in Pygame
+
+L2. Lists
+
+L3. The Fast Clicker game. Part 1
+
+L4. The Fast Clicker game. Part 2
+
+L5. The Fast Clicker game. Part 3
+
+L6. The game "Arkanoid". Part 1
+
+L7. The game "Arkanoid". Part 2
+
+L8. The game "Arkanoid". Part 3
+
+Module 7: Hackathon Series
+
+L1. Workshop: Developer skills
+
+L2. Hackathon. TestIT
+
+L3. Hackathon. Simple Paint
+
+L4. Grow Up Hackathon
+
+Graduation
+
+Python Hackathon

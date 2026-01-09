@@ -1,0 +1,68 @@
+{
+    "lesson_id": "lesson_02",
+    "title": "Memory Containers (Variables)",
+    "module": "Module 1: Python Basics",
+    "duration_minutes": 60,
+    "slide_url": "/content/python/slides/lesson_02.md",
+    "objectives": [
+        "Understand what variables are and how to store data",
+        "Learn about different data types: Strings, Integers, Floats",
+        "Practice variable assignment and re-assignment",
+        "Use variables in calculations",
+        "Debug variable naming errors"
+    ],
+    "description": "Master variables, strings, numbers, and basic data types in Python. You'll learn how to store and manipulate data in your programs.",
+    "exercises": [
+        {
+            "id": "l02_quiz_01",
+            "type": "quiz",
+            "title": "Clearance Check: Variable Concept",
+            "description": "What is the primary purpose of a variable in Python?",
+            "options": [
+                "To run code faster",
+                "To store data values for later use",
+                "To print text to the screen",
+                "To stop the program"
+            ],
+            "correctAnswer": 1,
+            "tasks": [
+                "Read the question",
+                "Select the best definition"
+            ],
+            "xp": 5
+        },
+        {
+            "id": "l02_type_01",
+            "type": "typing",
+            "title": "Neural Sync: Agent Profile Initialization",
+            "description": "CHRONOS PERSONNEL DATABASE: New operative 'Cipher' joining the ranks at Level 5 clearance with Active duty status. Initialize the agent's digital profile by storing their credentials in the system. Type the variable assignments exactly to register the operative in the mainframe.",
+            "targetCode": "agent_name = \"Cipher\"\nagent_level = 5\nstatus = \"Active\"",
+            "tasks": [
+                "Type the variable assignments",
+                "Check for quotes on strings"
+            ],
+            "xp": 10
+        },
+        {
+            "id": "l02_code_01",
+            "type": "code",
+            "title": "Field Mission: Power Core Diagnostics",
+            "description": "CHRONOS ENERGY SYSTEMS: Initialize the reactor core diagnostics module. The main power core is operating at 100% capacity. Store this critical value in the 'score' variable and output it to the monitoring terminal for verification.",
+            "starterCode": "# Create score variable\n# Print score",
+            "solution": "score = 100\nprint(score)",
+            "testCases": [
+                {
+                    "input": "",
+                    "expectedOutput": "100\n"
+                }
+            ],
+            "points": 20,
+            "tasks": [
+                "Define variable 'score'",
+                "Assign value 100",
+                "Print the variable"
+            ],
+            "xp": 20
+        }
+    ]
+}

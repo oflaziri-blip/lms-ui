@@ -1,0 +1,268 @@
+{
+  "lesson_id": "lesson_04",
+  "title": "Input & Logic: The Interaction",
+  "module": "Module 1: Python Basics",
+  "duration_minutes": 60,
+  "slide_url": "/content/python/slides/lesson_04_input.pdf",
+  "objectives": [
+    "Take user input with input()",
+    "Convert input types (str to int)",
+    "Understand boolean logic (True/False)",
+    "Use comparison operators (>, <, ==)",
+    "Build a password gate"
+  ],
+  "description": "Make your programs interactive. Learn to accept user commands, process data, and make decisions based on input.",
+  "exercises": [
+    {
+      "id": "l04_quiz_01",
+      "type": "quiz",
+      "title": "Clearance Check: Input Type",
+      "description": "What data type does the `input()` function ALWAYS return by default?",
+      "options": [
+        "integer",
+        "string",
+        "boolean",
+        "float"
+      ],
+      "correctAnswer": 1,
+      "xp": 5
+    },
+    {
+      "id": "l04_quiz_02",
+      "type": "quiz",
+      "title": "Clearance Check: Boolean Logic",
+      "description": "Evaluate: `10 > 5`",
+      "options": [
+        "True",
+        "False",
+        "10",
+        "Error"
+      ],
+      "correctAnswer": 0,
+      "xp": 5
+    },
+    {
+      "id": "l04_type_01",
+      "type": "typing",
+      "title": "Neural Sync: Input Command",
+      "description": "Prompt the user for their status.",
+      "targetCode": "mission_status = input(\"Please enter your current mission status report: \")",
+      "xp": 10
+    },
+    {
+      "id": "l04_type_02",
+      "type": "typing",
+      "title": "Neural Sync: Type Casting",
+      "description": "Convert the input string '100' directly to an integer.",
+      "targetCode": "energy_level = int(input(\"Enter current core energy reading (0-100): \"))",
+      "xp": 10
+    },
+    {
+      "id": "l04_type_03",
+      "type": "typing",
+      "title": "Neural Sync: Equality Check",
+      "description": "Check if the code equals 1234.",
+      "targetCode": "access_granted = security_code == 1234 # Verifying against database",
+      "xp": 10
+    },
+    {
+      "id": "l04_debug_01",
+      "type": "debug",
+      "title": "System Repair: String Math",
+      "description": "The system crashes when adding input because input() returns a string.",
+      "brokenCode": "age = input(\"Age: \")\nnext_age = age + 1",
+      "starterCode": "age = input(\"Age: \")\nnext_age = age + 1\nprint(next_age)",
+      "testCases": [
+        {
+          "input": "20",
+          "expectedOutput": "21\n"
+        }
+      ],
+      "solution": "age = int(input(\"Age: \"))\nnext_age = age + 1\nprint(next_age)",
+      "xp": 15
+    },
+    {
+      "id": "l04_debug_02",
+      "type": "debug",
+      "title": "System Repair: Comparison Syntax",
+      "description": "The logic gate is failing. We use `==` for comparison, not `=`.",
+      "brokenCode": "password = \"secret\"\nis_correct = password = \"secret\"",
+      "starterCode": "password = \"secret\"\nis_correct = password = \"secret\"\nprint(is_correct)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "True\n"
+        }
+      ],
+      "solution": "password = \"secret\"\nis_correct = password == \"secret\"\nprint(is_correct)",
+      "xp": 15
+    },
+    {
+      "id": "l04_code_01",
+      "type": "code",
+      "title": "Field Mission: Age Verifier",
+      "description": "Ask for age. Print True if age is greater than or equal to 18.",
+      "starterCode": "# Take input and check age",
+      "solution": "age = int(input())\nprint(age >= 18)",
+      "testCases": [
+        {
+          "input": "20",
+          "expectedOutput": "True\n"
+        },
+        {
+          "input": "15",
+          "expectedOutput": "False\n"
+        }
+      ],
+      "points": 20,
+      "xp": 20
+    },
+    {
+      "id": "l04_code_02",
+      "type": "code",
+      "title": "Field Mission: Multiplier",
+      "description": "Take a number as input, multiply it by 10, and print the result.",
+      "starterCode": "# Input -> Multiply -> Print",
+      "solution": "num = int(input())\nprint(num * 10)",
+      "testCases": [
+        {
+          "input": "5",
+          "expectedOutput": "50\n"
+        }
+      ],
+      "points": 20,
+      "xp": 20
+    },
+    {
+      "id": "l04_code_03",
+      "type": "code",
+      "title": "Field Mission: Security Logic",
+      "description": "Take a password input. Print True if it equals 'mainframe'.",
+      "starterCode": "# Password check",
+      "solution": "password = input()\nprint(password == 'mainframe')",
+      "testCases": [
+        {
+          "input": "mainframe",
+          "expectedOutput": "True\n"
+        },
+        {
+          "input": "guest",
+          "expectedOutput": "False\n"
+        }
+      ],
+      "points": 20,
+      "xp": 20
+    },
+    {
+      "id": "l04_typing_adv_1",
+      "type": "typing",
+      "title": "Neural Sync: Identity Verification",
+      "description": "Security checkpoint activated. Type the exact clearance protocol to verify agent identity and display credentials.",
+      "targetCode": "username = input(\"Username: \")\nprint(username)",
+      "points": 10,
+      "xp": 10
+    },
+    {
+      "id": "l04_typing_adv_2",
+      "type": "typing",
+      "title": "Neural Sync: New Recruit Registration",
+      "description": "Academy HQ needs your registration protocol. Collect first name, last name, and encrypted email from the new agent. Then confirm enrollment with their full identity.",
+      "targetCode": "# User registration form\nfirst_name = input(\"First Name: \")\nlast_name = input(\"Last Name: \")\nemail = input(\"Email: \")\nprint(\"Registration complete for\", first_name, last_name)",
+      "points": 15,
+      "xp": 15
+    },
+    {
+      "id": "l04_challenge_1",
+      "type": "debug",
+      "title": "Debug Challenge: Keypad Malfunction",
+      "description": "URGENT: The mainframe keypad is rejecting your access code! It's comparing text to numbers. Fix the type conversion bug before lockout (30 seconds remaining)!",
+      "brokenCode": "number = input(\"Enter 10: \")\nprint(number == 10)",
+      "starterCode": "number = input(\"Enter 10: \")\nprint(number == 10)",
+      "testCases": [
+        {
+          "input": "10",
+          "expectedOutput": "True\\n"
+        }
+      ],
+      "solution": "number = int(input(\"Enter 10: \"))\nprint(number == 10)",
+      "points": 20,
+      "xp": 20
+    },
+    {
+      "id": "l04_challenge_2",
+      "type": "code",
+      "title": "Surveillance Protocol: Shift Pattern Detection",
+      "description": "Agent, we're tracking enemy guard rotations. Input the hour they change shifts. Print True if it's an even hour (easier infiltration), False if odd (heavy security).",
+      "starterCode": "# Detect shift pattern - even hours are vulnerable\n",
+      "solution": "number = int(input())\nprint(number % 2 == 0)",
+      "testCases": [
+        {
+          "input": "4",
+          "expectedOutput": "True\\n"
+        },
+        {
+          "input": "7",
+          "expectedOutput": "False\\n"
+        }
+      ],
+      "points": 25,
+      "xp": 25
+    },
+    {
+      "id": "l04_challenge_3",
+      "type": "code",
+      "title": "Cover Identity: Alias Generator",
+      "description": "You need a cover identity for undercover work. Input your real first and last name, then print them reversed (last, first) for your fake passport.",
+      "starterCode": "# Generate cover identity by reversing name order\n",
+      "solution": "first = input()\nlast = input()\nprint(last, first)",
+      "testCases": [
+        {
+          "input": "John\\nDoe",
+          "expectedOutput": "Doe John\\n"
+        }
+      ],
+      "points": 25,
+      "xp": 25
+    },
+    {
+      "id": "l04_challenge_4",
+      "type": "code",
+      "title": "Arctic Mission: Temperature Decoder",
+      "description": "Your spy satellite detected enemy activity in Siberia. Local sensors report Celsius, but your American commander needs Fahrenheit. Convert the reading using: (C × 9/5) + 32. Mission success depends on accurate intel!",
+      "starterCode": "# Decode satellite temperature reading\ncelsius = int(input())\n",
+      "solution": "celsius = int(input())\nfahrenheit = (celsius * 9/5) + 32\nprint(fahrenheit)",
+      "testCases": [
+        {
+          "input": "0",
+          "expectedOutput": "32.0\\n"
+        },
+        {
+          "input": "100",
+          "expectedOutput": "212.0\\n"
+        }
+      ],
+      "points": 30,
+      "xp": 30
+    },
+    {
+      "id": "l04_challenge_5",
+      "type": "code",
+      "title": "Boss Challenge: Field Agent Clearance System",
+      "description": "FINAL SECURITY CHECK: You're vetting a field agent for a high-risk vehicle operation. Input their age, license status ('True'/'False'), and insurance status ('True'/'False'). Print True ONLY if: Age ≥18 AND has license AND has insurance. One failure = mission scrubbed!",
+      "starterCode": "# Triple-verification security protocol\nage = int(input())\nhas_license = input()\nhas_insurance = input()\n",
+      "solution": "age = int(input())\nhas_license = input()\nhas_insurance = input()\nprint(age >= 18 and has_license == 'True' and has_insurance == 'True')",
+      "testCases": [
+        {
+          "input": "20\\nTrue\\nTrue",
+          "expectedOutput": "True\\n"
+        },
+        {
+          "input": "20\\nTrue\\nFalse",
+          "expectedOutput": "False\\n"
+        }
+      ],
+      "points": 40,
+      "xp": 40
+    }
+  ]
+}

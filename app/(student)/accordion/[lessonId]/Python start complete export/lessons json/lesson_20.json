@@ -1,0 +1,59 @@
+{
+    "lesson_id": "lesson_20",
+    "title": "Project: Neon City Graffiti Tool",
+    "module": "Module 5: Object-Oriented Programming",
+    "duration_minutes": 90,
+    "environment": "turtle",
+    "slide_url": "/content/python/slides/lesson_20_paint_project.pdf",
+    "objectives": [
+        "Combine loops, events, and methods in one project",
+        "Build an interactive drawing application",
+        "Use keyboard input to change colors dynamically",
+        "Create a complete user-interactive program"
+    ],
+    "description": "Final project for the graphics module! Build a graffiti tool for Neon City's artistic district. Combine everything you've learned: objects, methods, events, and loops to create an interactive paint program.",
+    "exercises": [
+        {
+            "id": "l20_code_1",
+            "type": "code",
+            "title": "Setup the Canvas and Pen",
+            "instructions": "**Project Foundation:**\n\nSet up your digital spray paint system.\n\n**Requirements:**\n1. Create a turtle called `pen`\n2. Set its shape to 'circle'\n3. Set initial color to 'cyan'\n4. Set pen size to 3 using `pen.pensize(3)`\n5. Set speed to fastest: `pen.speed(0)`\n\nThis creates your basic drawing tool ready for art!",
+            "starterCode": "import turtle\n\n# Initialize your graffiti pen\n\n# Configure appearance and settings\n\nturtle.done()",
+            "solution": "import turtle\n\n# Initialize graffiti pen\npen = turtle.Turtle()\npen.shape('circle')\npen.color('cyan')\npen.pensize(3)\npen.speed(0)\n\n# Optional: hide the turtle for cleaner drawing\n# pen.hideturtle()\n\nturtle.done()",
+            "hints": [
+                "Use pen.pensize(3) to make lines thicker",
+                "speed(0) is the fastest drawing speed",
+                "You can use pen.hideturtle() to hide the cursor"
+            ],
+            "testCases": []
+        },
+        {
+            "id": "l20_code_2",
+            "type": "code",
+            "title": "Color Selector - Number Keys",
+            "instructions": "**Neon Color Palette:**\n\nAdd a color-changing system using number keys 1, 2, 3.\n\n**Color Scheme:**\n- Press '1' = Cyan (default neon)\n- Press '2' = Magenta (hot pink neon)\n- Press '3' = Yellow (electric yellow)\n\n**Implementation:**\n1. Create the pen turtle (copy from previous task)\n2. Define 3 functions: `color_cyan()`, `color_magenta()`, `color_yellow()`\n3. Each function changes `pen.color()` to the appropriate color\n4. Bind keys '1', '2', '3' to their respective functions",
+            "starterCode": "import turtle\n\npen = turtle.Turtle()\npen.shape('circle')\npen.pensize(3)\npen.speed(0)\n\n# Color switching functions\ndef color_cyan():\n    pass\n\ndef color_magenta():\n    pass\n\ndef color_yellow():\n    pass\n\n# Setup keyboard bindings\nscreen = turtle.Screen()\nscreen.listen()\n# Bind number keys to color functions\n\nturtle.mainloop()",
+            "solution": "import turtle\n\npen = turtle.Turtle()\npen.shape('circle')\npen.pensize(3)\npen.speed(0)\npen.color('cyan')\n\n# Color switching functions\ndef color_cyan():\n    pen.color('cyan')\n\ndef color_magenta():\n    pen.color('magenta')\n\ndef color_yellow():\n    pen.color('yellow')\n\n# Setup keyboard bindings\nscreen = turtle.Screen()\nscreen.bgcolor('black')  # Dark canvas for neon effect\nscreen.listen()\nscreen.onkey(color_cyan, '1')\nscreen.onkey(color_magenta, '2')\nscreen.onkey(color_yellow, '3')\n\nturtle.mainloop()",
+            "hints": [
+                "Each color function just needs one line: pen.color('...')",
+                "Set bgcolor to 'black' for authentic neon look!",
+                "Test by pressing 1, 2, 3 after running"
+            ],
+            "testCases": []
+        },
+        {
+            "id": "l20_code_3",
+            "type": "code",
+            "title": "Full Graffiti Tool - Movement Controls",
+            "instructions": "**Complete Paint System:**\n\nCombine colors + movement for a full drawing tool!\n\n**Final Features:**\n1. Color keys (1, 2, 3) change colors\n2. Arrow keys move the pen:\n   - Up = forward 20\n   - Down = backward 20\n   - Left = turn left 15 degrees\n   - Right = turn right 15 degrees\n3. 'c' key = clear the canvas (`pen.clear()`)\n4. 'u' key = pen up (stop drawing)\n5. 'd' key = pen down (start drawing)\n\n**Create your masterpiece!**",
+            "starterCode": "import turtle\n\npen = turtle.Turtle()\npen.shape('circle')\npen.pensize(3)\npen.speed(0)\n\n# Movement functions\ndef move_forward():\n    pass\n\ndef move_backward():\n    pass\n\ndef turn_left():\n    pass\n\ndef turn_right():\n    pass\n\n# Color functions\ndef color_cyan():\n    pass\n\n# Pen control\ndef pen_up():\n    pass\n\ndef pen_down():\n    pass\n\ndef clear_canvas():\n    pass\n\n# Setup all controls\nscreen = turtle.Screen()\nscreen.bgcolor('black')\nscreen.listen()\n# Bind all keys\n\nturtle.mainloop()",
+            "solution": "import turtle\n\npen = turtle.Turtle()\npen.shape('circle')\npen.pensize(3)\npen.speed(0)\npen.color('cyan')\n\n# Movement functions\ndef move_forward():\n    pen.forward(20)\n\ndef move_backward():\n    pen.backward(20)\n\ndef turn_left():\n    pen.left(15)\n\ndef turn_right():\n    pen.right(15)\n\n# Color functions\ndef color_cyan():\n    pen.color('cyan')\n\ndef color_magenta():\n    pen.color('magenta')\n\ndef color_yellow():\n    pen.color('yellow')\n\n# Pen control\ndef pen_up():\n    pen.penup()\n\ndef pen_down():\n    pen.pendown()\n\ndef clear_canvas():\n    pen.clear()\n\n# Setup all controls\nscreen = turtle.Screen()\nscreen.bgcolor('black')\nscreen.title('Neon City Graffiti Tool')\nscreen.listen()\n\n# Movement keys\nscreen.onkey(move_forward, 'Up')\nscreen.onkey(move_backward, 'Down')\nscreen.onkey(turn_left, 'Left')\nscreen.onkey(turn_right, 'Right')\n\n# Color keys\nscreen.onkey(color_cyan, '1')\nscreen.onkey(color_magenta, '2')\nscreen.onkey(color_yellow, '3')\n\n# Pen controls\nscreen.onkey(pen_up, 'u')\nscreen.onkey(pen_down, 'd')\nscreen.onkey(clear_canvas, 'c')\n\nturtle.mainloop()",
+            "hints": [
+                "Use pen.penup() and pen.pendown() to control drawing",
+                "pen.clear() erases everything on the canvas",
+                "Turn angles of 15 degrees allow for smooth curves"
+            ],
+            "testCases": []
+        }
+    ]
+}

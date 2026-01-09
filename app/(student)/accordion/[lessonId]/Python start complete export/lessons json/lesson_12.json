@@ -1,0 +1,210 @@
+{
+  "lesson_id": "lesson_12",
+  "title": "Random and Time Modules",
+  "module": "Module 3: Modules & Libraries",
+  "duration_minutes": 45,
+  "slide_url": "/content/python/slides/lesson_12_modules.pdf",
+  "objectives": [
+    "Use the import system to load modules",
+    "Generate random numbers with the random module",
+    "Create delays and measure time with the time module",
+    "Understand Python's standard library organization",
+    "Create your own custom modules"
+  ],
+  "description": "Unlock Python's standard library with the random and time modules. Learn the import system, generate random numbers, and control time in your programs. Build games, reaction testers, and password generators!",
+  "exercises": [
+    {
+      "id": "l12_typing_1",
+      "type": "typing",
+      "title": "Neural Sync: Import Statement",
+      "description": "Import the random module.",
+      "targetCode": "import random",
+      "points": 10
+    },
+    {
+      "id": "l12_typing_2",
+      "type": "typing",
+      "title": "Neural Sync: Random Integer",
+      "description": "Generate a random integer between 1 and 10.",
+      "targetCode": "import random\nnum = random.randint(1, 10)",
+      "points": 10
+    },
+    {
+      "id": "l12_typing_3",
+      "type": "typing",
+      "title": "Neural Sync: Time Delay",
+      "description": "Import time module and create a 2-second delay.",
+      "targetCode": "import time\ntime.sleep(2)",
+      "points": 10
+    },
+    {
+      "id": "l12_debug_1",
+      "type": "debug",
+      "title": "Glitch Fix: Module Not Imported",
+      "description": "Using random without importing it! Add the import statement.",
+      "brokenCode": "dice = random.randint(1, 6)\nprint(dice)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "1\n"
+        }
+      ],
+      "points": 15
+    },
+    {
+      "id": "l12_debug_2",
+      "type": "debug",
+      "title": "Glitch Fix: Wrong Function Name",
+      "description": "It's randint() not randomint()! Fix the function name.",
+      "brokenCode": "import random\nnum = random.randomint(1, 100)\nprint(num)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "50\n"
+        }
+      ],
+      "points": 15
+    },
+    {
+      "id": "l12_code_1",
+      "type": "code",
+      "title": "Field Mission: Dice Roller",
+      "description": "Import random and roll a six-sided die (1-6). Print the result.",
+      "starterCode": "# Roll a die\n",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "1\n"
+        }
+      ],
+      "points": 20
+    },
+    {
+      "id": "l12_code_2",
+      "type": "code",
+      "title": "Field Mission: Random Agent ID",
+      "description": "Generate a random agent ID between 1000-9999. Print it.",
+      "starterCode": "# Generate agent ID\n",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "5000\n"
+        }
+      ],
+      "points": 20
+    },
+    {
+      "id": "l12_code_3",
+      "type": "code",
+      "title": "Field Mission: Coin Flip",
+      "description": "Use random.choice() to pick 'Heads' or 'Tails' from a list. Print result.",
+      "starterCode": "# Flip a coin\n",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "Heads\n"
+        }
+      ],
+      "points": 20
+    },
+    {
+      "id": "l12_typing_adv_1",
+      "type": "typing",
+      "title": "Neural Sync: Randomized Decoy Selection",
+      "description": "Your extraction team needs a random escape route. Type code that selects one decoy path from options A, B, or C.",
+      "targetCode": "import random\noptions = ['A', 'B', 'C']\nprint(random.choice(options))",
+      "points": 10,
+      "xp": 10
+    },
+    {
+      "id": "l12_typing_adv_2",
+      "type": "typing",
+      "title": "Neural Sync: Reproducible Intel Generator",
+      "description": "For testing your spy gadget firmware, you need reproducible 'random' numbers. Type professional code using seed(42) to ensure consistent results during QA.",
+      "targetCode": "import random\n# Set seed for consistent results\nrandom.seed(42)\nresult = random.randint(1, 100)\nprint('Generated:', result)",
+      "points": 15,
+      "xp": 15
+    },
+    {
+      "id": "l12_challenge_1",
+      "type": "debug",
+      "title": "Debug Challenge: Wrong Module Import",
+      "description": "SYSTEM ERROR: Your randomization chip isn't working! You imported the wrong module. Time module doesn't have randint - you need the random module!",
+      "brokenCode": "import time\nnum = time.randint(1, 10)\nprint(num)",
+      "starterCode": "import time\nnum = time.randint(1, 10)\nprint(num)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "5\\n"
+        }
+      ],
+      "solution": "import random\nnum = random.randint(1, 10)\nprint(num)",
+      "points": 20,
+      "xp": 20
+    },
+    {
+      "id": "l12_challenge_2",
+      "type": "code",
+      "title": "Mission Budget: Random Resource Allocation",
+      "description": "HQ allocated 5 random supply drops (1-10 units each). Calculate total resources available for your operation.",
+      "starterCode": "import random\n# Sum 5 random supply drops\n",
+      "solution": "import random\ntotal = 0\nfor i in range(5):\n    total += random.randint(1, 10)\nprint(total)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "30\\n"
+        }
+      ],
+      "points": 25,
+      "xp": 25
+    },
+    {
+      "id": "l12_challenge_3",
+      "type": "code",
+      "title": "Encryption: Random Passcode Generator",
+      "description": "Generate a 4-character secure passcode for mission briefcase. Use random capital letters (A-Z) only. One random char at a time!",
+      "starterCode": "import random\n# Generate 4-char encryption key\nletters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'\n",
+      "solution": "import random\nletters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'\npassword = ''\nfor i in range(4):\n    password += random.choice(letters)\nprint(password)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "ABCD\\n"
+        }
+      ],
+      "points": 25,
+      "xp": 25
+    },
+    {
+      "id": "l12_challenge_4",
+      "type": "code",
+      "title": "Undercover Ops: Lottery Cover Identity",
+      "description": "You're posing as a lottery player for surveillance. Generate 6 unique 'lucky' numbers  (1-49) using random.sample(). Print each on separate line to look authentic.",
+      "starterCode": "import random\n# Generate believable lottery numbers\n",
+      "solution": "import random\nnumbers = random.sample(range(1, 50), 6)\nfor num in numbers:\n    print(num)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "5\\n12\\n23\\n34\\n41\\n48\\n"
+        }
+      ],
+      "points": 30,
+      "xp": 30
+    },
+    {
+      "id": "l12_challenge_5",
+      "type": "code",
+      "title": "Boss Challenge: Card Game Deception",
+      "description": "CASINO INFILTRATION: You're counting cards at enemy casino. Shuffle a 4-card hand (['A', 'K', 'Q', 'J']) using random.shuffle() to avoid detection, then reveal each card sequentially. One wrong move blows your cover!",
+      "starterCode": "import random\n# Shuffle and reveal cards naturally\ndeck = ['A', 'K', 'Q', 'J']\n",
+      "solution": "import random\ndeck = ['A', 'K', 'Q', 'J']\nrandom.shuffle(deck)\nfor card in deck:\n    print(card)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "K\\nJ\\nA\\nQ\\n"
+        }
+      ],
+      "points": 40,
+      "xp": 40
+    }
+  ]
+}

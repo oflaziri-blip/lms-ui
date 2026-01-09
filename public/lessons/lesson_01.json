@@ -1,0 +1,341 @@
+{
+  "lesson_id": "lesson_01",
+  "title": "System Boot: Python & Math Operators",
+  "module": "Module 1: Python Basics",
+  "duration_minutes": 60,
+  "slide_url": "/test-lesson01-corrected",
+  "objectives": [
+    "Understand what Python is and why it's powerful",
+    "Write your first Python program using print()",
+    "Master all 7 Python math operators (+, -, *, /, //, %, **)",
+    "Learn order of operations with PEMDAS",
+    "Combine numbers and strings in print statements"
+  ],
+  "description": "Learn the foundation of Python: the print() function and all 7 mathematical operators. Master calculations, order of operations, and basic text output.",
+  "exercises": [
+    {
+      "id": "l01_task_01",
+      "type": "code",
+      "title": "Task 1: First Print",
+      "description": "Print the message: System Online",
+      "starterCode": "# Print 'System Online'",
+      "solution": "print('System Online')",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "System Online\n"
+        }
+      ],
+      "tasks": [
+        "Use print() function",
+        "Include quotes around text"
+      ],
+      "xp": 10
+    },
+    {
+      "id": "l01_task_02",
+      "type": "code",
+      "title": "Task 2: Addition",
+      "description": "Calculate and print: 25 + 17",
+      "starterCode": "# Calculate 25 + 17",
+      "solution": "print(25 + 17)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "42\n"
+        }
+      ],
+      "tasks": [
+        "Use + operator",
+        "Print the result"
+      ],
+      "xp": 10
+    },
+    {
+      "id": "l01_task_03",
+      "type": "code",
+      "title": "Task 3: Subtraction",
+      "description": "Calculate and print: 100 - 35",
+      "starterCode": "# Calculate 100 - 35",
+      "solution": "print(100 - 35)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "65\n"
+        }
+      ],
+      "tasks": [
+        "Use - operator",
+        "Print the result"
+      ],
+      "xp": 10
+    },
+    {
+      "id": "l01_task_04",
+      "type": "code",
+      "title": "Task 4: Multiplication",
+      "description": "Calculate and print: 12 * 8",
+      "starterCode": "# Calculate 12 * 8",
+      "solution": "print(12 * 8)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "96\n"
+        }
+      ],
+      "tasks": [
+        "Use * operator",
+        "Print the result"
+      ],
+      "xp": 10
+    },
+    {
+      "id": "l01_task_05",
+      "type": "code",
+      "title": "Task 5: Division",
+      "description": "Calculate and print: 50 / 5",
+      "starterCode": "# Calculate 50 / 5",
+      "solution": "print(50 / 5)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "10.0\n"
+        }
+      ],
+      "tasks": [
+        "Use / operator",
+        "Note: result is a float"
+      ],
+      "xp": 10
+    },
+    {
+      "id": "l01_task_06",
+      "type": "code",
+      "title": "Task 6: Floor Division",
+      "description": "Calculate and print: 17 // 5 (should give 3, not 3.4)",
+      "starterCode": "# Calculate 17 // 5",
+      "solution": "print(17 // 5)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "3\n"
+        }
+      ],
+      "tasks": [
+        "Use // operator",
+        "Result should be whole number"
+      ],
+      "xp": 15
+    },
+    {
+      "id": "l01_task_07",
+      "type": "code",
+      "title": "Task 7: Modulo (Remainder)",
+      "description": "Calculate and print: 17 % 5 (remainder after division)",
+      "starterCode": "# Calculate 17 % 5",
+      "solution": "print(17 % 5)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "2\n"
+        }
+      ],
+      "tasks": [
+        "Use % operator",
+        "Find the remainder"
+      ],
+      "xp": 15
+    },
+    {
+      "id": "l01_task_08",
+      "type": "code",
+      "title": "Task 8: Exponentiation",
+      "description": "Calculate and print: 2 ** 8 (2 to the power of 8)",
+      "starterCode": "# Calculate 2 ** 8",
+      "solution": "print(2 ** 8)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "256\n"
+        }
+      ],
+      "tasks": [
+        "Use ** operator",
+        "Calculate power"
+      ],
+      "xp": 15
+    },
+    {
+      "id": "l01_task_09",
+      "type": "code",
+      "title": "Task 9: PEMDAS Test",
+      "description": "Calculate: 10 + 5 * 2 (multiplication happens first!)",
+      "starterCode": "# Calculate 10 + 5 * 2",
+      "solution": "print(10 + 5 * 2)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "20\n"
+        }
+      ],
+      "tasks": [
+        "Remember PEMDAS",
+        "5 * 2 = 10, then 10 + 10 = 20"
+      ],
+      "xp": 15
+    },
+    {
+      "id": "l01_task_10",
+      "type": "code",
+      "title": "Task 10: Parentheses Control",
+      "description": "Calculate: (10 + 5) * 2 (parentheses force addition first)",
+      "starterCode": "# Calculate (10 + 5) * 2",
+      "solution": "print((10 + 5) * 2)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "30\n"
+        }
+      ],
+      "tasks": [
+        "Use parentheses",
+        "10 + 5 = 15, then 15 * 2 = 30"
+      ],
+      "xp": 15
+    },
+    {
+      "id": "l01_task_11",
+      "type": "code",
+      "title": "Task 11: Complex Expression",
+      "description": "Calculate: ((15 + 5) * 3) - 10",
+      "starterCode": "# Calculate ((15 + 5) * 3) - 10",
+      "solution": "print(((15 + 5) * 3) - 10)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "50\n"
+        }
+      ],
+      "tasks": [
+        "Work from inside out",
+        "15+5=20, 20*3=60, 60-10=50"
+      ],
+      "xp": 20
+    },
+    {
+      "id": "l01_task_12",
+      "type": "code",
+      "title": "Task 12: String Concatenation",
+      "description": "Print: Hello + space + World (result: Hello World)",
+      "starterCode": "# Print 'Hello' + ' ' + 'World'",
+      "solution": "print('Hello' + ' ' + 'World')",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "Hello World\n"
+        }
+      ],
+      "tasks": [
+        "Use + to join strings",
+        "Don't forget the space"
+      ],
+      "xp": 15
+    },
+    {
+      "id": "l01_task_13",
+      "type": "code",
+      "title": "Task 13: String Repetition",
+      "description": "Print 20 equal signs using repetition: ====================",
+      "starterCode": "# Print '=' * 20",
+      "solution": "print('=' * 20)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "====================\n"
+        }
+      ],
+      "tasks": [
+        "Use * to repeat strings",
+        "Repeat '=' 20 times"
+      ],
+      "xp": 15
+    },
+    {
+      "id": "l01_task_14",
+      "type": "code",
+      "title": "Task 14: Combining Text and Numbers",
+      "description": "Print: Score: 100 (use comma to separate text and number)",
+      "starterCode": "# Print 'Score:', 100",
+      "solution": "print('Score:', 100)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "Score: 100\n"
+        }
+      ],
+      "tasks": [
+        "Use comma in print()",
+        "Comma adds automatic space"
+      ],
+      "xp": 15
+    },
+    {
+      "id": "l01_task_15",
+      "type": "code",
+      "title": "Task 15: Multi-line Output",
+      "description": "Print three lines:\n===\nHELLO\n===",
+      "starterCode": "# Print the three lines",
+      "solution": "print('===')\nprint('HELLO')\nprint('===')",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "===\nHELLO\n===\n"
+        }
+      ],
+      "tasks": [
+        "Use three print() statements",
+        "Each print() creates a new line"
+      ],
+      "xp": 20
+    },
+    {
+      "id": "l01_task_16",
+      "type": "debug",
+      "title": "Task 16: Fix Missing Quotes",
+      "description": "Fix the syntax error - text needs quotes!",
+      "brokenCode": "print(Hello World)",
+      "starterCode": "print(Hello World)",
+      "solution": "print('Hello World')",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "Hello World\n"
+        }
+      ],
+      "tasks": [
+        "Add quotes around text",
+        "Run to verify"
+      ],
+      "xp": 15
+    },
+    {
+      "id": "l01_task_17",
+      "type": "code",
+      "title": "Task 17: Calculator Challenge",
+      "description": "Calculate area of rectangle: length=10, width=5. Print the result.",
+      "starterCode": "# Calculate 10 * 5 and print",
+      "solution": "print(10 * 5)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "50\n"
+        }
+      ],
+      "tasks": [
+        "Use multiplication",
+        "Print the area"
+      ],
+      "xp": 20
+    }
+  ]
+}

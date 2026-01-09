@@ -1,0 +1,189 @@
+{
+    "lesson_id": "lesson_19",
+    "title": "Events: Interactive Security Grid",
+    "module": "Module 5: Object-Oriented Programming",
+    "duration_minutes": 60,
+    "environment": "turtle",
+    "slide_url": "/content/python/slides/lesson_19_events.pdf",
+    "objectives": [
+        "Understand event-driven programming concepts",
+        "Learn to use onkey() and onclick() methods",
+        "Create interactive turtle programs",
+        "Build manual override security controls"
+    ],
+    "description": "The Neon City Security Grid needs manual override controls! Learn event-driven programming by creating interactive turtle applications. Respond to keypresses, mouse clicks, and build a full security keypad system.",
+    "exercises": [
+        {
+            "id": "l19_quiz_1",
+            "type": "quiz",
+            "title": "Event-Driven Programming",
+            "question": "What does 'event-driven' mean?",
+            "options": [
+                "Code runs from top to bottom",
+                "Code waits for events (clicks, keys) then responds",
+                "Code repeats in a loop",
+                "Code runs when the file is saved"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Event-driven code WAITS for things to happen, then executes specific functions in response.",
+            "points": 5
+        },
+        {
+            "id": "l19_quiz_2",
+            "type": "quiz",
+            "title": "Function References",
+            "question": "What's wrong with this code: screen.onkey(move(), 'Up')?",
+            "options": [
+                "Nothing, it's correct",
+                "Should be screen.onclick instead",
+                "move() has parentheses - it calls immediately instead of passing reference",
+                "Missing turtle.listen()"
+            ],
+            "correctAnswer": 2,
+            "explanation": "onkey needs a function REFERENCE (move), not a function CALL (move()). No parentheses!",
+            "points": 5
+        },
+        {
+            "id": "l19_typing_1",
+            "type": "typing",
+            "title": "Neural Sync: Setup Event Listening",
+            "description": "Type code to set up event listening for keyboard input.",
+            "targetCode": "screen = turtle.Screen()\\nscreen.listen()",
+            "points": 10
+        },
+        {
+            "id": "l19_typing_2",
+            "type": "typing",
+            "title": "Neural Sync: Bind Key to Function",
+            "description": "Bind the 'space' key to a function called 'fire'.",
+            "targetCode": "screen.onkey(fire, 'space')",
+            "points": 10
+        },
+        {
+            "id": "l19_debug_1",
+            "type": "debug",
+            "title": "Glitch Fix: Function Call Error",
+            "description": "Key binding not working! Function is being called immediately instead of on keypress.",
+            "brokenCode": "def jump():\\n    player.forward(50)\\n\\nscreen.listen()\\nscreen.onkey(jump(), 'Up')",
+            "testCases": [],
+            "points": 15
+        },
+        {
+            "id": "l19_debug_2",
+            "type": "debug",
+            "title": "Glitch Fix: Missing listen()",
+            "description": "Events not working! Forgot to tell the screen to listen for events.",
+            "brokenCode": "def move():\\n    guard.forward(20)\\n\\nscreen = turtle.Screen()\\nscreen.onkey(move, 'w')",
+            "testCases": [],
+            "points": 15
+        },
+        {
+            "id": "l19_code_1",
+            "type": "code",
+            "title": "Keyboard Override - Up Arrow",
+            "instructions": "**Security Protocol Alpha:**\\n\\nCreate a manual override system where pressing the UP arrow key moves the security drone forward.\\n\\n**Implementation Steps:**\\n1. Create a turtle called `guard`\\n2. Define a function `move_forward()` that moves the guard 20 units forward\\n3. Tell the screen to listen for keyboard events\\n4. Bind the 'Up' key to your `move_forward` function\\n\\n**Test:** After running, press the UP arrow key to activate the override!",
+            "starterCode": "import turtle\\n\\n# Create security guard drone\\nguard = turtle.Turtle()\\nguard.shape('turtle')\\n\\n# Define movement function\\ndef move_forward():\\n    # Your code here\\n    pass\\n\\n# Setup event listening\\nscreen = turtle.Screen()\\n# Add your onkey binding here\\n\\nturtle.mainloop()",
+            "solution": "import turtle\\n\\n# Create security guard drone\\nguard = turtle.Turtle()\\nguard.shape('turtle')\\nguard.color('red')\\n\\n# Define movement function\\ndef move_forward():\\n    guard.forward(20)\\n\\n# Setup event listening\\nscreen = turtle.Screen()\\nscreen.listen()\\nscreen.onkey(move_forward, 'Up')\\n\\nturtle.mainloop()",
+            "hints": [
+                "screen.listen() must be called before onkey()",
+                "screen.onkey(function_name, 'Up') - note no parentheses on function!",
+                "The function is called automatically when the key is pressed"
+            ],
+            "testCases": [],
+            "points": 20
+        },
+        {
+            "id": "l19_code_2",
+            "type": "code",
+            "title": "Click-to-Change Color",
+            "instructions": "**Interactive Camouflage System:**\\n\\nMake the drone change color when the user clicks anywhere on the screen.\\n\\n**Mission Requirements:**\\n1. Create a turtle named `stealth_drone`\\n2. Define a function `change_color(x, y)` that:\\n   - Changes the drone's color to 'lime'\\n   - Moves to the clicked location using `goto(x, y)`\\n3. Use `screen.onclick(change_color)` to activate click detection\\n\\n**Note:** onclick functions receive x and y coordinates automatically!",
+            "starterCode": "import turtle\\n\\n# Initialize stealth drone\\nstealth_drone = turtle.Turtle()\\nstealth_drone.shape('circle')\\nstealth_drone.color('gray')\\n\\n# Camouflage activation function\\ndef change_color(x, y):\\n    # Change color and move to click position\\n    pass\\n\\n# Setup click events\\nscreen = turtle.Screen()\\n# Add onclick binding\\n\\nturtle.mainloop()",
+            "solution": "import turtle\\n\\n# Initialize stealth drone\\nstealth_drone = turtle.Turtle()\\nstealth_drone.shape('circle')\\nstealth_drone.color('gray')\\nstealth_drone.speed(3)\\n\\n# Camouflage activation function\\ndef change_color(x, y):\\n    stealth_drone.color('lime')\\n    stealth_drone.goto(x, y)\\n\\n# Setup click events\\nscreen = turtle.Screen()\\nscreen.onclick(change_color)\\n\\nturtle.mainloop()",
+            "hints": [
+                "onclick functions automatically receive x and y coordinates",
+                "Use stealth_drone.goto(x, y) to move to clicked position",
+                "Change color first, then move for visual effect"
+            ],
+            "testCases": [],
+            "points": 20
+        },
+        {
+            "id": "l19_code_3",
+            "type": "code",
+            "title": "4-Directional Security Keypad",
+            "instructions": "**Full Manual Override System:**\\n\\nBuild a complete 4-direction control system using W/A/S/D keys (gamer style!).\\n\\n**Control Mapping:**\\n- W = Move Up (forward)\\n- S = Move Down (backward)\\n- A = Turn Left\\n- D = Turn Right\\n\\n**Implementation:**\\n1. Create a turtle `patrol_unit`\\n2. Define 4 functions: `up()`, `down()`, `left()`, `right()`\\n3. Bind each key to its function\\n4. Test all 4 directions to ensure full control!",
+            "starterCode": "import turtle\\n\\npatrol_unit = turtle.Turtle()\\npatrol_unit.shape('square')\\npatrol_unit.color('cyan')\\n\\n# Define control functions\\ndef up():\\n    pass\\n\\ndef down():\\n    pass\\n\\ndef left():\\n    pass\\n\\ndef right():\\n    pass\\n\\n# Setup keyboard controls\\nscreen = turtle.Screen()\\nscreen.listen()\\n# Bind all 4 keys\\n\\nturtle.mainloop()",
+            "solution": "import turtle\\n\\npatrol_unit = turtle.Turtle()\\npatrol_unit.shape('square')\\npatrol_unit.color('cyan')\\npatrol_unit.speed(1)\\n\\n# Define control functions\\ndef up():\\n    patrol_unit.forward(30)\\n\\ndef down():\\n    patrol_unit.backward(30)\\n\\ndef left():\\n    patrol_unit.left(45)\\n\\ndef right():\\n    patrol_unit.right(45)\\n\\n# Setup keyboard controls\\nscreen = turtle.Screen()\\nscreen.listen()\\nscreen.onkey(up, 'w')\\nscreen.onkey(down, 's')\\nscreen.onkey(left, 'a')\\nscreen.onkey(right, 'd')\\n\\nturtle.mainloop()",
+            "hints": [
+                "Use lowercase letters for key names: 'w', 'a', 's', 'd'",
+                "patrol_unit.left() and .right() rotate in place",
+                "Test each key individually to debug"
+            ],
+            "testCases": [],
+            "points": 20
+        },
+        {
+            "id": "l19_typing_adv_1",
+            "type": "typing",
+            "title": "Neural Sync: Multiple Key Bindings",
+            "description": "Bind both arrow keys and WASD for redundant controls - 'Up' and 'w' both call move_up.",
+            "targetCode": "screen.onkey(move_up, 'Up')\\nscreen.onkey(move_up, 'w')\\nscreen.onkey(move_down, 'Down')\\nscreen.onkey(move_down, 's')",
+            "points": 10,
+            "xp": 10
+        },
+        {
+            "id": "l19_typing_adv_2",
+            "type": "typing",
+            "title": "Neural Sync: Click Event Handler",
+            "description": "Professional click handler - extract x,y from click and print coordinates.",
+            "targetCode": "def handle_click(x, y):\\n    print(f'Clicked at ({x}, {y})')\\n    drone.goto(x, y)\\n\\nscreen.onclick(handle_click)",
+            "points": 15,
+            "xp": 15
+        },
+        {
+            "id": "l19_challenge_1",
+            "type": "debug",
+            "title": "Debug Challenge: Event Loop Missing",
+            "description": "Program closes immediately! Missing the event loop at the end.",
+            "brokenCode": "import turtle\\n\\ndef jump():\\n    bot.forward(50)\\n\\nbot = turtle.Turtle()\\nscreen = turtle.Screen()\\nscreen.listen()\\nscreen.onkey(jump, 'space')\\n\\nturtle.done()",
+            "starterCode": "import turtle\\n\\ndef jump():\\n    bot.forward(50)\\n\\nbot = turtle.Turtle()\\nscreen = turtle.Screen()\\nscreen.listen()\\nscreen.onkey(jump, 'space')\\n\\nturtle.done()",
+            "testCases": [],
+            "solution": "import turtle\\n\\ndef jump():\\n    bot.forward(50)\\n\\nbot = turtle.Turtle()\\nscreen = turtle.Screen()\\nscreen.listen()\\nscreen.onkey(jump, 'space')\\n\\nturtle.mainloop()",
+            "points": 20,
+            "xp": 20
+        },
+        {
+            "id": "l19_challenge_2",
+            "type": "code",
+            "title": "Toggle Pen On/Off",
+            "description": "Create a drone that can toggle drawing on/off! Press 'u' to lift pen, 'd' to put pen down. Also bind arrow keys for movement.",
+            "starterCode": "import turtle\\n\\n# Create drone\\n",
+            "solution": "import turtle\\n\\ndrone = turtle.Turtle()\\n\\ndef pen_up():\\n    drone.penup()\\n\\ndef pen_down():\\n    drone.pendown()\\n\\ndef move_forward():\\n    drone.forward(20)\\n\\ndef move_back():\\n    drone.backward(20)\\n\\ndef turn_left():\\n    drone.left(15)\\n\\ndef turn_right():\\n    drone.right(15)\\n\\nscreen = turtle.Screen()\\nscreen.listen()\\nscreen.onkey(pen_up, 'u')\\nscreen.onkey(pen_down, 'd')\\nscreen.onkey(move_forward, 'Up')\\nscreen.onkey(move_back, 'Down')\\nscreen.onkey(turn_left, 'Left')\\nscreen.onkey(turn_right, 'Right')\\n\\nturtle.mainloop()",
+            "testCases": [],
+            "points": 25,
+            "xp": 25
+        },
+        {
+            "id": "l19_challenge_3",
+            "type": "code",
+            "title": "Color Palette Switcher",
+            "description": "Bind keys 1-3 to change turtle color! Press '1' for red, '2' for green, '3' for blue. Also include arrow key movement.",
+            "starterCode": "import turtle\\n\\n# Color-changing drone\\n",
+            "solution": "import turtle\\n\\nartist = turtle.Turtle()\\nartist.pensize(3)\\n\\ndef color_red():\\n    artist.color('red')\\n\\ndef color_green():\\n    artist.color('green')\\n\\ndef color_blue():\\n    artist.color('blue')\\n\\ndef move_forward():\\n    artist.forward(20)\\n\\nscreen = turtle.Screen()\\nscreen.bgcolor('black')\\nscreen.listen()\\nscreen.onkey(color_red, '1')\\nscreen.onkey(color_green, '2')\\nscreen.onkey(color_blue, '3')\\nscreen.onkey(move_forward, 'Up')\\n\\nturtle.mainloop()",
+            "testCases": [],
+            "points": 30,
+            "xp": 30
+        },
+        {
+            "id": "l19_challenge_4",
+            "type": "code",
+            "title": "Boss Challenge: Interactive Drawing Tool",
+            "description": "ADVANCED: Build a mini paint program! Controls: Arrow keys move, 'u'/'d' for pen up/down, '1'/'2'/'3' for colors, 'c' to clear screen. Make it fully functional!",
+            "starterCode": "import turtle\\n\\n# Complete interactive tool\\n",
+            "solution": "import turtle\\n\\npen = turtle.Turtle()\\npen.speed(0)\\n\\ndef move_forward():\\n    pen.forward(15)\\n\\ndef move_back():\\n    pen.backward(15)\\n\\ndef turn_left():\\n    pen.left(15)\\n\\ndef turn_right():\\n    pen.right(15)\\n\\ndef pen_up():\\n    pen.penup()\\n\\ndef pen_down():\\n    pen.pendown()\\n\\ndef color_cyan():\\n    pen.color('cyan')\\n\\ndef color_magenta():\\n    pen.color('magenta')\\n\\ndef color_yellow():\\n    pen.color('yellow')\\n\\ndef clear_canvas():\\n    pen.clear()\\n\\nscreen = turtle.Screen()\\nscreen.bgcolor('black')\\nscreen.listen()\\nscreen.onkey(move_forward, 'Up')\\nscreen.onkey(move_back, 'Down')\\nscreen.onkey(turn_left, 'Left')\\nscreen.onkey(turn_right, 'Right')\\nscreen.onkey(pen_up, 'u')\\nscreen.onkey(pen_down, 'd')\\nscreen.onkey(color_cyan, '1')\\nscreen.onkey(color_magenta, '2')\\nscreen.onkey(color_yellow, '3')\\nscreen.onkey(clear_canvas, 'c')\\n\\nturtle.mainloop()",
+            "testCases": [],
+            "points": 40,
+            "xp": 40
+        }
+    ]
+}

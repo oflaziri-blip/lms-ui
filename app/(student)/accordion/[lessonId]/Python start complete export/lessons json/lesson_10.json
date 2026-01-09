@@ -1,0 +1,210 @@
+{
+  "lesson_id": "lesson_10",
+  "title": "Functions",
+  "module": "Module 3: Code Organization",
+  "duration_minutes": 45,
+  "slide_url": "/content/python/slides/lesson_10_functions.pdf",
+  "objectives": [
+    "Define and call functions using def keyword",
+    "Apply DRY principle to avoid code repetition",
+    "Understand stack frames and function execution",
+    "Organize code with multiple functions",
+    "Follow Python naming conventions and best practices"
+  ],
+  "description": "Learn to create reusable code modules with functions. Master the DRY principle, understand stack frames, and organize code professionally. Build login systems and drawing functions!",
+  "exercises": [
+    {
+      "id": "l10_typing_1",
+      "type": "typing",
+      "title": "Neural Sync: Function Definition",
+      "description": "Define a simple function.",
+      "targetCode": "def greet():\n    print(\"Hello\")",
+      "points": 10
+    },
+    {
+      "id": "l10_typing_2",
+      "type": "typing",
+      "title": "Neural Sync: Function Call",
+      "description": "Define and call a function.",
+      "targetCode": "def activate():\n    print(\"System Active\")\nactivate()",
+      "points": 10
+    },
+    {
+      "id": "l10_typing_3",
+      "type": "typing",
+      "title": "Neural Sync: Multiple Functions",
+      "description": "Define two functions.",
+      "targetCode": "def start():\n    print(\"Start\")\ndef stop():\n    print(\"Stop\")",
+      "points": 10
+    },
+    {
+      "id": "l10_debug_1",
+      "type": "debug",
+      "title": "Glitch Fix: Scope Error",
+      "description": "Variable defined inside function can't be used outside! Move the variable or return it.",
+      "brokenCode": "def calculate():\n    result = 10 + 5\ncalculate()\nprint(result)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "15\n"
+        }
+      ],
+      "points": 15
+    },
+    {
+      "id": "l10_debug_2",
+      "type": "debug",
+      "title": "Glitch Fix: Missing Parentheses",
+      "description": "Function call needs parentheses! Add () to call the function.",
+      "brokenCode": "def launch():\n    print(\"Launching\")\nlaunch",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "Launching\n"
+        }
+      ],
+      "points": 15
+    },
+    {
+      "id": "l10_code_1",
+      "type": "code",
+      "title": "Field Mission: Encrypt Function",
+      "description": "Create a function encrypt(msg) that returns the message reversed. Call it with \"CYBER\".",
+      "starterCode": "# Define encrypt function\n",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "REBYC\n"
+        }
+      ],
+      "points": 20
+    },
+    {
+      "id": "l10_code_2",
+      "type": "code",
+      "title": "Field Mission: Greeting System",
+      "description": "Create a function welcome() that prints 'Welcome, Agent!'. Call it 3 times.",
+      "starterCode": "# Create and call welcome function\n",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "Welcome, Agent!\\nWelcome, Agent!\\nWelcome, Agent!\n"
+        }
+      ],
+      "points": 20
+    },
+    {
+      "id": "l10_code_3",
+      "type": "code",
+      "title": "Field Mission: Banner Generator",
+      "description": "Create print_banner() that prints '===', 'ALERT', '==='. Call it once.",
+      "starterCode": "# Create banner function\n",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "===\\nALERT\\n===\n"
+        }
+      ],
+      "points": 20
+    },
+    {
+      "id": "l10_typing_adv_1",
+      "type": "typing",
+      "title": "Neural Sync: Encryption Gadget",
+      "description": "Create reusable cipher tool for field operations.",
+      "targetCode": "def encrypt(msg):\n    return msg[::-1]\n\nresult = encrypt('SECRET')\nprint(result)",
+      "points": 10,
+      "xp": 10
+    },
+    {
+      "id": "l10_typing_adv_2",
+      "type": "typing",
+      "title": "Neural Sync: Threat Calculator",
+      "description": "Professional threat assessment function with return value.",
+      "targetCode": "# Threat level analyzer\ndef calculate_threat(enemies, weapons):\n    threat_score = enemies * weapons\n    return threat_score\n\nlevel = calculate_threat(10, 3)\nprint('Threat Level:', level)",
+      "points": 15,
+      "xp": 15
+    },
+    {
+      "id": "l10_challenge_1",
+      "type": "debug",
+      "title": "Debug Challenge: Missing Return",
+      "description": "Function calculates but doesn't return! Add return statement or result is None!",
+      "brokenCode": "def double(x):\n    x * 2\n\nresult = double(5)\nprint(result)",
+      "starterCode": "def double(x):\n    x * 2\n\nresult = double(5)\nprint(result)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "10\\n"
+        }
+      ],
+      "solution": "def double(x):\n    return x * 2\n\nresult = double(5)\nprint(result)",
+      "points": 20,
+      "xp": 20
+    },
+    {
+      "id": "l10_challenge_2",
+      "type": "code",
+      "title": "Gadget Builder: Distance Calculator",
+      "description": "Create function calculate_distance(x1, x2) that returns abs(x2 - x1). Test with (10, 50).",
+      "starterCode": "# Build distance gadget\n",
+      "solution": "def calculate_distance(x1, x2):\n    return abs(x2 - x1)\n\nresult = calculate_distance(10, 50)\nprint(result)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "40\\n"
+        }
+      ],
+      "points": 25,
+      "xp": 25
+    },
+    {
+      "id": "l10_challenge_3",
+      "type": "code",
+      "title": "Identity Checker: Access Validator",
+      "description": "Create function is_authorized(code) that returns True if code=='007', else False. Test it with '007'.",
+      "starterCode": "# Authorization function\n",
+      "solution": "def is_authorized(code):\n    return code == '007'\n\nresult = is_authorized('007')\nprint(result)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "True\\n"
+        }
+      ],
+      "points": 25,
+      "xp": 25
+    },
+    {
+      "id": "l10_challenge_4",
+      "type": "code",
+      "title": "Mission Intel: Status Reporter",
+      "description": "Function mission_status(success) prints 'COMPLETE' if True, 'FAILED' if False. Call it with True.",
+      "starterCode": "# Mission reporting system\n",
+      "solution": "def mission_status(success):\n    if success:\n        print('COMPLETE')\n    else:\n        print('FAILED')\n\nmission_status(True)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "COMPLETE\\n"
+        }
+      ],
+      "points": 30,
+      "xp": 30
+    },
+    {
+      "id": "l10_challenge_5",
+      "type": "code",
+      "title": "Boss Challenge: Multi-Function Operative System",
+      "description": "Create 2 functions: power(base, exp) returns base**exp. classify(score) returns 'ELITE' if score>=90, else 'STANDARD'. Call power(2, 8) then classify(95).",
+      "starterCode": "# Dual function system\n",
+      "solution": "def power(base, exp):\n    return base ** exp\n\ndef classify(score):\n    if score >= 90:\n        return 'ELITE'\n    else:\n        return 'STANDARD'\n\nprint(power(2, 8))\nprint(classify(95))",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "256\\nELITE\\n"
+        }
+      ],
+      "points": 40,
+      "xp": 40
+    }
+  ]
+}

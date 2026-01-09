@@ -1,0 +1,210 @@
+{
+  "lesson_id": "lesson_11",
+  "title": "Functions Continued",
+  "module": "Module 3: Code Organization",
+  "duration_minutes": 50,
+  "slide_url": "/content/python/slides/lesson_11_functions_continued.pdf",
+  "objectives": [
+    "Pass data to functions using parameters",
+    "Return values from functions",
+    "Understand local vs global scope",
+    "Use default parameters for optional values",
+    "Design pure functions following best practices"
+  ],
+  "description": "Master advanced function concepts including parameters, return values, scope, and default parameters. Learn to design professional functions. Build temperature converters and discount calculators!",
+  "exercises": [
+    {
+      "id": "l11_typing_1",
+      "type": "typing",
+      "title": "Neural Sync: Function with Parameter",
+      "description": "Define a function that takes a parameter.",
+      "targetCode": "def greet(name):\n    print(\"Hello\", name)",
+      "points": 10
+    },
+    {
+      "id": "l11_typing_2",
+      "type": "typing",
+      "title": "Neural Sync: Return Statement",
+      "description": "Define a function that returns a value.",
+      "targetCode": "def add(a, b):\n    return a + b",
+      "points": 10
+    },
+    {
+      "id": "l11_typing_3",
+      "type": "typing",
+      "title": "Neural Sync: Default Parameter",
+      "description": "Define a function with a default parameter.",
+      "targetCode": "def power(base, exp=2):\n    return base ** exp",
+      "points": 10
+    },
+    {
+      "id": "l11_debug_1",
+      "type": "debug",
+      "title": "Glitch Fix: Missing Argument",
+      "description": "Function expects 2 arguments but only gets 1! Add the second argument.",
+      "brokenCode": "def multiply(x, y):\n    return x * y\nresult = multiply(5)\nprint(result)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "15\n"
+        }
+      ],
+      "points": 15
+    },
+    {
+      "id": "l11_debug_2",
+      "type": "debug",
+      "title": "Glitch Fix: No Return",
+      "description": "Function calculates but doesn't return the result! Add return statement.",
+      "brokenCode": "def square(n):\n    result = n * n\nx = square(5)\nprint(x)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "25\n"
+        }
+      ],
+      "points": 15
+    },
+    {
+      "id": "l11_code_1",
+      "type": "code",
+      "title": "Field Mission: Temperature Converter",
+      "description": "Create celsius_to_fahrenheit(c) that returns F = C * 9/5 + 32. Test with 0.",
+      "starterCode": "# Temperature converter\n",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "32.0\n"
+        }
+      ],
+      "points": 20
+    },
+    {
+      "id": "l11_code_2",
+      "type": "code",
+      "title": "Field Mission: Circle Area",
+      "description": "Create circle_area(radius) that returns π * r² (use 3.14159). Test with radius 5.",
+      "starterCode": "# Circle area calculator\n",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "78.53975\n"
+        }
+      ],
+      "points": 20
+    },
+    {
+      "id": "l11_code_3",
+      "type": "code",
+      "title": "Field Mission: Max Finder",
+      "description": "Create max_of_two(a, b) that returns the larger number. Test with 15 and 23.",
+      "starterCode": "# Max finder\n",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "23\n"
+        }
+      ],
+      "points": 20
+    },
+    {
+      "id": "l11_typing_adv_1",
+      "type": "typing",
+      "title": "Neural Sync: Coordinates Function",
+      "description": "Function with 2 parameters returning formatted coordinates.",
+      "targetCode": "def format_coords(lat, lon):\n    return f'({lat}, {lon})'\n\nresult = format_coords(40.7, -74.0)\nprint(result)",
+      "points": 10,
+      "xp": 10
+    },
+    {
+      "id": "l11_typing_adv_2",
+      "type": "typing",
+      "title": "Neural Sync: Multi-Parameter Combat Calculator",
+      "description": "Professional damage calculator with 3 parameters and complex logic.",
+      "targetCode": "# Combat damage calculator\ndef calculate_damage(base_dmg, multiplier, armor):\n    total = base_dmg * multiplier - armor\n    return total\n\ndamage = calculate_damage(50, 2, 10)\nprint('Damage dealt:', damage)",
+      "points": 15,
+      "xp": 15
+    },
+    {
+      "id": "l11_challenge_1",
+      "type": "debug",
+      "title": "Debug Challenge: Parameter Mismatch",
+      "description": "Function expects 2 params but only 1 provided! Pass both arguments!",
+      "brokenCode": "def add(a, b):\n    return a + b\n\nresult = add(5)\nprint(result)",
+      "starterCode": "def add(a, b):\n    return a + b\n\nresult = add(5)\nprint(result)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "15\\n"
+        }
+      ],
+      "solution": "def add(a, b):\n    return a + b\n\nresult = add(5, 10)\nprint(result)",
+      "points": 20,
+      "xp": 20
+    },
+    {
+      "id": "l11_challenge_2",
+      "type": "code",
+      "title": "Crypto Math: XOR Cipher",
+      "description": "Create xor_cipher(value, key) that returns value ^ key. Test with (42, 7).",
+      "starterCode": "# XOR encry ption function\n",
+      "solution": "def xor_cipher(value, key):\n    return value ^ key\n\nresult = xor_cipher(42, 7)\nprint(result)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "45\\n"
+        }
+      ],
+      "points": 25,
+      "xp": 25
+    },
+    {
+      "id": "l11_challenge_3",
+      "type": "code",
+      "title": "Field Logic: Threat Assessor",
+      "description": "Function assess_threat(enemies, agents) returns True if enemies > agents, else False. Test (30, 20).",
+      "starterCode": "# Tactical assessment\n",
+      "solution": "def assess_threat(enemies, agents):\n    return enemies > agents\n\nresult = assess_threat(30, 20)\nprint(result)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "True\\n"
+        }
+      ],
+      "points": 25,
+      "xp": 25
+    },
+    {
+      "id": "l11_challenge_4",
+      "type": "code",
+      "title": "Resource Manager: Supply Calculator",
+      "description": "Function calc_supplies(days, per_day) returns days*per_day. Call with (7, 3) and print.",
+      "starterCode": "# Supply calculation\n",
+      "solution": "def calc_supplies(days, per_day):\n    return days * per_day\n\ntotal = calc_supplies(7, 3)\nprint(total)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "21\\n"
+        }
+      ],
+      "points": 30,
+      "xp": 30
+    },
+    {
+      "id": "l11_challenge_5",
+      "type": "code",
+      "title": "Boss Challenge: Mission Success Probability",
+      "description": "Function success_rate(skill, difficulty, equipment). score = skill + equipment - difficulty. If score > 50 return 'HIGH', elif > 20 return 'MEDIUM', else 'LOW'. Test (60, 30, 25).",
+      "starterCode": "# Mission probability calculator\n",
+      "solution": "def success_rate(skill, difficulty, equipment):\n    score = skill + equipment - difficulty\n    if score > 50:\n        return 'HIGH'\n    elif score > 20:\n        return 'MEDIUM'\n    else:\n        return 'LOW'\n\nresult = success_rate(60, 30, 25)\nprint(result)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "HIGH\\n"
+        }
+      ],
+      "points": 40,
+      "xp": 40
+    }
+  ]
+}

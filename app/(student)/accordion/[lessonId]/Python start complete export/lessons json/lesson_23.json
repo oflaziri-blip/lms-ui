@@ -1,0 +1,63 @@
+{
+    "lesson_id": "lesson_23",
+    "title": "Advanced Inheritance: Commander Override",
+    "module": "Module 5: Object-Oriented Programming",
+    "duration_minutes": 75,
+    "environment": "standard",
+    "slide_url": "/content/python/slides/lesson_23_advanced_inheritance.pdf",
+    "objectives": [
+        "Learn method overriding in child classes",
+        "Understand how to use super() to call parent methods",
+        "Master polymorphism - same method, different behavior",
+        "Build complex hierarchies with multiple specialized classes"
+    ],
+    "description": "Final OOP lesson! Create Commander Droids with higher privileges by mastering method overriding and super(). Learn polymorphism - how different droid types can respond to the same command differently. Build a complete droid hierarchy for Neon City!",
+    "exercises": [
+        {
+            "id": "l23_code_1",
+            "type": "code",
+            "title": "Method Overriding - Custom Greeting",
+            "instructions": "**Commander Privilege Protocol:**\n\nOverride the greet() method for Commanders to show authority!\n\n**Task:**\n1. Start with your Droid base class (with greet method)\n2. Create a `CommanderDroid` child class\n3. Override the `greet()` method to print:\n   `\"ATTENTION. Commander {self.name} taking control.\"`\n4. Create a Commander: `leader = CommanderDroid('ALPHA-PRIME', 100)`\n5. Call `leader.greet()`\n\n**Key Concept:** The child's method REPLACES the parent's method!",
+            "starterCode": "class Droid:\n    def __init__(self, name, battery_level):\n        self.name = name\n        self.battery_level = battery_level\n    \n    def greet(self):\n        print(f\"Greetings. I am {self.name}, Worker Unit.\")\n\n# Create CommanderDroid with overridden greet\nclass CommanderDroid(Droid):\n    # Override greet method here\n    pass\n\n# Test the override\n",
+            "solution": "class Droid:\n    def __init__(self, name, battery_level):\n        self.name = name\n        self.battery_level = battery_level\n    \n    def greet(self):\n        print(f\"Greetings. I am {self.name}, Worker Unit.\")\n\nclass CommanderDroid(Droid):\n    def greet(self):\n        # This REPLACES the parent's greet\n        print(f\"ATTENTION. Commander {self.name} taking control.\")\n\n# Test the override\nleader = CommanderDroid('ALPHA-PRIME', 100)\nleader.greet()  # Uses the NEW version",
+            "expectedOutput": "ATTENTION. Commander ALPHA-PRIME taking control.",
+            "hints": [
+                "Just define a method with the same name to override it",
+                "The child's version is used instead of the parent's",
+                "Commanders need a more authoritative greeting!"
+            ],
+            "testCases": []
+        },
+        {
+            "id": "l23_code_2",
+            "type": "code",
+            "title": "Using super() - Extended Initialization",
+            "instructions": "**Rank Assignment System:**\n\nUse super() to extend the __init__ method and add a rank attribute.\n\n**Protocol:**\n1. Create CommanderDroid class that inherits from Droid\n2. Override `__init__` to accept name, battery_level, AND rank\n3. Use `super().__init__(name, battery_level)` to call parent's init\n4. Add `self.rank = rank` for the new attribute\n5. Override `greet()` to print:\n   `\"Commander {self.name}, Rank {self.rank}, reporting.\"`\n6. Create: `cmd = CommanderDroid('APEX-1', 100, 'General')`\n\n**super() lets you avoid rewriting the parent code!**",
+            "starterCode": "class Droid:\n    def __init__(self, name, battery_level):\n        self.name = name\n        self.battery_level = battery_level\n    \n    def greet(self):\n        print(f\"Greetings. I am {self.name}, Worker Unit.\")\n\nclass CommanderDroid(Droid):\n    def __init__(self, name, battery_level, rank):\n        # Use super() to call parent __init__\n        # Then add rank attribute\n        pass\n    \n    def greet(self):\n        # Use self.rank in the greeting\n        pass\n\n# Create a ranked commander\n",
+            "solution": "class Droid:\n    def __init__(self, name, battery_level):\n        self.name = name\n        self.battery_level = battery_level\n    \n    def greet(self):\n        print(f\"Greetings. I am {self.name}, Worker Unit.\")\n\nclass CommanderDroid(Droid):\n    def __init__(self, name, battery_level, rank):\n        # Call parent's __init__ to set name and battery\n        super().__init__(name, battery_level)\n        # Add new attribute\n        self.rank = rank\n    \n    def greet(self):\n        print(f\"Commander {self.name}, Rank {self.rank}, reporting.\")\n\n# Create a ranked commander\ncmd = CommanderDroid('APEX-1', 100, 'General')\ncmd.greet()\nprint(f\"Battery: {cmd.battery_level}%\")  # Inherited attribute works!",
+            "expectedOutput": "Commander APEX-1, Rank General, reporting.\nBattery: 100%",
+            "hints": [
+                "super().__init__(name, battery_level) calls the parent's init",
+                "After super(), you can add new attributes like self.rank",
+                "This avoids copying self.name and self.battery_level code"
+            ],
+            "testCases": []
+        },
+        {
+            "id": "l23_code_3",
+            "type": "code",
+            "title": "Polymorphism - Factory Inspection",
+            "instructions": "**Final Factory Test - Polymorphism in Action:**\n\nCreate a mixed fleet and loop through them, calling greet() on each.\n\n**Manufacturing Order:**\n1. Use your complete Droid and CommanderDroid classes\n2. Create a list called `fleet` with:\n   - A Droid: `Droid('WORKER-1', 90)`\n   - A Droid: `Droid('WORKER-2', 85)`\n   - A CommanderDroid: `CommanderDroid('CHIEF-X', 100, 'Captain')`\n3. Loop through the fleet: `for unit in fleet:`\n4. Call `unit.greet()` on each\n\n**Polymorphism:** Same method name, different behavior based on object type!\n\nThis is OOP mastery - Python knows which greet() to call!",
+            "starterCode": "class Droid:\n    def __init__(self, name, battery_level):\n        self.name = name\n        self.battery_level = battery_level\n    \n    def greet(self):\n        print(f\"Greetings. I am {self.name}, Worker Unit.\")\n\nclass CommanderDroid(Droid):\n    def __init__(self, name, battery_level, rank):\n        super().__init__(name, battery_level)\n        self.rank = rank\n    \n    def greet(self):\n        print(f\"Commander {self.name}, Rank {self.rank}, reporting.\")\n\n# Create mixed fleet\nfleet = [\n    # Add 2 workers and 1 commander\n]\n\n# Inspection protocol - greet all units\nprint(\"=== FACTORY ROLL CALL ===\")\n",
+            "solution": "class Droid:\n    def __init__(self, name, battery_level):\n        self.name = name\n        self.battery_level = battery_level\n    \n    def greet(self):\n        print(f\"Greetings. I am {self.name}, Worker Unit.\")\n\nclass CommanderDroid(Droid):\n    def __init__(self, name, battery_level, rank):\n        super().__init__(name, battery_level)\n        self.rank = rank\n    \n    def greet(self):\n        print(f\"Commander {self.name}, Rank {self.rank}, reporting.\")\n\n# Create mixed fleet\nfleet = [\n    Droid('WORKER-1', 90),\n    Droid('WORKER-2', 85),\n    CommanderDroid('CHIEF-X', 100, 'Captain')\n]\n\n# Inspection protocol - greet all units\nprint(\"=== FACTORY ROLL CALL ===\")\nfor unit in fleet:\n    unit.greet()  # Python knows which version to call!\n\nprint(\"\\n✅ All units operational. Neon City Droid Factory complete!\")",
+            "expectedOutput": "=== FACTORY ROLL CALL ===\nGreetings. I am WORKER-1, Worker Unit.\nGreetings. I am WORKER-2, Worker Unit.\nCommander CHIEF-X, Rank Captain, reporting.\n\n✅ All units operational. Neon City Droid Factory complete!",
+            "hints": [
+                "Put all 3 droid instances in a list",
+                "Workers call the Droid version of greet()",
+                "Commander calls the CommanderDroid version of greet()",
+                "This is polymorphism - same interface, different implementations!"
+            ],
+            "testCases": []
+        }
+    ]
+}

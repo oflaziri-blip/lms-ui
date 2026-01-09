@@ -1,0 +1,233 @@
+{
+  "lesson_id": "lesson_14",
+  "title": "Drone Pathfinding: Linear Algorithms",
+  "module": "Module 4: Visual Algorithms",
+  "duration_minutes": 60,
+  "environment": "turtle",
+  "slide_url": "/content/python/slides/lesson_14_drone_pathfinding.pdf",
+  "objectives": [
+    "Understand Cartesian coordinate systems (X, Y)",
+    "Master linear movement algorithms",
+    "Calculate distance between points",
+    "Simulate drone flight paths with coordinates",
+    "Apply Pythagorean theorem in navigation"
+  ],
+  "description": "Learn autonomous drone navigation through coordinate systems. Master X/Y axes, linear algorithms, and distance calculations. No turtle graphics - this is real pathfinding used in delivery drones, games, and robotics.",
+  "exercises": [
+    {
+      "id": "l14_quiz_1",
+      "type": "quiz",
+      "title": "Coordinate System Check",
+      "question": "If a drone moves from (0, 0) to (5, 0), which direction did it move?",
+      "options": [
+        "Right",
+        "Left",
+        "Up",
+        "Down"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Positive X means moving RIGHT from the origin.",
+      "points": 5
+    },
+    {
+      "id": "l14_quiz_2",
+      "type": "quiz",
+      "title": "Distance Formula",
+      "question": "What formula calculates distance between two points?",
+      "options": [
+        "x2 - x1",
+        "y2 - y1",
+        "√((x2-x1)² + (y2-y1)²)",
+        "x² + y²"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Pythagorean theorem: distance = √(Δx² + Δy²)",
+      "points": 5
+    },
+    {
+      "id": "l14_typing_1",
+      "type": "typing",
+      "title": "Neural Sync: Coordinate Assignment",
+      "description": "Type code to set drone position to (10, 15).",
+      "targetCode": "x = 10\\ny = 15",
+      "points": 10
+    },
+    {
+      "id": "l14_typing_2",
+      "type": "typing",
+      "title": "Neural Sync: Movement Code",
+      "description": "Move drone right 5 units and up 3 units.",
+      "targetCode": "x = x + 5\\ny = y + 3",
+      "points": 10
+    },
+    {
+      "id": "l14_debug_1",
+      "type": "debug",
+      "title": "Glitch Fix: Wrong Direction",
+      "description": "Drone should move LEFT 3 units but moves right! Fix the sign.",
+      "brokenCode": "x = 0\\nx = x + 3\\nprint(x)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "-3\n"
+        }
+      ],
+      "points": 15
+    },
+    {
+      "id": "l14_debug_2",
+      "type": "debug",
+      "title": "Glitch Fix: Distance Bug",
+      "description": "Distance calculation is wrong - missing square root!",
+      "brokenCode": "import math\\nx1, y1 = 0, 0\\nx2, y2 = 3, 4\\ndistance = (x2-x1)**2 + (y2-y1)**2\\nprint(distance)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "5.0\n"
+        }
+      ],
+      "points": 15
+    },
+    {
+      "id": "l14_code_1",
+      "type": "code",
+      "title": "Field Mission: Path Simulator",
+      "description": "Print coordinates after: start (0,0), move right 8, move up 6.",
+      "starterCode": "# Start at origin\\nx, y = 0, 0\\n\\n# Move right 8\\n\\n# Move up 6\\n\\n# Print final position\\n",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "8 6\n"
+        }
+      ],
+      "points": 20
+    },
+    {
+      "id": "l14_code_2",
+      "type": "code",
+      "title": "Field Mission: Distance Calculator",
+      "description": "Calculate distance from (0, 0) to (6, 8). Print rounded to 2 decimals.",
+      "starterCode": "import math\\n\\nx1, y1 = 0, 0\\nx2, y2 = 6, 8\\n\\n# Calculate distance\\n\\n# Print result\\n",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "10.00\n"
+        }
+      ],
+      "points": 20
+    },
+    {
+      "id": "l14_code_3",
+      "type": "code",
+      "title": "Field Mission: Patrol Route",
+      "description": "Calculate total distance for route: (0,0)→(3,4)→(3,0). Print total.",
+      "starterCode": "import math\\n\\n# Define waypoints\\npoints = [(0,0), (3,4), (3,0)]\\n\\n# Calculate total distance\\n\\n# Print total\\n",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "9.00\n"
+        }
+      ],
+      "points": 20
+    },
+    {
+      "id": "l14_typing_adv_1",
+      "type": "typing",
+      "title": "Neural Sync: Coordinate Update",
+      "description": "Update drone coordinates during surveillance flight.",
+      "targetCode": "x, y = 0, 0\nx += 10\ny += 5\nprint(x, y)",
+      "points": 10,
+      "xp": 10
+    },
+    {
+      "id": "l14_typing_adv_2",
+      "type": "typing",
+      "title": "Neural Sync: Distance Calculation",
+      "description": "Professional pathfinding - calculate straight-line distance between two waypoints.",
+      "targetCode": "import math\nx1, y1 = 0, 0\nx2, y2 = 3, 4\ndist = math.sqrt((x2-x1)**2 + (y2-y1)**2)\nprint(f'Distance: {dist}')",
+      "points": 15,
+      "xp": 15
+    },
+    {
+      "id": "l14_challenge_1",
+      "type": "debug",
+      "title": "Debug Challenge:  Direction Error",
+      "description": "Drone moving wrong direction! Should go LEFT (-5) but going RIGHT (+5)!",
+      "brokenCode": "x = 10\nx = x + 5\nprint(x)",
+      "starterCode": "x = 10\nx = x + 5\nprint(x)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "5\\n"
+        }
+      ],
+      "solution": "x = 10\nx = x - 5\nprint(x)",
+      "points": 20,
+      "xp": 20
+    },
+    {
+      "id": "l14_challenge_2",
+      "type": "code",
+      "title": "Navigation: Multi-Step Path",
+      "description": "Drone starts at (0,0). Move RIGHT 10, UP 5, LEFT 3. Print final position as 'x y'.",
+      "starterCode": "# Multi-step navigation\nx, y = 0, 0\n",
+      "solution": "x, y = 0, 0\nx += 10\ny += 5\nx -= 3\nprint(x, y)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "7 5\\n"
+        }
+      ],
+      "points": 25,
+      "xp": 25
+    },
+    {
+      "id": "l14_challenge_3",
+      "type": "code",
+      "title": "Reconnaissance: 4-Point Patrol",
+      "description": "Print coordinates of square patrol: (0,0), (100,0), (100,100), (0,100). One per line.",
+      "starterCode": "# Square patrol pattern\n",
+      "solution": "points = [(0,0), (100,0), (100,100), (0,100)]\nfor x, y in points:\n    print(x, y)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "0 0\\n100 0\\n100 100\\n0 100\\n"
+        }
+      ],
+      "points": 25,
+      "xp": 25
+    },
+    {
+      "id": "l14_challenge_4",
+      "type": "code",
+      "title": "Tactical Range: Distance to Target",
+      "description": "Calculate distance from base (0,0) to target (30,40). Use Pythagorean theorem. Print rounded to 2 decimals.",
+      "starterCode": "import math\nbase_x, base_y = 0, 0\ntarget_x, target_y = 30, 40\n",
+      "solution": "import math\nbase_x, base_y = 0, 0\ntarget_x, target_y = 30, 40\ndistance = math.sqrt((target_x - base_x)**2 + (target_y - base_y)**2)\nprint(f'{distance:.2f}')",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "50.00\\n"
+        }
+      ],
+      "points": 30,
+      "xp": 30
+    },
+    {
+      "id": "l14_challenge_5",
+      "type": "code",
+      "title": "Boss Challenge: Multi-Waypoint Mission",
+      "description": "ADVANCED NAV: Calculate total flight distance for route: (0,0)→(60,0)→(60,80)→(0,80)→back to(0,0). Use distance formula for each segment. Print total rounded to 2 decimals.",
+      "starterCode": "import math\n# Waypoint coordinates\nroute = [(0,0), (60,0), (60,80), (0,80), (0,0)]\n",
+      "solution": "import math\nroute = [(0,0), (60,0), (60,80), (0,80), (0,0)]\ntotal = 0\nfor i in range(len(route)-1):\n    x1, y1 = route[i]\n    x2, y2 = route[i+1]\n    dist = math.sqrt((x2-x1)**2 + (y2-y1)**2)\n    total += dist\nprint(f'{total:.2f}')",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "280.00\\n"
+        }
+      ],
+      "points": 40,
+      "xp": 40
+    }
+  ]
+}

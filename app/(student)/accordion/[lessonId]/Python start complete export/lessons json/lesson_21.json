@@ -1,0 +1,62 @@
+{
+    "lesson_id": "lesson_21",
+    "title": "Classes: The Droid Blueprint",
+    "module": "Module 5: Object-Oriented Programming",
+    "duration_minutes": 60,
+    "environment": "standard",
+    "slide_url": "/content/python/slides/lesson_21_classes.pdf",
+    "objectives": [
+        "Understand what classes are and why we use them",
+        "Learn the __init__ constructor method",
+        "Understand the 'self' parameter",
+        "Create multiple instances from a single class blueprint"
+    ],
+    "description": "Welcome to the Neon City Droid Factory! Learn Object-Oriented Programming by creating blueprints for Worker Bots. Use classes to define reusable templates, then manufacture multiple droids from the same design.",
+    "exercises": [
+        {
+            "id": "l21_code_1",
+            "type": "code",
+            "title": "Define Your First Class",
+            "instructions": "**Factory Initialization Protocol:**\n\nCreate a basic Droid class blueprint.\n\n**Requirements:**\n1. Define a class called `Droid`\n2. Add an `__init__` method that accepts two parameters:\n   - `name` (the droid's designation)\n   - `battery_level` (power percentage)\n3. Store these as `self.name` and `self.battery_level`\n4. Create one droid: `worker = Droid('BOT-7734', 100)`\n5. Print the droid's name and battery level\n\n**Key Concept:** The class is the blueprint, the instance is the actual droid!",
+            "starterCode": "# Define the Droid class blueprint\nclass Droid:\n    def __init__(self, name, battery_level):\n        # Initialize attributes\n        pass\n\n# Manufacture a droid\n\n# Test output\n",
+            "solution": "# Define the Droid class blueprint\nclass Droid:\n    def __init__(self, name, battery_level):\n        self.name = name\n        self.battery_level = battery_level\n\n# Manufacture a droid\nworker = Droid('BOT-7734', 100)\n\n# Test output\nprint(f\"Droid {worker.name} online.\")\nprint(f\"Battery: {worker.battery_level}%\")",
+            "expectedOutput": "Droid BOT-7734 online.\nBattery: 100%",
+            "hints": [
+                "__init__ is called automatically when you create an instance",
+                "self refers to the specific instance being created",
+                "self.name stores data uniquely for each droid"
+            ],
+            "testCases": []
+        },
+        {
+            "id": "l21_code_2",
+            "type": "code",
+            "title": "Add a Method to the Class",
+            "instructions": "**Programming Behavior Protocols:**\n\nGive your droids the ability to greet!\n\n**Task:**\n1. Copy your Droid class from before\n2. Add a method called `greet()` that:\n   - Prints: `\"Greetings. I am {self.name}, Worker Unit.\"`\n3. Create a droid: `worker_one = Droid('BOT-3000', 95)`\n4. Call `worker_one.greet()`\n\n**Remember:** Methods are functions inside a class. They can access `self.name` and other attributes!",
+            "starterCode": "class Droid:\n    def __init__(self, name, battery_level):\n        self.name = name\n        self.battery_level = battery_level\n    \n    # Add greet method here\n\n# Test your droid\nworker_one = Droid('BOT-3000', 95)\n",
+            "solution": "class Droid:\n    def __init__(self, name, battery_level):\n        self.name = name\n        self.battery_level = battery_level\n    \n    def greet(self):\n        print(f\"Greetings. I am {self.name}, Worker Unit.\")\n\n# Test your droid\nworker_one = Droid('BOT-3000', 95)\nworker_one.greet()",
+            "expectedOutput": "Greetings. I am BOT-3000, Worker Unit.",
+            "hints": [
+                "Methods inside a class always have 'self' as the first parameter",
+                "Use self.name to access the droid's name",
+                "Call methods with droid.method_name()"
+            ],
+            "testCases": []
+        },
+        {
+            "id": "l21_code_3",
+            "type": "code",
+            "title": "Mass Production - Multiple Instances",
+            "instructions": "**Factory Production Line:**\n\nCreate a fleet of droids from one blueprint!\n\n**Manufacturing Orders:**\n1. Use your Droid class with `__init__` and `greet()` methods\n2. Create 3 droids:\n   - `worker_a = Droid('ALPHA-1', 100)`\n   - `worker_b = Droid('BETA-2', 87)`\n   - `worker_c = Droid('GAMMA-3', 92)`\n3. Make all 3 droids greet (call `.greet()` on each)\n\n**Observe:** Same blueprint, different data for each droid!\n\nThis is the power of OOP - reusable code!",
+            "starterCode": "class Droid:\n    def __init__(self, name, battery_level):\n        self.name = name\n        self.battery_level = battery_level\n    \n    def greet(self):\n        print(f\"Greetings. I am {self.name}, Worker Unit.\")\n\n# Create factory line of 3 droids\n\n# Make them all greet\n",
+            "solution": "class Droid:\n    def __init__(self, name, battery_level):\n        self.name = name\n        self.battery_level = battery_level\n    \n    def greet(self):\n        print(f\"Greetings. I am {self.name}, Worker Unit.\")\n\n# Create factory line of 3 droids\nworker_a = Droid('ALPHA-1', 100)\nworker_b = Droid('BETA-2', 87)\nworker_c = Droid('GAMMA-3', 92)\n\n# Make them all greet\nworker_a.greet()\nworker_b.greet()\nworker_c.greet()",
+            "expectedOutput": "Greetings. I am ALPHA-1, Worker Unit.\nGreetings. I am BETA-2, Worker Unit.\nGreetings. I am GAMMA-3, Worker Unit.",
+            "hints": [
+                "Each instance is a separate object with its own data",
+                "You only define the class once, but create many instances",
+                "All 3 droids share the same methods but have unique names"
+            ],
+            "testCases": []
+        }
+    ]
+}

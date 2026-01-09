@@ -1,0 +1,351 @@
+{
+    "lesson_id": "lesson_04",
+    "title": "Interactive Protocols & Logic Gates",
+    "module": "Module 1: Python Basics",
+    "duration_minutes": 60,
+    "slide_url": "/content/python/slides/lesson_04.md",
+    "objectives": [
+        "Take user input with input()",
+        "Convert input types (str to int)",
+        "Understand boolean logic (True/False)",
+        "Use comparison operators (>, <, ==)",
+        "Build interactive security systems"
+    ],
+    "description": "Agent, it's time to make Chronos interactive. Learn to accept user commands, process real-time data, and make logical decisions based on input. Your programs will come alive.",
+    "exercises": [
+        {
+            "id": "l04_quiz_01",
+            "type": "quiz",
+            "title": "Clearance Check: Input Data Type",
+            "description": "CHRONOS SECURITY: What data type does the input() function ALWAYS return by default?",
+            "options": [
+                "integer",
+                "string",
+                "boolean",
+                "float"
+            ],
+            "correctAnswer": 1,
+            "tasks": [
+                "Read the security question",
+                "Identify input() return type"
+            ],
+            "xp": 5
+        },
+        {
+            "id": "l04_quiz_02",
+            "type": "quiz",
+            "title": "Clearance Check: Boolean Evaluation",
+            "description": "CHRONOS LOGIC GATE: Evaluate the expression: 10 > 5",
+            "options": [
+                "True",
+                "False",
+                "10",
+                "Error"
+            ],
+            "correctAnswer": 0,
+            "tasks": [
+                "Analyze the comparison",
+                "Select the correct boolean result"
+            ],
+            "xp": 5
+        },
+        {
+            "id": "l04_type_01",
+            "type": "typing",
+            "title": "Neural Sync: Field Status Transmission",
+            "description": "CHRONOS COMMAND CENTER: Field operative reporting from active mission zone. Establish secure communication channel to receive mission status update. Use input() function to prompt the agent for their current operational status report. Store the transmission for command review.",
+            "targetCode": "mission_status = input(\"Please enter your current mission status report: \")",
+            "tasks": [
+                "Type the input() command",
+                "Include the prompt message",
+                "Store in mission_status variable"
+            ],
+            "xp": 10
+        },
+        {
+            "id": "l04_type_02",
+            "type": "typing",
+            "title": "Neural Sync: Reactor Core Diagnostics",
+            "description": "CHRONOS POWER SYSTEMS: Main reactor core requires real-time energy monitoring. Prompt the operator to input current core energy reading (0-100 scale). Convert the input directly to integer format for immediate processing by the power management system. Critical for preventing overload conditions.",
+            "targetCode": "energy_level = int(input(\"Enter current core energy reading (0-100): \"))",
+            "tasks": [
+                "Wrap input() with int()",
+                "Include the prompt message",
+                "Store in energy_level variable"
+            ],
+            "xp": 10
+        },
+        {
+            "id": "l04_type_03",
+            "type": "typing",
+            "title": "Neural Sync: Biometric Access Verification",
+            "description": "CHRONOS ACCESS CONTROL: Secure vault requires biometric security code verification. Check if the provided security_code matches the authorized value 1234 in the database. Use the equality comparison operator (==) to verify credentials and grant or deny access to classified materials.",
+            "targetCode": "access_granted = security_code == 1234 # Verifying against database",
+            "tasks": [
+                "Use == comparison operator",
+                "Compare against 1234",
+                "Include the comment"
+            ],
+            "xp": 10
+        },
+        {
+            "id": "l04_debug_01",
+            "type": "debug",
+            "title": "System Repair: Type Mismatch Error",
+            "description": "CRITICAL ERROR: System crashes when adding to input because input() returns a string, not a number. Convert the input to integer before arithmetic!",
+            "brokenCode": "age = input(\"Age: \")\\nnext_age = age + 1",
+            "starterCode": "age = input(\"Age: \")\\nnext_age = age + 1\\nprint(next_age)",
+            "testCases": [
+                {
+                    "input": "20",
+                    "expectedOutput": "21\\n"
+                }
+            ],
+            "solution": "age = int(input(\"Age: \"))\\nnext_age = age + 1\\nprint(next_age)",
+            "tasks": [
+                "Identify the type error",
+                "Wrap input() with int()",
+                "Verify arithmetic works"
+            ],
+            "xp": 15
+        },
+        {
+            "id": "l04_debug_02",
+            "type": "debug",
+            "title": "System Repair: Assignment vs Comparison",
+            "description": "CHRONOS LOGIC FAILURE: The security gate is malfunctioning! We use == for comparison, not =. Fix the operator before unauthorized access!",
+            "brokenCode": "password = \"secret\"\\nis_correct = password = \"secret\"",
+            "starterCode": "password = \"secret\"\\nis_correct = password = \"secret\"\\nprint(is_correct)",
+            "testCases": [
+                {
+                    "input": "",
+                    "expectedOutput": "True\\n"
+                }
+            ],
+            "solution": "password = \"secret\"\\nis_correct = password == \"secret\"\\nprint(is_correct)",
+            "tasks": [
+                "Identify assignment operator (=)",
+                "Change to comparison operator (==)",
+                "Verify boolean result"
+            ],
+            "xp": 15
+        },
+        {
+            "id": "l04_code_01",
+            "type": "code",
+            "title": "Field Mission: Operative Age Clearance",
+            "description": "CHRONOS SECURITY CHECKPOINT: Vetting new recruit for field operations. Minimum age requirement is 18 years for tactical deployment. Input candidate age and verify clearance status. Print True if qualified for duty, False if reassignment to support roles required.",
+            "starterCode": "# Take input and check age clearance",
+            "solution": "age = int(input())\\nprint(age >= 18)",
+            "testCases": [
+                {
+                    "input": "20",
+                    "expectedOutput": "True\\n"
+                },
+                {
+                    "input": "15",
+                    "expectedOutput": "False\\n"
+                }
+            ],
+            "points": 20,
+            "tasks": [
+                "Take age input with int(input())",
+                "Use >= operator to check if 18 or older",
+                "Print the boolean result"
+            ],
+            "xp": 20
+        },
+        {
+            "id": "l04_code_02",
+            "type": "code",
+            "title": "Field Mission: Signal Amplification",
+            "description": "CHRONOS COMMUNICATIONS: Satellite signal too weak for secure transmission! Input the current signal strength value, amplify it by a factor of 10 using the signal booster array, then output the boosted signal power to establish connection.",
+            "starterCode": "# Input -> Amplify -> Output",
+            "solution": "num = int(input())\\nprint(num * 10)",
+            "testCases": [
+                {
+                    "input": "5",
+                    "expectedOutput": "50\\n"
+                }
+            ],
+            "points": 20,
+            "tasks": [
+                "Take number input with int(input())",
+                "Multiply by 10",
+                "Print the result"
+            ],
+            "xp": 20
+        },
+        {
+            "id": "l04_code_03",
+            "type": "code",
+            "title": "Field Mission: Secure Vault Access",
+            "description": "CHRONOS CLASSIFIED VAULT: Mainframe vault contains top-secret intelligence files. Input the access password and verify against the secure database. Print True if password matches 'mainframe' (case-sensitive security protocol), False to trigger lockdown.",
+            "starterCode": "# Password verification system",
+            "solution": "password = input()\\nprint(password == 'mainframe')",
+            "testCases": [
+                {
+                    "input": "mainframe",
+                    "expectedOutput": "True\\n"
+                },
+                {
+                    "input": "guest",
+                    "expectedOutput": "False\\n"
+                }
+            ],
+            "points": 20,
+            "tasks": [
+                "Take password input",
+                "Compare with 'mainframe' using ==",
+                "Print boolean result"
+            ],
+            "xp": 20
+        },
+        {
+            "id": "l04_typing_adv_1",
+            "type": "typing",
+            "title": "Neural Sync: Secure Terminal Login",
+            "description": "CHRONOS SECURITY CHECKPOINT: Operative attempting to access classified terminal. Activate identity verification protocol by prompting for username credentials. Display the entered username for visual confirmation before granting system access. This prevents unauthorized entry to sensitive systems.",
+            "targetCode": "username = input(\"Username: \")\\nprint(username)",
+            "points": 10,
+            "tasks": [
+                "Prompt for username",
+                "Store in variable",
+                "Display for verification"
+            ],
+            "xp": 10
+        },
+        {
+            "id": "l04_typing_adv_2",
+            "type": "typing",
+            "title": "Neural Sync: Operative Enrollment System",
+            "description": "CHRONOS ACADEMY HEADQUARTERS: New recruit enrollment protocol initiated. Collect complete identity profile: first name, last name, and secure email contact. Process all three data points and confirm successful registration with full identity display. This creates the operative's permanent record in the Chronos database.",
+            "targetCode": "# User registration form\\nfirst_name = input(\"First Name: \")\\nlast_name = input(\"Last Name: \")\\nemail = input(\"Email: \")\\nprint(\"Registration complete for\", first_name, last_name)",
+            "points": 15,
+            "tasks": [
+                "Collect three inputs",
+                "Store in separate variables",
+                "Display confirmation message"
+            ],
+            "xp": 15
+        },
+        {
+            "id": "l04_challenge_1",
+            "type": "debug",
+            "title": "Debug Challenge: Keypad Type Mismatch",
+            "description": "URGENT ALERT: Mainframe keypad malfunction! Comparing string to integer. Fix type conversion before lockout (30 seconds)!",
+            "brokenCode": "number = input(\"Enter 10: \")\\nprint(number == 10)",
+            "starterCode": "number = input(\"Enter 10: \")\\nprint(number == 10)",
+            "testCases": [
+                {
+                    "input": "10",
+                    "expectedOutput": "True\\n"
+                }
+            ],
+            "solution": "number = int(input(\"Enter 10: \"))\\nprint(number == 10)",
+            "points": 20,
+            "tasks": [
+                "Identify string vs int comparison",
+                "Convert input to int",
+                "Verify comparison works"
+            ],
+            "xp": 20
+        },
+        {
+            "id": "l04_challenge_2",
+            "type": "code",
+            "title": "Surveillance: Shift Pattern Detection",
+            "description": "CHRONOS INTEL: Tracking enemy guard rotations. Input shift hour. Print True if even hour (vulnerable), False if odd (heavy security). Use modulo operator.",
+            "starterCode": "# Detect shift pattern - even hours are vulnerable\\n",
+            "solution": "number = int(input())\\nprint(number % 2 == 0)",
+            "testCases": [
+                {
+                    "input": "4",
+                    "expectedOutput": "True\\n"
+                },
+                {
+                    "input": "7",
+                    "expectedOutput": "False\\n"
+                }
+            ],
+            "points": 25,
+            "tasks": [
+                "Take hour input",
+                "Use modulo (%) to check even/odd",
+                "Print boolean result"
+            ],
+            "xp": 25
+        },
+        {
+            "id": "l04_challenge_3",
+            "type": "code",
+            "title": "Cover Identity: Alias Generator",
+            "description": "CHRONOS BLACK OPS: Generate cover identity for undercover work. Input first and last name, print reversed (last, first) for fake passport.",
+            "starterCode": "# Generate cover identity by reversing name order\\n",
+            "solution": "first = input()\\nlast = input()\\nprint(last, first)",
+            "testCases": [
+                {
+                    "input": "John\\nDoe",
+                    "expectedOutput": "Doe John\\n"
+                }
+            ],
+            "points": 25,
+            "tasks": [
+                "Take two name inputs",
+                "Print in reversed order",
+                "Use comma separator"
+            ],
+            "xp": 25
+        },
+        {
+            "id": "l04_challenge_4",
+            "type": "code",
+            "title": "Arctic Mission: Temperature Decoder",
+            "description": "CHRONOS SATELLITE INTEL: Spy satellite detected activity in Siberia. Convert Celsius to Fahrenheit using formula: (C × 9/5) + 32. Accurate intel critical!",
+            "starterCode": "# Decode satellite temperature reading\\ncelsius = int(input())\\n",
+            "solution": "celsius = int(input())\\nfahrenheit = (celsius * 9/5) + 32\\nprint(fahrenheit)",
+            "testCases": [
+                {
+                    "input": "0",
+                    "expectedOutput": "32.0\\n"
+                },
+                {
+                    "input": "100",
+                    "expectedOutput": "212.0\\n"
+                }
+            ],
+            "points": 30,
+            "tasks": [
+                "Take Celsius input",
+                "Apply conversion formula",
+                "Print Fahrenheit result"
+            ],
+            "xp": 30
+        },
+        {
+            "id": "l04_challenge_5",
+            "type": "code",
+            "title": "Boss Challenge: Agent Clearance System",
+            "description": "CHRONOS FINAL SECURITY: Vetting field agent for high-risk vehicle operation. Input age, license status, insurance status. Print True ONLY if: Age ≥18 AND has license AND has insurance. Triple verification required!",
+            "starterCode": "# Triple-verification security protocol\\nage = int(input())\\nhas_license = input()\\nhas_insurance = input()\\n",
+            "solution": "age = int(input())\\nhas_license = input()\\nhas_insurance = input()\\nprint(age >= 18 and has_license == 'True' and has_insurance == 'True')",
+            "testCases": [
+                {
+                    "input": "20\\nTrue\\nTrue",
+                    "expectedOutput": "True\\n"
+                },
+                {
+                    "input": "20\\nTrue\\nFalse",
+                    "expectedOutput": "False\\n"
+                }
+            ],
+            "points": 40,
+            "tasks": [
+                "Take three inputs (age, license, insurance)",
+                "Check all three conditions with AND",
+                "Print final boolean result"
+            ],
+            "xp": 40
+        }
+    ]
+}

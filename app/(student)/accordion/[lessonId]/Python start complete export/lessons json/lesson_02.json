@@ -1,0 +1,248 @@
+{
+  "lesson_id": "lesson_02",
+  "title": "Variables & Data Types",
+  "module": "Module 1: Python Basics",
+  "duration_minutes": 60,
+  "slide_url": "/content/python/slides/lesson_02.md",
+  "objectives": [
+    "Understand variables and assignment",
+    "Learn the 4 main data types (str, int, float, bool)",
+    "Master type conversion with int(), str(), float()",
+    "Use input() for user interaction",
+    "Apply the type() function"
+  ],
+  "description": "Deep dive into Python variables and data types. Learn how Python stores different kinds of information and how to convert between types.",
+  "exercises": [
+    {
+      "id": "l02_quiz_01",
+      "type": "quiz",
+      "title": "Clearance Check: Variable Assignment",
+      "description": "What happens when you run: x = 5; y = x; x = 10; print(y)?",
+      "options": [
+        "5",
+        "10",
+        "15",
+        "Error"
+      ],
+      "correctAnswer": 0,
+      "xp": 5
+    },
+    {
+      "id": "l02_quiz_02",
+      "type": "quiz",
+      "title": "Clearance Check: Data Type",
+      "description": "What is the data type of: age = 25?",
+      "options": [
+        "str",
+        "int",
+        "float",
+        "bool"
+      ],
+      "correctAnswer": 1,
+      "xp": 5
+    },
+    {
+      "id": "l02_type_01",
+      "type": "typing",
+      "title": "Neural Sync: Variable Declaration",
+      "description": "Create three variables: name (string), age (int), active (bool)",
+      "targetCode": "name = \\\"Agent47\\\"\\nage = 25\\nactive = True",
+      "xp": 10
+    },
+    {
+      "id": "l02_type_02",
+      "type": "typing",
+      "title": "Neural Sync: Type Conversion",
+      "description": "Convert string '42' to integer",
+      "targetCode": "number_str = \\\"42\\\"\\nnumber_int = int(number_str)\\nprint(number_int)",
+      "xp": 10
+    },
+    {
+      "id": "l02_type_03",
+      "type": "typing",
+      "title": "Neural Sync: User Input",
+      "description": "Get user's name and print greeting",
+      "targetCode": "name = input(\\\"Enter your name: \\\")\\nprint(f\\\"Hello, {name}!\\\")",
+      "xp": 10
+    },
+    {
+      "id": "l02_debug_01",
+      "type": "debug",
+      "title": "System Repair: Type Error",
+      "description": "Can't add string and number. Fix by converting age to string.",
+      "brokenCode": "name = \\\"Agent\\\"\\nage = 25\\nprint(name + age)",
+      "starterCode": "name = \\\"Agent\\\"\\nage = 25\\nprint(name + age)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "Agent25\\n"
+        }
+      ],
+      "solution": "name = \\\"Agent\\\"\\nage = 25\\nprint(name + str(age))",
+      "xp": 15
+    },
+    {
+      "id": "l02_debug_02",
+      "type": "debug",
+      "title": "System Repair: Input Type",
+      "description": "input() returns string. Convert to int for math operations.",
+      "brokenCode": "num = input()\\nresult = num * 2\\nprint(result)",
+      "starterCode": "num = input()\\nresult = num * 2\\nprint(result)",
+      "testCases": [
+        {
+          "input": "5",
+          "expectedOutput": "10\\n"
+        }
+      ],
+      "solution": "num = int(input())\\nresult = num * 2\\nprint(result)",
+      "xp": 15
+    },
+    {
+      "id": "l02_code_01",
+      "type": "code",
+      "title": "Field Mission: Age Calculator",
+      "description": "Ask for birth year, calculate age (current year is 2024)",
+      "starterCode": "# Get birth year from user\\n# Calculate and print age",
+      "solution": "birth_year = int(input())\\nage = 2024 - birth_year\\nprint(age)",
+      "testCases": [
+        {
+          "input": "2000",
+          "expectedOutput": "24\\n"
+        }
+      ],
+      "points": 20,
+      "xp": 20
+    },
+    {
+      "id": "l02_code_02",
+      "type": "code",
+      "title": "Field Mission: Temperature Converter",
+      "description": "Convert Celsius to Fahrenheit: F = C * 9/5 + 32",
+      "starterCode": "# Get Celsius temperature\\n# Convert and print Fahrenheit",
+      "solution": "celsius = float(input())\\nfahrenheit = celsius * 9/5 + 32\\nprint(fahrenheit)",
+      "testCases": [
+        {
+          "input": "0",
+          "expectedOutput": "32.0\\n"
+        }
+      ],
+      "points": 20,
+      "xp": 20
+    },
+    {
+      "id": "l02_code_03",
+      "type": "code",
+      "title": "Field Mission: Name Badge",
+      "description": "Create badge: 'Name: [name] | Status: ACTIVE'",
+      "starterCode": "# Get name from user\\n# Print badge format",
+      "solution": "name = input()\\nprint(f\\\"Name: {name} | Status: ACTIVE\\\")",
+      "testCases": [
+        {
+          "input": "Neo",
+          "expectedOutput": "Name: Neo | Status: ACTIVE\\n"
+        }
+      ],
+      "points": 20,
+      "xp": 20
+    },
+    {
+      "id": "l02_typing_adv_1",
+      "type": "typing",
+      "title": "Neural Sync: Multiple Inputs",
+      "description": "Get two numbers from user and calculate their sum",
+      "targetCode": "num1 = int(input(\\\"First number: \\\"))\\nnum2 = int(input(\\\"Second number: \\\"))\\ntotal = num1 + num2\\nprint(f\\\"Sum: {total}\\\")",
+      "points": 10,
+      "xp": 10
+    },
+    {
+      "id": "l02_typing_adv_2",
+      "type": "typing",
+      "title": "Neural Sync: Type Checking",
+      "description": "Use type() to check variable data type",
+      "targetCode": "value = 42\\nprint(type(value))\\nvalue = \\\"42\\\"\\nprint(type(value))",
+      "points": 15,
+      "xp": 15
+    },
+    {
+      "id": "l02_challenge_1",
+      "type": "debug",
+      "title": "Debug Challenge: Float Conversion",
+      "description": "Need float for decimal result, not int",
+      "brokenCode": "price = \\\"19.99\\\"\\ntax = int(price) * 0.1\\nprint(tax)",
+      "starterCode": "price = \\\"19.99\\\"\\ntax = int(price) * 0.1\\nprint(tax)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "1.999\\\\n"
+        }
+      ],
+      "solution": "price = \\\"19.99\\\"\\ntax = float(price) * 0.1\\nprint(tax)",
+      "points": 20,
+      "xp": 20
+    },
+    {
+      "id": "l02_challenge_2",
+      "type": "code",
+      "title": "Data Typing: BMI Calculator",
+      "description": "Calculate BMI = weight(kg) / height(m)^2. Get inputs, print result.",
+      "starterCode": "# Get weight in kg and height in meters\\n# Calculate and print BMI",
+      "solution": "weight = float(input())\\nheight = float(input())\\nbmi = weight / (height ** 2)\\nprint(bmi)",
+      "testCases": [
+        {
+          "input": "70\\\\n1.75",
+          "expectedOutput": "22.857142857142858\\\\n"
+        }
+      ],
+      "points": 25,
+      "xp": 25
+    },
+    {
+      "id": "l02_challenge_3",
+      "type": "code",
+      "title": "Conversion: String to Boolean",
+      "description": "Get input, convert to boolean (bool('') = False, bool('text') = True)",
+      "starterCode": "# Get user input\\n# Convert to boolean and print",
+      "solution": "text = input()\\nresult = bool(text)\\nprint(result)",
+      "testCases": [
+        {
+          "input": "hello",
+          "expectedOutput": "True\\\\n"
+        }
+      ],
+      "points": 25,
+      "xp": 25
+    },
+    {
+      "id": "l02_challenge_4",
+      "type": "code",
+      "title": "Field Intel: Circle Area",
+      "description": "Get radius, calculate area (π×r²). Use 3.14159 for π.",
+      "starterCode": "# Get radius from user\\n# Calculate and print area",
+      "solution": "radius = float(input())\\npi = 3.14159\\narea = pi * radius ** 2\\nprint(area)",
+      "testCases": [
+        {
+          "input": "5",
+          "expectedOutput": "78.53975\\\\n"
+        }
+      ],
+      "points": 30,
+      "xp": 30
+    },
+    {
+      "id": "l02_challenge_5",
+      "type": "code",
+      "title": "Boss Challenge: Multi-Type Processor",
+      "description": "Get 3 inputs: name(str), score(int from str), active(bool from str 'True'/'False'). Print formatted output.",
+      "starterCode": "# Get three inputs and convert types\\n# Print: Name: [name] | Score: [score] | Active: [active]",
+      "solution": "name = input()\\nscore = int(input())\\nactive_str = input()\\nactive = active_str == 'True'\\nprint(f\\\"Name: {name} | Score: {score} | Active: {active}\\\")",
+      "testCases": [
+        {
+          "input": "Agent Smith\\\\n95\\\\nTrue",
+          "expectedOutput": "Name: Agent Smith | Score: 95 | Active: True\\\\n"
+        }
+      ],
+      "points": 40,
+      "xp": 40
+    }
+  ]
+}

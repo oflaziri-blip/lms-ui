@@ -1,68 +1,349 @@
 {
-    "lesson_id": "lesson_02",
-    "title": "Memory Containers (Variables)",
-    "module": "Module 1: Python Basics",
-    "duration_minutes": 60,
-    "slide_url": "/content/python/slides/lesson_02.md",
-    "objectives": [
-        "Understand what variables are and how to store data",
-        "Learn about different data types: Strings, Integers, Floats",
-        "Practice variable assignment and re-assignment",
-        "Use variables in calculations",
-        "Debug variable naming errors"
-    ],
-    "description": "Master variables, strings, numbers, and basic data types in Python. You'll learn how to store and manipulate data in your programs.",
-    "exercises": [
+  "lesson_id": "lesson_02",
+  "title": "Memory Containers: Variables",
+  "module": "Module 1: Python Basics",
+  "duration_minutes": 60,
+  "slide_url": "/test-improved-slides",
+  "objectives": [
+    "Understand what variables are and why they're essential",
+    "Create and name variables following Python conventions",
+    "Store numbers and strings in variables",
+    "Reassign and update variable values",
+    "Use variables in calculations and operations"
+  ],
+  "description": "Master Python variables - the containers that store your data. Learn to create, name, and use variables effectively.",
+  "exercises": [
+    {
+      "id": "l02_task_01",
+      "type": "code",
+      "title": "Task 1: Create Your First Variable",
+      "description": "Create a variable named 'score' and assign it the value 100. Then print it.",
+      "starterCode": "# Create variable score = 100\n# Print the score",
+      "solution": "score = 100\nprint(score)",
+      "testCases": [
         {
-            "id": "l02_quiz_01",
-            "type": "quiz",
-            "title": "Clearance Check: Variable Concept",
-            "description": "What is the primary purpose of a variable in Python?",
-            "options": [
-                "To run code faster",
-                "To store data values for later use",
-                "To print text to the screen",
-                "To stop the program"
-            ],
-            "correctAnswer": 1,
-            "tasks": [
-                "Read the question",
-                "Select the best definition"
-            ],
-            "xp": 5
-        },
-        {
-            "id": "l02_type_01",
-            "type": "typing",
-            "title": "Neural Sync: Agent Profile Initialization",
-            "description": "CHRONOS PERSONNEL DATABASE: New operative 'Cipher' joining the ranks at Level 5 clearance with Active duty status. Initialize the agent's digital profile by storing their credentials in the system. Type the variable assignments exactly to register the operative in the mainframe.",
-            "targetCode": "agent_name = \"Cipher\"\nagent_level = 5\nstatus = \"Active\"",
-            "tasks": [
-                "Type the variable assignments",
-                "Check for quotes on strings"
-            ],
-            "xp": 10
-        },
-        {
-            "id": "l02_code_01",
-            "type": "code",
-            "title": "Field Mission: Power Core Diagnostics",
-            "description": "CHRONOS ENERGY SYSTEMS: Initialize the reactor core diagnostics module. The main power core is operating at 100% capacity. Store this critical value in the 'score' variable and output it to the monitoring terminal for verification.",
-            "starterCode": "# Create score variable\n# Print score",
-            "solution": "score = 100\nprint(score)",
-            "testCases": [
-                {
-                    "input": "",
-                    "expectedOutput": "100\n"
-                }
-            ],
-            "points": 20,
-            "tasks": [
-                "Define variable 'score'",
-                "Assign value 100",
-                "Print the variable"
-            ],
-            "xp": 20
+          "input": "",
+          "expectedOutput": "100\n"
         }
-    ]
+      ],
+      "tasks": [
+        "Use = to assign value",
+        "Print the variable"
+      ],
+      "xp": 10
+    },
+    {
+      "id": "l02_task_02",
+      "type": "code",
+      "title": "Task 2: String Variable",
+      "description": "Create a variable named 'name' with the value 'Shadow'. Print it.",
+      "starterCode": "# Create variable name = 'Shadow'\n# Print name",
+      "solution": "name = 'Shadow'\nprint(name)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "Shadow\n"
+        }
+      ],
+      "tasks": [
+        "Create string variable",
+        "Print the variable"
+      ],
+      "xp": 10
+    },
+    {
+      "id": "l02_task_03",
+      "type": "code",
+      "title": "Task 3: Multiple Variables",
+      "description": "Create two variables: age = 25 and level = 5. Print both on separate lines.",
+      "starterCode": "# Create age = 25\n# Create level = 5\n# Print both",
+      "solution": "age = 25\nlevel = 5\nprint(age)\nprint(level)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "25\n5\n"
+        }
+      ],
+      "tasks": [
+        "Create two variables",
+        "Print both values"
+      ],
+      "xp": 10
+    },
+    {
+      "id": "l02_task_04",
+      "type": "code",
+      "title": "Task 4: Valid Variable Names",
+      "description": "Create a variable with snake_case naming: user_score = 150. Print it.",
+      "starterCode": "# Create user_score = 150",
+      "solution": "user_score = 150\nprint(user_score)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "150\n"
+        }
+      ],
+      "tasks": [
+        "Use snake_case naming",
+        "Print the variable"
+      ],
+      "xp": 10
+    },
+    {
+      "id": "l02_task_05",
+      "type": "code",
+      "title": "Task 5: Descriptive Names",
+      "description": "Create variables with descriptive names: player_health = 100, max_health = 100. Print player_health.",
+      "starterCode": "# Create player_health = 100\n# Create max_health = 100\n# Print player_health",
+      "solution": "player_health = 100\nmax_health = 100\nprint(player_health)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "100\n"
+        }
+      ],
+      "tasks": [
+        "Use descriptive names",
+        "Create two variables",
+        "Print one of them"
+      ],
+      "xp": 15
+    },
+    {
+      "id": "l02_task_06",
+      "type": "code",
+      "title": "Task 6: Reassigning Variables",
+      "description": "Create x = 10, then reassign x = 20. Print x (should show 20).",
+      "starterCode": "# Create x = 10\n# Reassign x = 20\n# Print x",
+      "solution": "x = 10\nx = 20\nprint(x)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "20\n"
+        }
+      ],
+      "tasks": [
+        "Create variable",
+        "Reassign new value",
+        "Print shows latest value"
+      ],
+      "xp": 15
+    },
+    {
+      "id": "l02_task_07",
+      "type": "code",
+      "title": "Task 7: Updating with Operations",
+      "description": "Create score = 100, then update score = score + 50. Print score (should show 150).",
+      "starterCode": "# Create score = 100\n# Update score = score + 50\n# Print score",
+      "solution": "score = 100\nscore = score + 50\nprint(score)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "150\n"
+        }
+      ],
+      "tasks": [
+        "Create initial value",
+        "Update using itself",
+        "Print new value"
+      ],
+      "xp": 15
+    },
+    {
+      "id": "l02_task_08",
+      "type": "code",
+      "title": "Task 8: Variables in Calculations",
+      "description": "Create x = 10 and y = 5. Print x + y.",
+      "starterCode": "# Create x = 10, y = 5\n# Print x + y",
+      "solution": "x = 10\ny = 5\nprint(x + y)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "15\n"
+        }
+      ],
+      "tasks": [
+        "Create two variables",
+        "Add them in print()"
+      ],
+      "xp": 15
+    },
+    {
+      "id": "l02_task_09",
+      "type": "code",
+      "title": "Task 9: Complex Calculation",
+      "description": "Create base = 50, bonus = 20, multiplier = 2. Print (base + bonus) * multiplier.",
+      "starterCode": "# Create the three variables\n# Print the calculation",
+      "solution": "base = 50\nbonus = 20\nmultiplier = 2\nprint((base + bonus) * multiplier)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "140\n"
+        }
+      ],
+      "tasks": [
+        "Create three variables",
+        "Use parentheses for order",
+        "Print the result"
+      ],
+      "xp": 20
+    },
+    {
+      "id": "l02_task_10",
+      "type": "code",
+      "title": "Task 10: Storing Results",
+      "description": "Create x = 10, y = 5. Create result = x * y. Print result.",
+      "starterCode": "# Create x = 10, y = 5\n# Create result = x * y\n# Print result",
+      "solution": "x = 10\ny = 5\nresult = x * y\nprint(result)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "50\n"
+        }
+      ],
+      "tasks": [
+        "Create two variables",
+        "Store calculation in new variable",
+        "Print the result variable"
+      ],
+      "xp": 15
+    },
+    {
+      "id": "l02_task_11",
+      "type": "code",
+      "title": "Task 11: String Variables",
+      "description": "Create first_name = 'John' and last_name = 'Doe'. Print both with a space between using comma.",
+      "starterCode": "# Create the two name variables\n# Print with comma",
+      "solution": "first_name = 'John'\nlast_name = 'Doe'\nprint(first_name, last_name)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "John Doe\n"
+        }
+      ],
+      "tasks": [
+        "Create two string variables",
+        "Use comma in print to separate"
+      ],
+      "xp": 15
+    },
+    {
+      "id": "l02_task_12",
+      "type": "code",
+      "title": "Task 12: String Concatenation with Variables",
+      "description": "Create agent = 'Shadow'. Print 'Agent: ' + agent.",
+      "starterCode": "# Create agent = 'Shadow'\n# Print 'Agent: ' + agent",
+      "solution": "agent = 'Shadow'\nprint('Agent: ' + agent)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "Agent: Shadow\n"
+        }
+      ],
+      "tasks": [
+        "Create string variable",
+        "Use + to concatenate"
+      ],
+      "xp": 15
+    },
+    {
+      "id": "l02_task_13",
+      "type": "code",
+      "title": "Task 13: Combining Variables",
+      "description": "Create x = 5, y = 10, z = 15. Print x + y + z.",
+      "starterCode": "# Create three variables\n# Print sum",
+      "solution": "x = 5\ny = 10\nz = 15\nprint(x + y + z)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "30\n"
+        }
+      ],
+      "tasks": [
+        "Create three variables",
+        "Add all three"
+      ],
+      "xp": 15
+    },
+    {
+      "id": "l02_task_14",
+      "type": "code",
+      "title": "Task 14: Text and Number Variables",
+      "description": "Create label = 'Score:' and value = 100. Print them with comma separation.",
+      "starterCode": "# Create label and value\n# Print both",
+      "solution": "label = 'Score:'\nvalue = 100\nprint(label, value)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "Score: 100\n"
+        }
+      ],
+      "tasks": [
+        "Create string and number variables",
+        "Print with comma (auto space)"
+      ],
+      "xp": 20
+    },
+    {
+      "id": "l02_task_15",
+      "type": "debug",
+      "title": "Task 15: Fix Undefined Variable",
+      "description": "Fix the error - variable must be created before use!",
+      "brokenCode": "print(undefined_var)",
+      "starterCode": "print(undefined_var)",
+      "solution": "undefined_var = 42\nprint(undefined_var)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "42\n"
+        }
+      ],
+      "tasks": [
+        "Create the variable first",
+        "Then print it"
+      ],
+      "xp": 15
+    },
+    {
+      "id": "l02_task_16",
+      "type": "debug",
+      "title": "Task 16: Fix Typo in Variable Name",
+      "description": "Fix the typo - variable names must match exactly!",
+      "brokenCode": "score = 100\nprint(scroe)",
+      "starterCode": "score = 100\nprint(scroe)",
+      "solution": "score = 100\nprint(score)",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "100\n"
+        }
+      ],
+      "tasks": [
+        "Fix the typo in print statement",
+        "Variable names are case-sensitive"
+      ],
+      "xp": 15
+    },
+    {
+      "id": "l02_task_17",
+      "type": "code",
+      "title": "Task 17: Complete Program",
+      "description": "Create a character profile: name = 'Shadow', level = 10, health = 100. Print formatted output:\n===\nAGENT: Shadow\nLEVEL: 10\nHEALTH: 100\n===",
+      "starterCode": "# Create the three variables\n# Print formatted profile",
+      "solution": "name = 'Shadow'\nlevel = 10\nhealth = 100\nprint('===')\nprint('AGENT:', name)\nprint('LEVEL:', level)\nprint('HEALTH:', health)\nprint('===')",
+      "testCases": [
+        {
+          "input": "",
+          "expectedOutput": "===\nAGENT: Shadow\nLEVEL: 10\nHEALTH: 100\n===\n"
+        }
+      ],
+      "tasks": [
+        "Create three variables",
+        "Print border",
+        "Print each with label",
+        "Print closing border"
+      ],
+      "xp": 25
+    }
+  ]
 }

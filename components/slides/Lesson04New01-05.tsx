@@ -106,7 +106,7 @@ export function Lesson04NewSlide02() {
                 <div className="grid grid-cols-2 gap-8">
                     <CharacterQuote character="aria">
                         <p className="text-lg italic mb-3">
-                            "Real systems combine operations—calculations within calculations."
+                            """Real systems combine operations—calculations within calculations."quot;Real systems combine operations—calculations within calculations."Real systems combine operations—calculations within calculations."quot;"quot;Real systems combine operations—calculations within calculations.""Real systems combine operations—calculations within calculations."quot;Real systems combine operations—calculations within calculations."Real systems combine operations—calculations within calculations."quot;"quot;"
                         </p>
                         <p className="text-sm text-gray-400">
                             Commander Aria will show you how to build robust, multi-layer logic.
@@ -115,7 +115,7 @@ export function Lesson04NewSlide02() {
 
                     <ProTip>
                         <p className="text-lg italic mb-3">
-                            "Nesting is how Python handles complex logic efficiently."
+                            """Nesting is how Python handles complex logic efficiently."quot;Nesting is how Python handles complex logic efficiently."Nesting is how Python handles complex logic efficiently."quot;"quot;Nesting is how Python handles complex logic efficiently.""Nesting is how Python handles complex logic efficiently."quot;Nesting is how Python handles complex logic efficiently."Nesting is how Python handles complex logic efficiently."quot;"quot;"
                         </p>
                         <p className="text-sm text-gray-400">
                             Chief Engineer Kael will guide you through the syntax and structure.
@@ -295,10 +295,4 @@ export function Lesson04NewSlide05() {
 }
 
 // Export all slides
-export {
-    Lesson04NewSlide01,
-    Lesson04NewSlide02,
-    Lesson04NewSlide03,
-    Lesson04NewSlide04,
-    Lesson04NewSlide05
-};
+// Exports handled inline

@@ -184,7 +184,7 @@ export function Lesson04NewSlide09() {
                         <h3 className="text-red-400 font-bold mb-2">Extra Parenthesis</h3>
                         <Terminal variant="error">
                             <CodeLine>print((10 + 5)) * 2))</CodeLine>
-                            <CodeLine error>SyntaxError: unmatched ')'</CodeLine>
+                            <CodeLine error>SyntaxError: unmatched unmatched unmatched ')'apos;)unmatched ')'apos;apos;)unmatched unmatched ')'apos;)unmatched ')'apos;apos;</CodeLine>
                         </Terminal>
                         <p className="mt-2 text-sm text-gray-400">Count your parentheses carefully!</p>
                     </div>
@@ -309,7 +309,7 @@ export function Lesson04NewSlide12() {
                     <CodeLine output>====================</CodeLine>
                     <CodeLine>&nbsp;</CodeLine>
                     <CodeLine># String Concatenation</CodeLine>
-                    <CodeLine>print("Hello" + " " + "World")</CodeLine>
+                    <CodeLine>print("""Hello"quot;Hello"Hello"quot;"quot;Hello""Hello"quot;Hello"Hello"quot;"quot;" + " " + """World"quot;World"World"quot;"quot;World""World"quot;World"World"quot;"quot;")</CodeLine>
                     <CodeLine output>Hello World</CodeLine>
                 </Terminal>
 
@@ -344,7 +344,7 @@ export function Lesson04NewSlide13() {
                         <h3 className="text-cyan-400 font-bold mb-2 text-xl">Functions as Arguments</h3>
                         <Terminal variant="success">
                              <CodeLine># len() inside print()</CodeLine>
-                             <CodeLine>print(len("Hello"))</CodeLine>
+                             <CodeLine>print(len("""Hello"quot;Hello"Hello"quot;"quot;Hello""Hello"quot;Hello"Hello"quot;"quot;"))</CodeLine>
                              <CodeLine output>5</CodeLine>
                         </Terminal>
                     </div>
@@ -353,14 +353,14 @@ export function Lesson04NewSlide13() {
                         <h3 className="text-blue-400 font-bold mb-2 text-xl">Combined Operations</h3>
                          <Terminal variant="success">
                              <CodeLine># Concatenate THEN measure</CodeLine>
-                             <CodeLine>print(len("Hello" + "World"))</CodeLine>
+                             <CodeLine>print(len("""Hello"quot;Hello"Hello"quot;"quot;Hello""Hello"quot;Hello"Hello"quot;"quot;" + """World"quot;World"World"quot;"quot;World""World"quot;World"World"quot;"quot;"))</CodeLine>
                              <CodeLine output>10</CodeLine>
                         </Terminal>
                     </div>
                 </div>
 
                 <div className="mt-8 text-center text-gray-400 italic">
-                    "Hello" + "World" becomes "HelloWorld" (10 chars), then len() counts it.
+                    """Hello"quot;Hello"Hello"quot;"quot;Hello""Hello"quot;Hello"Hello"quot;"quot;" + """World"quot;World"World"quot;"quot;World""World"quot;World"World"quot;"quot;" becomes "HelloWorld" (10 chars), then len() counts it.
                 </div>
             </div>
         </div>
@@ -389,7 +389,7 @@ export function Lesson04NewSlide14() {
 
                 <Terminal variant="success" title="Advanced Examples">
                      <CodeLine># 1. Measure two strings and add lengths</CodeLine>
-                     <CodeLine>print(len("Hello") + len("World"))</CodeLine>
+                     <CodeLine>print(len("""Hello"quot;Hello"Hello"quot;"quot;Hello""Hello"quot;Hello"Hello"quot;"quot;") + len("""World"quot;World"World"quot;"quot;World""World"quot;World"World"quot;"quot;"))</CodeLine>
                      <CodeLine output>10</CodeLine>
                      <CodeLine>&nbsp;</CodeLine>
                      <CodeLine># 2. Calculate repeat count</CodeLine>
@@ -397,7 +397,7 @@ export function Lesson04NewSlide14() {
                      <CodeLine output>----------</CodeLine>
                      <CodeLine>&nbsp;</CodeLine>
                      <CodeLine># 3. Format output with math</CodeLine>
-                     <CodeLine>print("Score:", (100 + 50) * 2)</CodeLine>
+                     <CodeLine>print("""Score:"quot;Score:"Score:"quot;"quot;Score:""Score:"quot;Score:"Score:"quot;"quot;", (100 + 50) * 2)</CodeLine>
                      <CodeLine output>Score: 300</CodeLine>
                 </Terminal>
             </div>
@@ -423,12 +423,12 @@ export function Lesson04NewSlide15() {
 
                 <RealWorldExample>
                     <p className="mb-6 italic text-lg">
-                        "In the Chronos user database, we sanitize inputs in a single line."
+                        """In the Chronos user database, we sanitize inputs in a single line."quot;In the Chronos user database, we sanitize inputs in a single line."In the Chronos user database, we sanitize inputs in a single line."quot;"quot;In the Chronos user database, we sanitize inputs in a single line.""In the Chronos user database, we sanitize inputs in a single line."quot;In the Chronos user database, we sanitize inputs in a single line."In the Chronos user database, we sanitize inputs in a single line."quot;"quot;"
                     </p>
 
                     <div className="bg-slate-900/80 p-6 rounded-lg border border-cyan-500/30 font-mono mb-6">
                          <div className="text-gray-400 mb-2"># User input is messy</div>
-                         <div className="text-purple-400">username = "  AGENT_007  "</div>
+                         <div className="text-purple-400">username = """  AGENT_007  "quot;  AGENT_007  "  AGENT_007  "quot;"quot;  AGENT_007  ""  AGENT_007  "quot;  AGENT_007  "  AGENT_007  "quot;"quot;"</div>
                          <br/>
                          <div className="text-gray-400 mb-2"># Clean and measure in one step</div>
                          <div className="text-blue-400">print<span className="text-white">(</span><span className="text-yellow-400">len</span><span className="text-white">(</span>username.strip().lower()<span className="text-white">))</span></div>
@@ -445,15 +445,4 @@ export function Lesson04NewSlide15() {
 }
 
 // Export all slides
-export {
-    Lesson04NewSlide06,
-    Lesson04NewSlide07,
-    Lesson04NewSlide08,
-    Lesson04NewSlide09,
-    Lesson04NewSlide10,
-    Lesson04NewSlide11,
-    Lesson04NewSlide12,
-    Lesson04NewSlide13,
-    Lesson04NewSlide14,
-    Lesson04NewSlide15
-};
+// Exports handled inline

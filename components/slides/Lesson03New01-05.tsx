@@ -277,10 +277,4 @@ export function Lesson03NewSlide05() {
 }
 
 // Export all slides
-export {
-    Lesson03NewSlide01,
-    Lesson03NewSlide02,
-    Lesson03NewSlide03,
-    Lesson03NewSlide04,
-    Lesson03NewSlide05
-};
+// Exports handled inline

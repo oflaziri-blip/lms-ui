@@ -122,7 +122,7 @@ export function Lesson04NewSlide18() {
                     <h3 className="text-[#53d22d] font-bold text-2xl mb-6">Your Mission:</h3>
 
                     <p className="text-lg text-gray-300 mb-6">
-                        Print a border of <span className="font-mono text-cyan-300">"="</span> calculated by <span className="font-mono text-cyan-300">(10 + 10)</span> length, followed by "CHRONOS SYSTEM"
+                        Print a border of <span className="font-mono text-cyan-300">"""="quot;="="quot;"quot;=""="quot;="="quot;"quot;"</span> calculated by <span className="font-mono text-cyan-300">(10 + 10)</span> length, followed by """CHRONOS SYSTEM"quot;CHRONOS SYSTEM"CHRONOS SYSTEM"quot;"quot;CHRONOS SYSTEM""CHRONOS SYSTEM"quot;CHRONOS SYSTEM"CHRONOS SYSTEM"quot;"quot;"
                     </p>
 
                     <div className="p-5 bg-yellow-500/10 border border-yellow-500/30 rounded-xl">
@@ -135,7 +135,7 @@ export function Lesson04NewSlide18() {
                     </div>
                 </div>
                  <div className="mt-6 text-center text-sm text-gray-500">
-                    Hint: You can use print("=" * (math))
+                    Hint: You can use print("""="quot;="="quot;"quot;=""="quot;="="quot;"quot;" * (math))
                 </div>
             </div>
         </div>
@@ -212,11 +212,11 @@ export function Lesson04NewSlide20() {
                     <CodeLine>bonus = 20</CodeLine>
                     <CodeLine>multiplier = 2</CodeLine>
                     <CodeLine>&nbsp;</CodeLine>
-                    <CodeLine>print("=" * 30)</CodeLine>
-                    <CodeLine>print("DAMAGE REPORT")</CodeLine>
-                    <CodeLine>print("=" * 30)</CodeLine>
-                    <CodeLine>print("Total:", (base + bonus) * multiplier)</CodeLine>
-                    <CodeLine>print("=" * 30)</CodeLine>
+                    <CodeLine>print("""="quot;="="quot;"quot;=""="quot;="="quot;"quot;" * 30)</CodeLine>
+                    <CodeLine>print("""DAMAGE REPORT"quot;DAMAGE REPORT"DAMAGE REPORT"quot;"quot;DAMAGE REPORT""DAMAGE REPORT"quot;DAMAGE REPORT"DAMAGE REPORT"quot;"quot;")</CodeLine>
+                    <CodeLine>print("""="quot;="="quot;"quot;=""="quot;="="quot;"quot;" * 30)</CodeLine>
+                    <CodeLine>print("""Total:"quot;Total:"Total:"quot;"quot;Total:""Total:"quot;Total:"Total:"quot;"quot;", (base + bonus) * multiplier)</CodeLine>
+                    <CodeLine>print("""="quot;="="quot;"quot;=""="quot;="="quot;"quot;" * 30)</CodeLine>
 
                     <CodeLine output>==============================</CodeLine>
                     <CodeLine output>DAMAGE REPORT</CodeLine>
@@ -266,7 +266,7 @@ export function Lesson04NewSlide21() {
 
                     <ProTip>
                          <p className="text-lg italic mb-3">
-                            "Nesting is the foundation of all complex programs. Master it now, and you'll build anything later."
+                            """Nesting is the foundation of all complex programs. Master it now, and you'll build anything later."quot;Nesting is the foundation of all complex programs. Master it now, and you"Nesting is the foundation of all complex programs. Master it now, and you'll build anything later."apos;ll build anything later."Nesting is the foundation of all complex programs. Master it now, and you'll build anything later."quot;"quot;Nesting is the foundation of all complex programs. Master it now, and you""Nesting is the foundation of all complex programs. Master it now, and you'll build anything later."quot;Nesting is the foundation of all complex programs. Master it now, and you"Nesting is the foundation of all complex programs. Master it now, and you'll build anything later."apos;ll build anything later."Nesting is the foundation of all complex programs. Master it now, and you'll build anything later."quot;"apos;ll build anything later.""Nesting is the foundation of all complex programs. Master it now, and you'll build anything later."quot;Nesting is the foundation of all complex programs. Master it now, and you"Nesting is the foundation of all complex programs. Master it now, and you'll build anything later."apos;ll build anything later."Nesting is the foundation of all complex programs. Master it now, and you'll build anything later."quot;"quot;"
                         </p>
                         <p className="text-sm text-gray-400">
                             - Chief Engineer Kael
@@ -317,12 +317,4 @@ export function Lesson04NewSlide22() {
 }
 
 // Export all slides
-export {
-    Lesson04NewSlide16,
-    Lesson04NewSlide17,
-    Lesson04NewSlide18,
-    Lesson04NewSlide19,
-    Lesson04NewSlide20,
-    Lesson04NewSlide21,
-    Lesson04NewSlide22
-};
+// Exports handled inline

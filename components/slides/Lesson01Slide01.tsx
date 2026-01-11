@@ -3,10 +3,21 @@
  * Operation Chronos: System Boot
  */
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Terminal, Zap, Code2 } from 'lucide-react';
 
 export function Lesson01Slide01() {
+    const [particles, setParticles] = useState<Array<{left: string, top: string, delay: string, opacity: number}>>([]);
+
+    useEffect(() => {
+        setParticles([...Array(20)].map(() => ({
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            delay: `${Math.random() * 2}s`,
+            opacity: Math.random() * 0.5 + 0.2
+        })));
+    }, []);
+
     return (
         <div className="min-h-screen w-full bg-gradient-to-br from-cyan-950 via-blue-950 to-slate-950 text-white flex items-center justify-center p-12 relative overflow-hidden">
             {/* Animated Background Grid */}
@@ -19,15 +30,15 @@ export function Lesson01Slide01() {
 
             {/* Floating Particles */}
             <div className="absolute inset-0 overflow-hidden">
-                {[...Array(20)].map((_, i) => (
+                {particles.map((particle, i) => (
                     <div
                         key={i}
                         className="absolute w-1 h-1 bg-cyan-400 rounded-full animate-pulse"
                         style={{
-                            left: `${Math.random() * 100}%`,
-                            top: `${Math.random() * 100}%`,
-                            animationDelay: `${Math.random() * 2}s`,
-                            opacity: Math.random() * 0.5 + 0.2
+                            left: particle.left,
+                            top: particle.top,
+                            animationDelay: particle.delay,
+                            opacity: particle.opacity
                         }}
                     />
                 ))}
